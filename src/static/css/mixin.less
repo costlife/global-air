@@ -1,0 +1,70 @@
+.cf() {
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+// ............................................................
+// for.less file
+// https://github.com/seven-phases-max/less.curious/blob/master/articles/generic-for.md
+
+
+.for(@i, @n) {.-each(@i)}
+.for(@n)     when (isnumber(@n)) {.for(1, @n)}
+.for(@i, @n) when not (@i = @n)  {
+    .for((@i + (@n - @i) / abs(@n - @i)), @n);
+}
+
+// ............................................................
+// .for-each
+
+.for(@array)   when (default()) {.for-impl_(length(@array))}
+.for-impl_(@i) when (@i > 1)    {.for-impl_((@i - 1))}
+.for-impl_(@i) when (@i > 0)    {.-each(extract(@array, @i))}
+
+
+
+.page-text {
+    p {
+        text-align: justify;
+        font-size: 14px;
+        color: #666;
+        line-height: 2;
+        margin-top: 0.5rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: #406599;
+        font-size: 14px;
+    }
+
+    h3 {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-top: 0.5rem;
+        color: #000;
+    }
+
+    ul {
+    	list-style-type: disc;
+    	li {
+        	margin-left: 20px;
+    	}
+    }
+
+    li {
+    	font-size: 14px;
+    	color: #666;
+        line-height: 2.5;
+    }
+
+    .red {
+        color: #ed4040;
+    }
+    .inline {
+        display: inline;
+    }
+}

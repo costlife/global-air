@@ -1,0 +1,8 @@
+node_modules/*
+src/.DS_Store
+output
+*.sublime-workspace
+*.swp
+npm-debug.log
+*.orig
+.DS_Store
