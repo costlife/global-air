@@ -7,7 +7,6 @@ var buildPath = path.resolve(__dirname, 'output/webroot');
 var TransferWebpackPlugin = require('transfer-webpack-plugin');
 var autoprefixer = require('autoprefixer');
 
-
 module.exports = {
     // 入口文件
     entry : {

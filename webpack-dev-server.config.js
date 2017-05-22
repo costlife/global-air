@@ -8,7 +8,7 @@ module.exports = {
         'global-air': [
             'webpack/hot/dev-server',
             'webpack/hot/only-dev-server',
-            './src/entry/index.js'
+            './src/entry/index'
         ],
     },
     // 产出路径

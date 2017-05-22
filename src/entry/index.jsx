@@ -15,9 +15,11 @@ import Footer from '../partials/footer';
 /* router */
 
 import Home from '../containers/home';
+import Booking from '../containers/booking';
 
 /* router end */
 
+import './index.css';
 /*
 @Des:获取store
 */
@@ -42,7 +44,7 @@ render(
                 <div>
                     <Menu/>
                     <Switch>
-                        <Route path="" component={Home} />
+                        <Route path="" component={Booking} />
                     </Switch>
                 </div>
                 <Footer/>
