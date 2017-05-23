@@ -1,0 +1,64 @@
+.flightCard {
+    border: 1px solid #ccc;
+    padding: 20px;
+    position: relative;
+    margin-bottom: -1px;
+    transition: .5s;
+    background: #fff;
+    .flightsName {
+        h1 {
+            font-size: 18px;
+            color: #2993d1
+        }
+        img {
+            margin-right: 4px
+        }
+        p {
+            line-height: 1.5;
+            color: #999;
+            text-indent: 30px
+        }
+    }
+    &:hover {
+        z-index: 10;
+        transform: scale(1.01);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .flightInfo {
+        position:relative;
+        .flightsName {
+            display: inline-block;
+            *display: inline;
+            zoom: 1;
+        }
+        .linebars {
+            display: inline-block;
+            *display: inline;
+            zoom: 1;
+        }
+
+    }
+
+    .flightTool {
+        position: absolute;
+        right: 20px;
+        top: 0;
+        text-align: center;
+
+        a.btn {
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+
+        .viewMore {
+            text-decoration: underline;
+            color: #2993d1;
+            display: block;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+    }
+
+}

@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import moment from 'moment';
+import './index.less';
+
 class Dialog extends Component {
 
     /**
@@ -6,41 +9,105 @@ class Dialog extends Component {
      */
     constructor(props) {
         super(props);
+        this.state = {
+            showMoreInfo: false
+        };
+    }
+
+    unixToTimeFormat(value) {
+        return moment(value).format('HH:MM');
+    }
+
+    durationFormat(value) {
+        return value.replace(':', '小时') + '分';
+    }
+
+    showMoreInfoAction() {
+        this.setState({showMoreInfo: !this.state.showMoreInfo});
+    }
+
+    renderFlightInfo(detail) {
+        let firstOD = detail.odlist[0];
+        let lastOD = detail.odlist[detail.odlist.length - 1];
+        let startTime = firstOD.flightDetail[0].departureTime;
+        let endTime = lastOD.flightDetail[lastOD.flightDetail.length - 1].arriveTime;
+        let differDay = Math.floor((endTime - startTime) / 86400000);
+        return (
+            <div className="flightInfo">
+                <div className="flightsName">
+                    <h1><i><img src="http://simg1.qunarzz.com/site/images/airlines/HU.gif" alt="" /></i>{detail.airlineSet.split(';')[0]}</h1>
+                    <p>PS288波音767(大)</p>
+                    <p>PS415波音737(中)</p>
+                </div>
+                <div className="linebars">
+                    <div className="time star">
+                        <div className="times">{this.unixToTimeFormat(startTime)}</div>
+                        <b>{detail.odlist[0].aPortName}</b>
+                    </div>
+                    <div className="line">
+                        <div className="alltime">14小时20分钟</div>
+                        <div className="transfer">转 <b>基辅KBP</b></div>
+                    </div>
+                    <div className="time end">
+                        <div className="times">
+                            {this.unixToTimeFormat(endTime)}
+                            <div className="dateAdd">+1</div>
+                        </div>
+                        <b>{detail.odlist[1].aPortName}</b>
+                    </div>
+                </div>
+                <div className="flightTool">
+                    <a className="viewMore" onClick={this.showMoreInfoAction.bind(this)}>航班详情</a>
+                    <a className="btn selbtn btn-o">选为去程</a>
+                </div>
+            </div>
+        )
+    }
+
+    renderFlightMoreInfo(odlist) {
+        return odlist.map((oditem, index) => {
+            let startTime = oditem.flightDetail[0].departureTime;
+            let endTime = oditem.flightDetail[oditem.flightDetail.length - 1].arriveTime;
+            let differDay = Math.floor((endTime - startTime) / 86400000);
+            console.log(differDay)
+            return (
+                <div key={index} className="flightInfo">
+                    <div className="flightsName">
+                        <h1><i><img src="http://simg1.qunarzz.com/site/images/airlines/HU.gif" alt="" /></i>{oditem.airline}</h1>
+                        <p>{oditem.flightNo}</p>
+                    </div>
+                    <div className="linebars">
+                        <div className="time star">
+                            <div className="times">{this.unixToTimeFormat(startTime)}</div>
+                            <b>{oditem.dPortName}</b>
+                        </div>
+                        <div className="line">
+                            <div className="alltime">{this.durationFormat(oditem.duration)}</div>
+                            <div className="transfer">转 <b>基辅KBP</b></div>
+                        </div>
+                        <div className="time end">
+                            <div className="times">
+                                {this.unixToTimeFormat(endTime)}
+                                {differDay > 0 ?
+                                    <div className="dateAdd">+{differDay}</div> : null
+                                }
+                            </div>
+                            <b>{oditem.flightDetail[oditem.flightDetail.length - 1].aPortName}</b>
+                        </div>
+                    </div>
+                </div>
+            )
+        })
     }
 
     render() {
         const { detail } = this.props;
-
-
-        console.log(detail)
+        const { showMoreInfo } = this.state;
+        console.log(detail);
         return (
             <div className="flightCard">
-                <div className="flightInfo">
-                    <div className="flightsName">
-                        <h1><i><img src="http://simg1.qunarzz.com/site/images/airlines/HU.gif" alt="" /></i>{detail.airlineSet.split(';')[0]}</h1>
-                        <p>PS288波音767(大)</p>
-                        <p>PS415波音737(中)</p>
-                    </div>
-                    <div className="linebars">
-                        <div className="time star">
-                            <div className="times">{detail.odlist[0].transferTime}</div>
-                            <b>{detail.odlist[0].aPortName}</b>
-                        </div>
-                        <div className="line">
-                            <div className="alltime">14小时20分钟</div>
-                            <div className="transfer">转 <b>基辅KBP</b></div>
-                        </div>
-                        <div className="time end">
-                            <div className="times">{detail.odlist[1].transferTime}<div className="dateAdd">+1</div></div>
-                            <b>{detail.odlist[1].aPortName}</b>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div className="flightTool">
-                    <a className="viewMore">查看详情</a>
-                    <a className="btn selbtn btn-o">选为去程</a>
-                </div>
+                {this.renderFlightInfo(detail)}
+                {showMoreInfo && this.renderFlightMoreInfo(detail.odlist)}
                 <div className="flightDetails">
                     <div className="flights">
                         <div className="flines">
