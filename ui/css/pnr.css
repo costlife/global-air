@@ -1,0 +1,140 @@
+/*pnr导入*/
+.pnr{width:990px;margin-left:20px;}
+.pnr_import ul.tab{height:30px;width:100%;border-bottom:1px solid #2993d1;}
+.pnr_import ul.tab li{height:30px;float:left;display:inline;}
+.pnr_import ul.tab li.hover{background:#2993d1;position:relative;}
+.pnr_import ul.tab li a{display:block;width:110px;height:23px;text-align:center;padding-top:7px;font-size:14px;color: #2993d1;}
+.pnr_import ul.tab li.hover a{color:#fff;}
+.pnr_import ul.tab li.hover b{display:none;}
+.pnr_import .divTip{background-color: #ffffe1; border-radius: 5px;border: 1px solid #fadfb2;line-height: 20px; padding:4px 0 4px 16px;margin-top: 15px;margin-bottom: 10px;margin-bottom:25px;overflow:hidden;}
+.pnr_import .divTip .pnr_point{width:16px;height:16px;background:url(../images/point.png) no-repeat;padding-top:4px;float:left;margin-right:6px;}
+.pnr_import .divTip span{float:left;}
+.oreder_detail .oreder_detail_information,.oreder_detail  .flight_xx{border:1px solid #ddd;}
+.oreder_detail .oreder_detail_information tr{background:#f5f9fc;}
+.oreder_detail .oreder_detail_information tr td{padding:12px 80px;}
+
+.oreder_detail  .flight_xx th{background:#f5f5f5;padding:8px 0;}
+.oreder_detail  .flight_xx  td{padding:8px 0;text-align: center;}
+.oreder_detail   .supply_time{font-weight:normal;text-decoration:underline;color:#0055aa;float:right;}
+.oreder_detail h2{font-size:14px;color:#333333;padding:20px 0 8px}
+.pnr_import .rt{margin-top: 22px;}
+.pnr_rt h2{font-size:14px;margin:4px 0 6px;color:#666;font-weight:bold;}
+.pnr_overseas {padding-top:26px;}
+.pnr_overseas dl{overflow:hidden;background-color: #ffffe1; border-radius: 5px;border: 1px solid #e6db55;padding:4px 0 4px 18px;line-height: 20px; }
+.pnr_overseas dt,.pnr_overseas dd{float:left;}
+.pnr_overseas .coding{margin-top:12px;}
+.pnr_overseas .coding .coding_input{height:28px;width:120px;}
+.pnr_overseas .coding button{width:82px;height:30px;text-align:center;color:#333333;margin-left:12px;
+ font-size:14px;}
+.pnr_rt_import .text_extract{display:block;color:#fff;margin:auto;padding-top:10px;height:20px;margin-top:50px;}
+.pnr_rt_import .text_extract:hover{background:#ff6c00;}
+.pnr_content .pnr_text_centert{margin-top:32px;}
+.pnr_content .pnr_text_centert dt{color:#666666;margin-bottom:8px;}
+.pnr_content div.pnrstyle {display:none;}
+/*pnr导入——文本*/
+.pnr_text{width:988px;margin-left:20px;}
+.coding_title{font-size:14px;margin-bottom:14px;color: #666;font-weight: bold;}
+.coding_title .coding_font_bule{color:#0000ff;margin-right:40px;}
+.coding_title .big_coding{width:88px;height:22px;}
+.coding_title .freight{width:96px;height:28px;margin-left:18px;margin-right:10px;}
+/*航段信息*/
+.airlines_title{margin-bottom:6px;font-size:14px;}
+.airlines_title span{font-size:14px;margin-right:12px;color:#333;font-weight:bold;}
+.airlines_title span.segment{color:#666;margin-right:24px;font-weight:bold;}
+.airlines_title thead .airlines{width:40px;height:22px;line-height:24px;text-align: center;margin-right:14px;color:#666;}
+.aviation_coding{margin-bottom:16px;}
+.aviation_coding tr{text-align:center;border:1px solid #dddddd;border-top:none;color:#333;}
+.aviation_coding tr.aviation_coding_title{border-top:1px solid #dddddd;}
+.aviation_coding tr th{background:#f5f5f5;padding:10px 0 6px;color:#666;}
+.aviation_coding tr td{padding:9px 0;}
+.aviation_coding tr td.coding_fikght{width:257px;}
+
+/*乘客信息*/
+.information .information_border{border:1px solid #ddd;padding-bottom:16px;}
+.information h2{font-size:14px;color:#666;padding-top:8px;font-weight:bold;margin-bottom:8px;}
+.information h3{width:97%;padding-top:12px;margin:12px auto 6px;border:1px solid #b2d0ec;padding:5px 0 5px 8px;}
+.information h3 a{display:inline-block;padding:4px 4px;border:1px solid #fff;margin-left:12px;color:#0055aa;text-decoration:underline;}
+.information h3 a.hover{border:1px solid #ff8800;color:#ff8800;text-decoration:none;}
+.aviation_coding_title{clear:both;}
+.aviation_coding_title .sexinput{width:54px;height:30px;padding-left:4px;}
+.aviation_coding_title .passport_type{width:40px;height:30px;padding-left:4px;}
+.aviation_coding_title .passport_type_number{width:98px;height:22px;padding-left:4px;}
+.aviation_coding_title .members{width:104px;height:24px;padding-left:4px;}
+/*osi信息*/
+.osi_information h2{font-size:14px;color:#666;margin-top:16px;margin-bottom:8px;font-weight:bold;}
+.osi_information p{background:#f5f5f5;padding:9px 0 9px 20px;border:1px solid #dddddd;}
+/*私有运价政策详情*/
+.freight h2{padding:25px 0 8px;font-size:14px;font-weight:bold;color:#666;}
+.freight table{border:1px solid #dddddd;clear:both;}
+.freight tr{text-align:center;}
+.freight tr.freight_ctner{border:1px solid #dddddd;border-left: none;border-radius:0;}
+.freight tr.text_left{text-align:left;}
+.freight tr.freight_header th{padding:9px 0px 9px 4px; background:#f5f5f5;color:#666;}
+.freight tr.freight_header th .point_somal{display:inline-block;width:10px;height:10px;background:url(../images/point_somal.png); no-repert; }
+.price_point{position: relative;display:inline-block; }
+.somale_center {width:471px;height:50px;padding:5px 0 0 16px;background:url(../images/point_nr.png); no-repert;position: absolute;top:-44px;left: 12px;display:none;}
+.somale_center p{text-align:left;line-height:22px;color:#333333;}
+.freight tr.freight_ctner td{padding:17px 0 15px 0;color:#333;}
+.freight tr.freight_ctner td.font_red{color:#ff0000;}
+.freight tr.text_left td{padding:0px 20px 0px 20px;line-height:22px;}
+.freight_ctner td .supply{color:#0055aa;text-decoration:underline;}
+.stars_divide{position: relative;width:77px;margin: auto;}
+.freight_ctner .stars{width:77px;height:13px;display:inline-block;background:url(../images/strat.png);background-position:-8px -31px }
+.freight_ctner .stars_ys{width:77px;height:13px;display:inline-block;background:url(../images/strat.png);background-position:-8px -12px; position: absolute;top:0px;left:0;}
+.freight tr.freight_ctner .font-bold{font-weight: bold;font-size:14px;}
+/*公布运价政策*/
+.policy .policy_title{overflow:hidden;}
+.policy .policy_title h2{overflow:hidden;}
+.policy .policy_title h2 span{float:left;font-size:14px;color:#666;}
+.policy .policy_title ul{float:right;height:24px;}
+.policy .policy_title ul li{float:left;display:inline-block;font-weight: normal;}
+.policy .policy_title ul li input{margin-top:0px;margin:0 4px 0 13px}
+.policy .policy_title ul li .sexinput{width:108px;height:24px;margin:-7px 6px 0 18px;}
+.policy .policy_title ul li .freight{width:68px;height:24px;}
+/*支付合计*/
+.total{}
+.total h2{font-size:14px;color:#333;margin:20px 0 8px ;font-weight:bold;}
+.total dl{border:1px solid #ddd;line-height:22px;padding:14px 0 12px 12px;color:#333;}
+.total dl .font_size{font-size:24px;}
+/*其他备注*/
+.total_note h2{font-size:14px;margin:20px 0 8px;color:#666;font-weight: bold;}
+.total_note dl {font-size:14px;border:1px solid #ddd;padding:20px 0 22px 12px;}
+.total_note dl input{width:114px;height:22px;margin-left:6px;padding-left:4px;}
+.total_note dl label{color:#a2a2a2;margin-left:6px;margin-right:24px;}
+/*订单支付*/
+.price{float:right;}
+.order_number{padding:14px 0 22px 0 ;}
+.order_number dt{line-height:22px;}
+.order_number dt span{display:inline-block;width:62px;text-align:right;}
+.order_number dt .font_red{font-size:26px;color:#ff0000;font-weight:bold; }
+.treay{border:1px solid #ddd;clear:both;}
+.travy_pay{height:30px;border-bottom:1px solid #ddd;background:#f9f9f9;}
+.treay .travy_pay  dt{float:left;width:149px;height:30px;text-align: center;line-height:30px;position:relative;}
+.treay .travy_pay  dt.hover{background:#fff;}
+.treay .travy_pay  dt.hover a{color:#00adee;}
+.treay .travy_pay  dt.hover b{background:#00adee;}
+.treay .travy_pay  dt.hover strong{background:#fff;}
+.treay .travy_pay  dt b{display:block;height:2px;width:100%;position: absolute;top:-2px;}
+.treay .travy_pay  dt strong{display:block;height:1px;width:100%;position: absolute;bottom:-1px;}
+#yslpayDiv tr  input{margin-top:-3px;}
+#yslpayDiv tr td{padding-right:10px;line-height:28px;}
+#yslpayDiv .easy_pay{width:140px;}
+.treay .payDiv{display:none;clear:both;padding-left:16px;}
+
+/*创建订单按钮*/
+.create_order{margin:auto;padding-top:60px;}
+.create_order a.font_button{display:block;color:#fff;cursor:pointer;}
+.create_order a.font_button:hover{background:#ff6c00;}
+
+/*弹窗*/
+.shadow_window{ position: fixed; top:0;left:0;height: 100%;width: 100%; z-index: 10000;  background:rgba(0, 0, 0, 0.6) none repeat scroll 0 0 !important;filter:Alpha(opacity=60);z-index:999; display:none;}
+.open_window{position:absolute;width:600px;top:300px;left:50%;margin-left:-300px;background:#fff;border:2px solid #00adee;}
+.open_window h2{padding:10px 0  10px 19px;background:#f6f6f6;color:#333333;border-bottom:1px solid #e7e7e7;font-size:14px;} 
+.open_window ul{margin:18px 0 0 13px;padding:12px 0 9px 15px;width:545px; border:1px solid #dddddd;line-height:30px;}
+.open_window ul span{display:inline-block;width:105px;text-align:right}
+.open_window p{padding:66px 0 95px;text-align: center;}
+.open_window p .clone_button{display:inline-block;color:#fff;padding-top:10px;height:20px;margin-right:10px;}
+.open_window p .clone_button:hover{background:#ff6c00;}
+.open_window  h2 {position:relative;}
+.open_window  h2 .shut_down{display:block;width:16px;height:16px;background:url(../images/shut_down.png) no-repeat;position:absolute;top:9px;right:20px;}
+.open_window p .font_one_bule{text-decoration:underline;}

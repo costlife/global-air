@@ -1,0 +1,87 @@
+/*头部  左侧  公共部分*/
+.main{width:1200px;margin: auto;} 
+/*公共颜色*/
+.font_bule{color:#1b74aa;}
+.font_red{color:#ff0000}
+.font_one_bule{color:#00adee;}
+.font_green{color:#007300;}
+.font_button,.font_big_button,.popup_button,.font_text_button{height:20px;padding-top:10px;background:#ff8800;text-align:center;}
+.font_button{width:106px;}
+.font_big_button{width:118px;}
+.font_text_button{width:124px;}
+.font_big_bule{color:#0055aa}
+
+.ipticon {
+   background: url(../images/public.png) 98% 50% no-repeat;
+    border: 1px #CFCFCF solid;
+    padding: 2px 0;
+    background-position: -60px -5px;
+}
+/*弹窗按钮*/
+.popup_button{width:96px;}
+body {
+    font: 12px/1.0 "Microsoft YaHei",Arial,Tahoma,Helvetica,"宋体",sans-serif !important;}
+/*公共背景*/ 
+.meun span,.list dl dt b,.pnr_import ul li.hover b{background:url(../images/public.png);background-repeat:no-repeat;}
+ /*头部*/
+.head_top{height:21px;padding-top:15px;overflow:hidden;}
+ .head_top .flspan{color:#666;margin-right: 14px;} 
+ .head_top .fl a{color:#00adee;} 
+ .head_top  .fl a:hover{color:#fd3300;} 
+ .head_top  b{color:#929292;margin:0 6px;}
+.head_top p.fr a{color:#666;}
+ .head_top p.fr a:hover{color:#fd3300;} 
+ /*导航*/
+.top_meun{width:100%;height:70px;overflow:hidden;background:#669acc;} 
+.meun span{display:block;width:161px;height:49px; background-position:-39px -79px;margin-top:12px;}
+.meun ul {margin-top:36px}
+.meun ul li{float:left;margin-left:23px;display: inline;} 
+.meun ul li a{color:#fff;display:block;width:88px;height:24px;text-align:center;font-size:16px;padding-top:10px;}
+.meun ul li.hover a{background:#fff;color:#ff6600;}
+/*额度电话*/
+.content{background:#f8f8f8;height:22px;padding-top:16px;border-bottom:1px solid #dddddd;margin-bottom:19px;}
+.main_content ul {position:relative;}
+.main_content ul li{float:left;display:inline;margin-left:10px;position:}
+.main_content ul li span{color:#1b74aa;}
+.main_content ul li a{font-weight: bold;}
+.main_content ul li a:hover{color:#ff3300}
+.more_consulting{width: 360px;padding: 10px 15px;border:2px solid #4096ee;position: absolute;top:13px;right:0;background:#fff;z-index:999; box-shadow: -3px 3px 0 rgba(0,0,0,0.2);display: none;  }
+.more_consulting dt{float:left;width: 180px;color:#333;height: 30px;line-height: 30px;}
+.more_consulting dt b{display:inline-block;width: 80px;text-align: right;}
+/*list*/
+.list_main{}
+.list { width:186px; border:1px solid #d2d2d3;margin-bottom:18px}
+.list dl { background:#fff;}
+.list dl.tool_bottom{margin-bottom:18px}
+.list dl dt { background:#f7f7f7; border-bottom:1px solid #d2d2d3; border-top:1px solid #d2d2d3; height:36px;line-height:36px;}
+.list dl dt { margin-bottom:8px;position:relative;}
+.list dl dt.first_dt { border-top:none;}
+.list dl dt b{display:inline-block;width:21px;height:17px;background-position:-9px -5px; margin-left:14px;position: absolute;top:10px;}
+.list dl dt b.trading{width:18px;height:17px;background-position:-13px -29px; }
+.list dl dt b.report{width:17px;height:17px;background-position:-15px -53px;}
+.list dl dt b.itinerary{width:17px;height:17px;background-position:-15px -78px;}
+.list dl dt b.tool{width:17px;height:17px;background-position:-15px -103px;}
+.list dl dt span { color:#666; font-size:14px; font-weight:bold; margin-left:13px; padding-left:27px;} 
+.list dl dd { margin-left:22px; margin-bottom:6px; _position:relative; _right:-1px;}
+.list dl dd a { font-size:14px; color:#666; padding-left:15px; display:block; border:1px solid #fff; line-height:28px; width:148px; border-right:none;}
+.list dl dd a em { font-size:14px; color:#F00; font-style:normal;} 
+.list dl dd a.hover{ background:#FFF; border:1px solid #dcdcdc; line-height:28px; border-right:none; color:#669acc; width:149px; _width:148px;}
+/*支付宝*/
+.payment{ width:186px; border:1px solid #d2d2d3;border-top:none;}
+.payment_bag{background:#f1f0f6;padding-top:18px;padding-bottom:28px;border-top:1px solid #a1c1d8;}
+.payment h2{margin-bottom:5px;}
+.payment h2 a{display:block;width:188px;height:32px;background:url(../images/wallet.png) no-repeat;}
+.payment h1 { font-size:14px; color:#333; font-weight:bold;margin-left:16px;}
+.payment h1 span { color:#50aef1;}
+.payment textarea { width:160px; font-size:12px; color:#ccc; line-height:21px; min-height:74px; margin-left:12px; margin-top:20px; border:1px solid #d7d7d7;}
+.payment input.email {width:160px; font-size:12px; color:#ccc; height:28px; border:1px solid #d7d7d7; margin:12px;}
+.payment input.send { background:#56aeff; width:142px; font-size:12px; color:#FFF; height:31px; border:none; margin:0 auto; font-weight:bold; display:block; border-radius:3px; cursor:pointer; line-height:31px;}
+
+
+
+
+
+
+
+
+

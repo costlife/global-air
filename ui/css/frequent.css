@@ -1,0 +1,17 @@
+
+.frequent_centent tbody a{color:#333;}
+.frequent_centent tbody a.font_big_bule{text-decoration: underline;color:#0055aa;}
+.frequent dl dt{text-align:center;}
+.frequent dl dt label{width:74px;color:#333333;font-weight:500}
+.frequent dl dt  .passengers{width: 134px;height: 28px;padding-left: 6px;line-height: 28px;
+    border: 1px solid #ddd;}
+ /*大客户列表*/
+.dakhlb dl dt label{width:106px;}
+.dakhlb dl dt{float:none;}
+.dakhlb dl dt input[type="checkbox"]{
+	width:12px;height:12px;
+}
+.dakhlb dl dt b{margin:0 28px;}
+
+
+

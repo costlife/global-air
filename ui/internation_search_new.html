@@ -1,0 +1,811 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>search国际机票</title>
+	<link rel="stylesheet" href="css/newcss.css" />
+</head>
+<body>
+	<div class="pagecont">
+	<div class="flyHead">
+		<div class="flyType">
+			<a class="active">单程</a>
+			<a>往返</a>
+			<a>多程</a>
+		</div>
+		<div class="typeCont">
+			<div class="tpyeBox" id="typeBox">
+				<div style="display:block"><!--单程-->
+					<div class="searchForms">
+						<div class="formline">
+							<i>出发地</i><input type="text" class="loacal" placeholder="支持中文/拼音/英文/三字码" />
+							<div class="toggle">换</div>
+						</div>
+						<div class="formline">
+							<i>出发日期</i><input type="text" placeholder="选择出发日期" class="date"/>
+						</div>
+						<div class="formline">
+							<i>到达地</i><input type="text" class="loacal" placeholder="支持中文/拼音/英文/三字码" />
+							<s class="ico-time"></s>
+						</div>
+						
+						<div class="formline">
+							<i>成人</i><input type="text" class="selects" onclick="selects(this)" />
+							<dl class="selectlist">
+								 <dd data-value="0" class="select-option">无</dd>
+				                             <dd data-value="1" class="select-option">1</dd>
+				                             <dd data-value="2" class="select-option">2</dd>
+				                             <dd data-value="3" class="select-option">3</dd>
+				                             <dd data-value="4" class="select-option">4</dd>
+				                             <dd data-value="5" class="select-option">5</dd>
+				                             <dd data-value="6" class="select-option">6</dd>
+				                             <dd data-value="7" class="select-option">7</dd>
+				                             <dd data-value="8" class="select-option">8</dd>
+				                             <dd data-value="9" class="select-option">9</dd>
+							</dl>
+						</div>
+						<div class="formline">
+							<i>旅客身份</i><input type="text" value="普通" />
+							
+						</div>
+						<div class="formline">
+							<i>普通儿童</i><input type="text" class="selects" onclick="selects(this)" />
+							<dl class="selectlist">
+				                             <dd data-value="0" class="select-option">无</dd>
+				                             <dd data-value="1" class="select-option">1</dd>
+				                             <dd data-value="2" class="select-option">2</dd>
+				                             <dd data-value="3" class="select-option">3</dd>
+				                             <dd data-value="4" class="select-option">4</dd>
+				                             <dd data-value="5" class="select-option">5</dd>
+				                             <dd data-value="6" class="select-option">6</dd>
+				                             <dd data-value="7" class="select-option">7</dd>
+				                             <dd data-value="8" class="select-option">8</dd>
+				                            <dd data-value="9" class="select-option">9</dd>
+				                         </dl>
+						</div>
+						<div class="formline">
+							<i>舱位等级</i><input type="text" class="selects" onclick="selects(this)" />
+							<dl class="selectlist">
+				                             <dd data-value="ECONOMY" class="select-option">经济舱</dd>
+				                             <dd data-value="PREMIUM_ECONOMY" class="select-option">超级经济舱</dd>
+				                             <dd data-value="BUSINESS" class="select-option">公务舱</dd>
+				                             <dd data-value="FIRST" class="select-option">头等舱</dd>
+				                         </dl>
+						</div>
+						<div class="moreInfo" style="display:none;">
+							<div class="formline">
+								<i>中转</i><input type="text" class="loacal" placeholder="支持中文/拼音/英文/三字码" />
+							</div>
+							<div class="formline">
+								<i>航空公司</i><input type="text" />
+							</div>
+						</div>
+						<div class="moreBtn">查看更多搜索条件</div>
+						
+					</div>
+				</div>
+				
+				<div><!--多程-->
+					<div class="searchForms">
+						<div class="formline">
+							<i>出发地</i><input type="text" class="loacal" placeholder="支持中文/拼音/英文/三字码" />
+							<div class="toggle">换</div>
+						</div>
+						<div class="formline">
+							<i>出发日期</i><input type="text" placeholder="选择出发日期" class="date"/>
+						</div>
+						<div class="formline">
+							<i>到达地</i><input type="text" class="loacal" placeholder="支持中文/拼音/英文/三字码" />
+							<s class="ico-time"></s>
+						</div>
+						<div class="formline">
+							<i>返回日期</i><input type="text" placeholder="选择返回日期" class="date"/>
+						</div>
+		、				<div class="formline">
+							<i>成人</i><input type="text" class="selects" onclick="selects(this)" />
+							<dl class="selectlist">
+								 <dd data-value="0" class="select-option">无</dd>
+				                             <dd data-value="1" class="select-option">1</dd>
+				                             <dd data-value="2" class="select-option">2</dd>
+				                             <dd data-value="3" class="select-option">3</dd>
+				                             <dd data-value="4" class="select-option">4</dd>
+				                             <dd data-value="5" class="select-option">5</dd>
+				                             <dd data-value="6" class="select-option">6</dd>
+				                             <dd data-value="7" class="select-option">7</dd>
+				                             <dd data-value="8" class="select-option">8</dd>
+				                             <dd data-value="9" class="select-option">9</dd>
+							</dl>
+						</div>
+						<div class="formline">
+							<i>旅客身份</i><input type="text" value="普通" />
+							
+						</div>
+						<div class="formline">
+							<i>普通儿童</i><input type="text" class="selects" onclick="selects(this)" />
+							<dl class="selectlist">
+				                             <dd data-value="0" class="select-option">无</dd>
+				                             <dd data-value="1" class="select-option">1</dd>
+				                             <dd data-value="2" class="select-option">2</dd>
+				                             <dd data-value="3" class="select-option">3</dd>
+				                             <dd data-value="4" class="select-option">4</dd>
+				                             <dd data-value="5" class="select-option">5</dd>
+				                             <dd data-value="6" class="select-option">6</dd>
+				                             <dd data-value="7" class="select-option">7</dd>
+				                             <dd data-value="8" class="select-option">8</dd>
+				                             <dd data-value="9" class="select-option">9</dd>
+				                         </dl>
+						</div>
+						<div class="formline">
+							<i>舱位等级</i><input type="text" class="selects" onclick="selects(this)" />
+							<dl class="selectlist">
+				                             <dd data-value="ECONOMY" class="select-option">经济舱</dd>
+				                             <dd data-value="PREMIUM_ECONOMY" class="select-option">超级经济舱</dd>
+				                             <dd data-value="BUSINESS" class="select-option">公务舱</dd>
+				                             <dd data-value="FIRST" class="select-option">头等舱</dd>
+				                         </dl>
+						</div>
+						<div class="moreInfo" style="display:none;">
+							<div class="formline">
+								<i>中转</i><input type="text" class="loacal" placeholder="支持中文/拼音/英文/三字码" />
+							</div>
+							<div class="formline">
+								<i>航空公司</i><input type="text" />
+							</div>
+						</div>
+						<div class="moreBtn">查看更多搜索条件</div>
+						
+					</div>
+				</div>
+				
+				<div><!--往返-->
+					<div class="searchForms">
+						<div class="formline">
+							<i>出发地</i><input type="text" class="loacal" placeholder="支持中文/拼音/英文/三字码" />
+							<div class="toggle">换</div>
+						</div>
+						<div class="formline">
+							<i>出发日期</i><input type="text" placeholder="选择出发日期" class="date"/>
+						</div>
+						<div class="formline">
+							<i>到达地</i><input type="text" class="loacal" placeholder="支持中文/拼音/英文/三字码" />
+							<s class="ico-time"></s>
+						</div>
+						<div class="formline">
+							<i>返回日期</i><input type="text" placeholder="选择返回日期" class="date"/>
+						</div>
+		、				<div class="formline">
+							<i>成人</i><input type="text" class="selects" onclick="selects(this)" />
+							<dl class="selectlist">
+								 <dd data-value="0" class="select-option">无</dd>
+				                             <dd data-value="1" class="select-option">1</dd>
+				                             <dd data-value="2" class="select-option">2</dd>
+				                             <dd data-value="3" class="select-option">3</dd>
+				                             <dd data-value="4" class="select-option">4</dd>
+				                             <dd data-value="5" class="select-option">5</dd>
+				                             <dd data-value="6" class="select-option">6</dd>
+				                             <dd data-value="7" class="select-option">7</dd>
+				                             <dd data-value="8" class="select-option">8</dd>
+				                             <dd data-value="9" class="select-option">9</dd>
+							</dl>
+						</div>
+						<div class="formline">
+							<i>旅客身份</i><input type="text" value="普通" />
+							
+						</div>
+						<div class="formline">
+							<i>普通儿童</i><input type="text" class="selects" onclick="selects(this)" />
+							<dl class="selectlist">
+				                             <dd data-value="0" class="select-option">无</dd>
+				                             <dd data-value="1" class="select-option">1</dd>
+				                             <dd data-value="2" class="select-option">2</dd>
+				                             <dd data-value="3" class="select-option">3</dd>
+				                             <dd data-value="4" class="select-option">4</dd>
+				                             <dd data-value="5" class="select-option">5</dd>
+				                             <dd data-value="6" class="select-option">6</dd>
+				                             <dd data-value="7" class="select-option">7</dd>
+				                             <dd data-value="8" class="select-option">8</dd>
+				                             <dd data-value="9" class="select-option">9</dd>
+				                         </dl>
+						</div>
+						<div class="formline">
+							<i>舱位等级</i><input type="text" class="selects" onclick="selects(this)" />
+							<dl class="selectlist">
+				                             <dd data-value="ECONOMY" class="select-option">经济舱</dd>
+				                             <dd data-value="PREMIUM_ECONOMY" class="select-option">超级经济舱</dd>
+				                             <dd data-value="BUSINESS" class="select-option">公务舱</dd>
+				                             <dd data-value="FIRST" class="select-option">头等舱</dd>
+				                         </dl>
+						</div>
+						<div class="moreInfo" style="display:none;">
+							<div class="formline">
+								<i>中转</i><input type="text" class="loacal" placeholder="支持中文/拼音/英文/三字码" />
+							</div>
+							<div class="formline">
+								<i>航空公司</i><input type="text" />
+							</div>
+						</div>
+						<div class="moreBtn">查看更多搜索条件</div>
+						
+					</div>	
+				</div>
+			</div>
+		
+		<div class="footbar">
+			<a class="searchBtn">搜索</a>
+		</div>
+		</div>
+	</div>
+		<!--bar-->
+		<div class="searchBar">
+			<div class="searchItem">
+				<div class="selectall" onclick="selectmore(this)"><label for="">起飞时段</label>
+					<div class="dropmenu">
+						<a>不限</a>
+						<a>上午</a>
+						<a>下午</a>
+						<a>晚上</a>
+					</div>
+				</div>
+				<div  class="selectall"  onclick="selectmore(this)"><label for="">航空公司</label>
+					<div class="dropmenu">
+						<a>国际上看</a>
+						<a>上午</a>
+						<a>下午</a>
+						<a>晚上</a>
+					</div>
+				</div>
+				<div  class="selectall"  onclick="selectmore(this)"><label for="">中转城市</label>
+					<div class="dropmenu">
+						<a>国际上看</a>
+						<a>上午</a>
+						<a>下午</a>
+						<a>晚上</a>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			<div class="bar">
+				<a class="active">时间</a>
+				<a>价格</a>
+				<a>返点</a>
+			</div>
+		</div>
+		
+		<div class="flightLists">
+			<div class="flightCard">
+				<div class="flightInfo">
+					<div class="flightsName">
+						<h1><i><img src="http://simg1.qunarzz.com/site/images/airlines/HU.gif" alt="" /></i>国航</h1>
+						<p>PS288波音767(大)</p>
+						<p>PS415波音737(中)</p>
+					</div>
+					<div class="linebars">
+						<div class="time star">
+							<div class="times">14:00</div>
+							<b>PEK 首都机场</b>
+						</div>
+						<div class="line">
+							<div class="alltime">14小时20分钟</div>
+							<div class="transfer">转 <b>基辅KBP</b></div>
+						</div>
+						<div class="time end">
+							<div class="times">22:00<div class="dateAdd">+1</div></div>
+							<b>MUC 弗朗茨约瑟夫机场</b>
+							
+						</div>
+					</div>
+				</div>
+				<div class="flightTool">
+					<a class="viewMore">查看详情</a>
+					<a class="btn selbtn btn-o">选为去程</a>
+				</div>
+				<div class="flightDetails">
+					<div class="flights">
+						<div class="flines">
+						<div class="lineStep">第一段</div>
+							<div class="fname">
+								<img src="http://simg1.qunarzz.com/site/images/airlines/HU.gif" alt="" /><h2>西班牙伊比利亚航空</h2>
+									
+								<div>
+									<span class="orange">BN4783</span>
+									<span>大型机</span>
+									<span>经济舱</span>
+									<span>行李额：2件</span>
+								</div>
+							
+								
+							</div>
+							<div class="timeline">
+								<div class="star">
+									<p>LHR 希思罗机场2</p>
+									<p class="time">2017-04-27 14:00</p>
+									</div>
+									<div class="bar">
+										<div class="flightTime">约2小时35分</div>
+									</div>
+								<div class="end">
+									<p>ARN 阿兰达机场</p>
+									<p class="time">2017-04-27 14:00</p>
+								</div>
+							</div>
+							
+						</div>
+						
+						<div class="transferName">
+							<div class="time">
+								中转 斯德哥尔摩
+								<span class="orange">停2小时30分</span></div>
+						</div>
+						<div class="flines">
+							<div class="lineStep">第二段</div>
+							<div class="fname">
+								<h2><img src="http://simg1.qunarzz.com/site/images/airlines/HU.gif" alt="" />西班牙伊比利亚航空<sub>BN4783</sub></h2>
+								<div>
+									<span>大型机</span>
+									<span>经济舱</span>
+									<span>行李额：2件</span>
+								</div>
+							</div>
+							<div class="timeline">
+								<div class="star">
+									<p>LHR 希思罗机场2</p>
+									<p class="time">2017-04-27 14:00</p>
+									</div>
+									<div class="bar">
+										<div class="flightTime">约2小时35分</div>
+									</div>
+								<div class="end">
+									<p>ARN 阿兰达机场</p>
+									<p class="time">2017-04-27 14:00</p>
+								</div>
+							</div>	
+						</div>	
+					</div>
+				</div>
+				<div class="personBar">
+					<div class="personLine">
+						<div>ssww=8</div>
+						<div>成人/普通</div>
+						<div>退改签规定</div>
+						<div>票面价：800</div>
+						<div>政策：5%,6%,8%</div>
+						<div class="price">
+							<b>¥9800.00</b>
+							<p>含税费¥8900</p>
+						</div>
+					</div>
+					<div class="personLine">
+						<div>ssww=8</div>
+						<div>成人/普通</div>
+						<div>退改签规定</div>
+						<div>票面价：800</div>
+						<div>政策：5%,6%,8%</div>
+						<div class="price">
+							<b>¥9800.00</b>
+							<p>含税费¥8900</p>
+						</div>
+					</div>
+				</div>
+			
+			</div>
+			<div class="flightCard">
+				<div class="flightInfo">
+					<div class="flightsName">
+						<h1><i><img src="http://simg1.qunarzz.com/site/images/airlines/HU.gif" alt="" /></i>国航</h1>
+						<p>PS288波音767(大)</p>
+						<p>PS415波音737(中)</p>
+					</div>
+					<div class="linebars">
+						<div class="time star">
+							<div class="times">14:00</div>
+							<b>PEK 首都机场</b>
+						</div>
+						<div class="line">
+							<div class="alltime">14小时20分钟</div>
+							<div class="transfer">转 <b>基辅KBP</b></div>
+						</div>
+						<div class="time end">
+							<div class="times">22:00<div class="dateAdd">+1</div></div>
+							<b>MUC 弗朗茨约瑟夫机场</b>
+							
+						</div>
+					</div>
+				</div>
+				<div class="flightTool">
+					<a class="viewMore">查看详情</a>
+					<a class="btn selbtn btn-o">选为去程</a>
+				</div>
+				<div class="flightDetails">
+					<div class="flights">
+						<div class="flines">
+						<div class="lineStep">第一段</div>
+							<div class="fname">
+								<img src="http://simg1.qunarzz.com/site/images/airlines/HU.gif" alt="" /><h2>西班牙伊比利亚航空</h2>
+									
+								<div>
+									<span class="orange">BN4783</span>
+									<span>大型机</span>
+									<span>经济舱</span>
+									<span>行李额：2件</span>
+								</div>
+							
+								
+							</div>
+							<div class="timeline">
+								<div class="star">
+									<p>LHR 希思罗机场2</p>
+									<p class="time">2017-04-27 14:00</p>
+									</div>
+									<div class="bar">
+										<div class="flightTime">约2小时35分</div>
+									</div>
+								<div class="end">
+									<p>ARN 阿兰达机场</p>
+									<p class="time">2017-04-27 14:00</p>
+								</div>
+							</div>
+							
+						</div>
+						
+						<div class="transferName">
+							<div class="time">
+								中转 斯德哥尔摩
+								<span class="orange">停2小时30分</span></div>
+						</div>
+						<div class="flines">
+							<div class="lineStep">第二段</div>
+							<div class="fname">
+								<h2><img src="http://simg1.qunarzz.com/site/images/airlines/HU.gif" alt="" />西班牙伊比利亚航空<sub>BN4783</sub></h2>
+								<div>
+									<span>大型机</span>
+									<span>经济舱</span>
+									<span>行李额：2件</span>
+								</div>
+							</div>
+							<div class="timeline">
+								<div class="star">
+									<p>LHR 希思罗机场2</p>
+									<p class="time">2017-04-27 14:00</p>
+									</div>
+									<div class="bar">
+										<div class="flightTime">约2小时35分</div>
+									</div>
+								<div class="end">
+									<p>ARN 阿兰达机场</p>
+									<p class="time">2017-04-27 14:00</p>
+								</div>
+							</div>	
+						</div>	
+					</div>
+				</div>
+				<div class="personBar">
+					<div class="personLine">
+						<div>ssww=8</div>
+						<div>成人/普通</div>
+						<div>退改签规定</div>
+						<div>票面价：800</div>
+						<div>政策：5%,6%,8%</div>
+						<div class="price">
+							<b>¥9800.00</b>
+							<p>含税费¥8900</p>
+						</div>
+					</div>
+					<div class="personLine">
+						<div>ssww=8</div>
+						<div>成人/普通</div>
+						<div>退改签规定</div>
+						<div>票面价：800</div>
+						<div>政策：5%,6%,8%</div>
+						<div class="price">
+							<b>¥9800.00</b>
+							<p>含税费¥8900</p>
+						</div>
+					</div>
+				</div>
+			
+			</div>
+			<div class="flightCard">
+				<div class="flightInfo">
+					<div class="flightsName">
+						<h1><i><img src="http://simg1.qunarzz.com/site/images/airlines/HU.gif" alt="" /></i>国航</h1>
+						<p>PS288波音767(大)</p>
+						<p>PS415波音737(中)</p>
+					</div>
+					<div class="linebars">
+						<div class="time star">
+							<div class="times">14:00</div>
+							<b>PEK 首都机场</b>
+						</div>
+						<div class="line">
+							<div class="alltime">14小时20分钟</div>
+							<div class="transfer">转 <b>基辅KBP</b></div>
+						</div>
+						<div class="time end">
+							<div class="times">22:00<div class="dateAdd">+1</div></div>
+							<b>MUC 弗朗茨约瑟夫机场</b>
+							
+						</div>
+					</div>
+				</div>
+				<div class="flightTool">
+					<a class="viewMore">查看详情</a>
+					<a class="btn selbtn btn-o">选为去程</a>
+				</div>
+				<div class="flightDetails">
+					<div class="flights">
+						<div class="flines">
+						<div class="lineStep">第一段</div>
+							<div class="fname">
+								<img src="http://simg1.qunarzz.com/site/images/airlines/HU.gif" alt="" /><h2>西班牙伊比利亚航空</h2>
+									
+								<div>
+									<span class="orange">BN4783</span>
+									<span>大型机</span>
+									<span>经济舱</span>
+									<span>行李额：2件</span>
+								</div>
+							
+								
+							</div>
+							<div class="timeline">
+								<div class="star">
+									<p>LHR 希思罗机场2</p>
+									<p class="time">2017-04-27 14:00</p>
+									</div>
+									<div class="bar">
+										<div class="flightTime">约2小时35分</div>
+									</div>
+								<div class="end">
+									<p>ARN 阿兰达机场</p>
+									<p class="time">2017-04-27 14:00</p>
+								</div>
+							</div>
+							
+						</div>
+						
+						<div class="transferName">
+							<div class="time">
+								中转 斯德哥尔摩
+								<span class="orange">停2小时30分</span></div>
+						</div>
+						<div class="flines">
+							<div class="lineStep">第二段</div>
+							<div class="fname">
+								<h2><img src="http://simg1.qunarzz.com/site/images/airlines/HU.gif" alt="" />西班牙伊比利亚航空<sub>BN4783</sub></h2>
+								<div>
+									<span>大型机</span>
+									<span>经济舱</span>
+									<span>行李额：2件</span>
+								</div>
+							</div>
+							<div class="timeline">
+								<div class="star">
+									<p>LHR 希思罗机场2</p>
+									<p class="time">2017-04-27 14:00</p>
+									</div>
+									<div class="bar">
+										<div class="flightTime">约2小时35分</div>
+									</div>
+								<div class="end">
+									<p>ARN 阿兰达机场</p>
+									<p class="time">2017-04-27 14:00</p>
+								</div>
+							</div>	
+						</div>	
+					</div>
+				</div>
+				<div class="personBar">
+					<div class="personLine">
+						<div>ssww=8</div>
+						<div>成人/普通</div>
+						<div>退改签规定</div>
+						<div>票面价：800</div>
+						<div>政策：5%,6%,8%</div>
+						<div class="price">
+							<b>¥9800.00</b>
+							<p>含税费¥8900</p>
+						</div>
+					</div>
+					<div class="personLine">
+						<div>ssww=8</div>
+						<div>成人/普通</div>
+						<div>退改签规定</div>
+						<div>票面价：800</div>
+						<div>政策：5%,6%,8%</div>
+						<div class="price">
+							<b>¥9800.00</b>
+							<p>含税费¥8900</p>
+						</div>
+					</div>
+				</div>
+			
+			</div>
+			<div class="flightCard">
+				<div class="flightInfo">
+					<div class="flightsName">
+						<h1><i><img src="http://simg1.qunarzz.com/site/images/airlines/HU.gif" alt="" /></i>国航</h1>
+						<p>PS288波音767(大)</p>
+						<p>PS415波音737(中)</p>
+					</div>
+					<div class="linebars">
+						<div class="time star">
+							<div class="times">14:00</div>
+							<b>PEK 首都机场</b>
+						</div>
+						<div class="line">
+							<div class="alltime">14小时20分钟</div>
+							<div class="transfer">转 <b>基辅KBP</b></div>
+						</div>
+						<div class="time end">
+							<div class="times">22:00<div class="dateAdd">+1</div></div>
+							<b>MUC 弗朗茨约瑟夫机场</b>
+							
+						</div>
+					</div>
+				</div>
+				<div class="flightTool">
+					<a class="viewMore">查看详情</a>
+					<a class="btn selbtn btn-o">选为去程</a>
+				</div>
+				<div class="flightDetails">
+					<div class="flights">
+						<div class="flines">
+						<div class="lineStep">第一段</div>
+							<div class="fname">
+								<img src="http://simg1.qunarzz.com/site/images/airlines/HU.gif" alt="" /><h2>西班牙伊比利亚航空</h2>
+									
+								<div>
+									<span class="orange">BN4783</span>
+									<span>大型机</span>
+									<span>经济舱</span>
+									<span>行李额：2件</span>
+								</div>
+							
+								
+							</div>
+							<div class="timeline">
+								<div class="star">
+									<p>LHR 希思罗机场2</p>
+									<p class="time">2017-04-27 14:00</p>
+									</div>
+									<div class="bar">
+										<div class="flightTime">约2小时35分</div>
+									</div>
+								<div class="end">
+									<p>ARN 阿兰达机场</p>
+									<p class="time">2017-04-27 14:00</p>
+								</div>
+							</div>
+							
+						</div>
+						
+						<div class="transferName">
+							<div class="time">
+								中转 斯德哥尔摩
+								<span class="orange">停2小时30分</span></div>
+						</div>
+						<div class="flines">
+							<div class="lineStep">第二段</div>
+							<div class="fname">
+								<h2><img src="http://simg1.qunarzz.com/site/images/airlines/HU.gif" alt="" />西班牙伊比利亚航空<sub>BN4783</sub></h2>
+								<div>
+									<span>大型机</span>
+									<span>经济舱</span>
+									<span>行李额：2件</span>
+								</div>
+							</div>
+							<div class="timeline">
+								<div class="star">
+									<p>LHR 希思罗机场2</p>
+									<p class="time">2017-04-27 14:00</p>
+									</div>
+									<div class="bar">
+										<div class="flightTime">约2小时35分</div>
+									</div>
+								<div class="end">
+									<p>ARN 阿兰达机场</p>
+									<p class="time">2017-04-27 14:00</p>
+								</div>
+							</div>	
+						</div>	
+					</div>
+				</div>
+				<div class="personBar">
+					<div class="personLine">
+						<div>ssww=8</div>
+						<div>成人/普通</div>
+						<div>退改签规定</div>
+						<div>票面价：800</div>
+						<div>政策：5%,6%,8%</div>
+						<div class="price">
+							<b>¥9800.00</b>
+							<p>含税费¥8900</p>
+						</div>
+					</div>
+					<div class="personLine">
+						<div>ssww=8</div>
+						<div>成人/普通</div>
+						<div>退改签规定</div>
+						<div>票面价：800</div>
+						<div>政策：5%,6%,8%</div>
+						<div class="price">
+							<b>¥9800.00</b>
+							<p>含税费¥8900</p>
+						</div>
+					</div>
+				</div>
+			
+			</div>
+			
+			<div class="paged">
+				<a href="">上一页</a>
+				<a href="" class="active">1</a>
+				<a href="">2</a>
+				<a href="">3</a>
+				<a href="">4</a>
+				<a href="">5</a>
+				<a href="">下一页</a>
+			</div>
+		</div>
+		
+		
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+	
+		//下拉select选择
+		function selects(that){
+			$('.selectlist').removeClass('open');
+			$(that).addClass('focus');
+			$(that).next('.selectlist').addClass('open');		
+		}
+		
+		$('.selectlist dd').click(function(e){
+			$(this).parent().siblings('.selects').val($(this).text()).removeClass('focus');
+			$(this).parent().removeClass('open');
+		});
+		
+		
+		//下拉多选择
+		function selectmore(that){
+			$('.dropmenu').removeClass('open');
+			$(that).addClass('focus');
+			$(that).find('.dropmenu').addClass('open');		
+		}
+		
+		
+		
+		//查询方式切换
+		$('.flyType a').on('click',function(){
+			$(this).siblings().removeClass('active');
+			$(this).addClass('active');
+			$('#typeBox>div').hide().eq($(this).index()).show();
+		});
+		
+		//查看更多条件
+		var more = true;
+		
+		$('.moreBtn').click(function(){
+			
+			var that = $(this);
+			if(more){
+				that.prev('.moreInfo').show();
+				that.text('收起更多查询条件');
+				more = false;
+			}else{
+				that.prev('.moreInfo').hide();
+				that.text('查看更多查询条件');
+				that = true;
+			}
+		});
+		
+		//查看详情
+		
+		$('.viewMore').click(function(){
+			$(this).parent().siblings('.flightDetails').toggle();
+		});
+	</script>
+</body>
+</html>:

@@ -1,0 +1,41 @@
+/*-------------航班查询-----------------------*/
+.departure_city dt b{background:url(../images/public.png);background-repeat:no-repeat;}
+/*我要下订单*/
+.content_right{margin-left:19px;width:990px; }
+.content_right_first{border:1px solid #cbddec;width:834px;margin-bottom:16px}
+.content_right_first li{padding:14px  0 14px 17px;border-bottom:1px solid #dddddd;}
+.content_right_first li.list_order_last{border-bottom:0;}
+.content_right_first li a{margin-right:39px;}
+.content_right_first li a.order_detail{margin-right:26px;}
+/*航班查询*/
+.flight{width:792px;border:2px solid #33bdf1;overflow: hidden;padding:19px 18px;}
+.flight_query{width:416px;}
+.flight_query h2{color:#00acee;font-size:16px;font-weight:bold;margin-bottom:29px;} 
+.flight_query  ul{height:40px;}
+.flight_query li{float:left;vertical-align:middle;font-size:14px;color:#666666;margin-right:20px;display:inline;}
+.flight_query li input{margin-top:-1px;margin-right:3px;}
+.content_right_first li a{text-decoration:underline;}
+.content_right_first li a:hover{color:#00adee;}
+.content_right_first li a.order_detail{text-decoration:none;color:#666;}
+.departure_city{clear:both;}
+.departure_city .city_input{width:116px;height:24px;border:1px solid #cbddec;padding-left:4px;}
+.flight .departure_query{display:block;width:106px;height:23px;font-size:16px;margin:auto;color:#fff;background:#ff8800;text-align:center;padding-top:7px;}
+.departure_city dt{margin-bottom:27px;height:24px;}
+.departure_city dt label{position:relative;margin-right:20px;color:#666666;}
+.departure_city dt b{display:inline-block;width:16px;height:16px;position:absolute;right:12px;top:0px;background-position:-60px -5px;}
+.departure_city dt label input{position:relative;}
+.pnr .hd{font-size:16px;color:#00acee;font-weight:bold;} 
+.bd{margin-top: 26px;margin-bottom:22px;}
+.shu_pnr{float:left;height:268px;width:1px;border-left:1px dashed #d5d5d5;margin-right:23px;}
+
+
+
+
+
+
+
+
+
+
+
+

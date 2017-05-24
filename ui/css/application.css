@@ -1,0 +1,34 @@
+/*------------申请单-------------------*/
+/*订单查询*/
+.application_information .mi_application {margin-top:18px;border:1px solid #ddd;padding:10px 0 8px;overflow:hidden;position:relative;}
+.application_information .mi_application li{float:left;display:inline;margin-right:10px;margin-bottom:12px;}
+.application_information .mi_application label{width:70px;display:inline-block;text-align:right;}
+.application_information .mi_application input{width:140px;height:24px;padding-left:4px;border:1px solid #cccccc;} 
+.application_information .mi_application li span{margin:0 12px;}
+.application_information .classification{clear:both;margin-bottom:18px;}
+.application_information .appliction_button{position:absolute;right:-17px;top:10px;}
+.application_information .appliction_button a{display:block;width:106px;height:24px;background:#00adee;text-align:center;padding-top:6px;color:#fff;}
+.application_information .appliction_button a.condition{margin-bottom:10px;}
+.application_information .appliction_button a.condition:hover{background:#008cee;}
+.application_information .appliction_button a.query{background:#ff8800;}
+.application_information .appliction_button a.query:hover{background:#ff6c00;}
+/*订单分类*/
+.application_information .classification{background:#fbfdff;border:1px solid #ddd;border-top:none;overflow:hidden;padding:4px 0 4px 10px;}
+.application_information .classification li{float:left;display:inline;line-height:22px;margin-right:16px;}
+.application_information .classification li a{color:#0030ff;text-decoration:underline;display:inline-block;text-align:center;line-height:22px;*display:inline;zoom:1;padding:0 10px;text-decoration:none;color:blue;}
+.application_information .classification li a.hover{background:#ff5300;color:#fff;}
+
+.application_information .number{border:1px solid #ddd;}
+.application_information .number tr{ text-align:center; }
+.application_information .number thead th{padding:9px 0;background:#f5f5f5;}
+.application_information .number tbody td{border-top:1px solid #ddd;padding: 16px 0 14px 0;line-height:19px;color:#333;}
+.application_information .number tfoot td{padding:9px 0px;background:#f5f5f5;margin:0 2px}
+.application_information .number tfoot .zutuan{width:80px;height:26px;}
+.application_information .number tfoot .save_input{width:234px;height:26px;padding-left:6px;}
+.application_information .number tfoot  button{width:50px;height:28px;}
+.paging {position: relative;margin: 20px 0;}
+.paging ul {}
+.paging ul li{float:left;display: inline;line-height:22px;margin-right:8px;}
+.paging ul li a{display:block;padding:0 8px;height:22px;border:1px solid #ddd;}
+.paging ul li a.hover,.paging ul li a:hover{background:#00adee;color:#fff;border:1px solid #00adee;}
+.paging ul li .page{width:36px;height:22px;border:1px solid #ddd;margin:0 6px;}

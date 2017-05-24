@@ -1,0 +1,53 @@
+/*------------------------ 行程单------------------------*/
+.itinerary_text_content{background:#f5f9fc;border:1px solid #ddd;padding:14px 22px 12px 12px; margin-top:22px;}
+.itinerary_text_content h4{color:#ff0000;margin-bottom:14px;}
+.itinerary_text dl {overflow:hidden;line-height:28px;}
+.itinerary_text dl dt,.itinerary_text dl dt{float:left;display:inline;}
+.itinerary_text dl dd {}
+.itinerary_content{display:none;}
+.itinerary_content .order_no{font-size:14px;color:#333;font-weight:bold;margin:18px 0 6px;}
+.itinerary_content .order_no_number{border:1px solid #ddd;height:130px;}
+.itinerary_content .order_no_number th{padding:8px 0;background:#f5f5f5;}
+.itinerary_content .order_no_number td{height:28px;border-top:1px solid #ddd;border-bottom:1px solid #ddd;}
+.itinerary_content .return_itinerary{color:#0055aa;font-size:14px;text-decoration:underline;margin-left:8px;}
+.itinerary_content  .itinerary_order .mi_application li{margin-right:0;}
+.itinerary_content  .itinerary_order .appBtn{width:240px;top:0;}
+.itinerary_content  .itinerary_order .appBtn .create_order{float:left;width:106px;margin-right:13px;}
+.itinerary_content  .itinerary_order .appBtn .create_order a{cursor:pointer;}
+.itinerary_content .appliction_button{top:-6px;}
+.appBtn .blue_button{display:block; width: 106px;height: 20px; background: #00adee;text-align: center; padding-top: 10px;color: #fff;}
+.appBtn .blue_button:hover{background:#008cee;}
+.order_status{margin-top:20px;}
+.order_status .tab_Box{border:1px solid #ddd;}
+/*------------------------ 行程单------------------------*/
+.itinerary_detail .xc_detail{width:480px;border:1px solid #ddd;margin:auto;margin-top:12px;padding:10px 48px 0 30px;overflow:hidden;}
+.xc_detail ol{float:left;display:inline;}
+.xc_detail ol li{margin-bottom:22px;}
+.xc_detail ol li span{display:inline-block;width:94px;text-align:right;}
+.xc_detail ol.ddxh{width:278px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

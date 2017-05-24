@@ -1,0 +1,42 @@
+/*-----------流量管理----------------*/
+.traffic .traffic_name .report {text-align:right;padding:20px 0 6px 0}
+.traffic .traffic_name .report a{text-decoration:underline;font-size:14px;color:#0055aa;}
+.traffic .top-up {margin-bottom:16px;}
+.traffic .top-up p{margin-bottom:6px; }
+.traffic .top-up  .yuan{width:108px;height:22px;margin-right:4px;}
+.traffic .top-up  span{display:inline-block;width:64px;text-align:right;}
+.traffic  .traffic_order{border:1px solid #ddd;overflow: hidden;padding-top:6px;padding-left:8px;position: relative;margin-bottom:24px;}
+.traffic  .traffic_order li{float:left;display:inline;margin-right:14px;margin-bottom:12px;}
+.traffic  .traffic_order li input{width:106px;height:22px;padding-left:4px;}
+.traffic  .traffic_order li label{display:inline-block;width:64px;text-align: right;}
+.traffic  .traffic_order li em{margin:0 13px;}
+.traffic  .traffic_order li.query{position: absolute;right:30px;top:16px;}
+.traffic  .traffic_order li.query .query_button{}
+.traffic  .traffic_order li.query .query_button a.font_button{display:block;width: 96px;color:#fff;}
+.traffic  .traffic_order li.query .query_button a.font_button:hover{background:#ff6c00;}
+.traffic .traffic_table{border:1px solid #ddd;text-align: center;}
+.traffic .traffic_table thead th{padding:6px 0 ;background:#f5f5f5;}
+.traffic .traffic_table tbody td{padding:6px 0;line-height:17px;border-top:1px solid #ddd;color:#333;}
+.traffic .traffic_table  a{text-decoration: underline;color:#0055aa;}
+.traffic  .traffic_order li .interface{width:190px;height:26px;}
+.traffic .traffic_name{}
+.traffic_window ol{padding:12px 0 12px  60px;overflow:hidden;}
+.traffic_window li{width:260px;float: left;display:inline;margin-bottom:10px;}
+.traffic_window li span{display:inline-block;width: 96px;margin-right:6px;text-align:right;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

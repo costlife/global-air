@@ -1,0 +1,6 @@
+/*系统公告*/
+.system_title .qmsg{margin-top:26px;}
+.system_text h3{padding-top:18px;padding-bottom:14px;}
+.system_text h3,.system_text strong{padding-left:18px;color:#000;}
+.system_text strong{display: block;text-indent:2em;line-height:24px;padding-right:20px;} 
+.system_text .font_button{background:#ff8800;}

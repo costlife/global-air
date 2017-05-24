@@ -1,0 +1,210 @@
+/*政策管理  有奖励政策列表*/
+.reward_policy {border:1px solid #ddd;padding:8px 100px 8px 20px;position: relative;overflow:hidden;margin-top:20px;}
+.reward_policy .policy_list li{float:left;display:inline;margin-right:8px;margin-bottom:8px;color:#333333;}
+.reward_policy .policy_list li .hs{width:38px;height:24px;border:1px solid #ddd;}
+.reward_policy .policy_list li label{text-align:right;}
+.reward_policy .policy_list li .choose{width:112px;height:28px;}
+.reward_policy .policy_list li .list_input{width:104px;height:22px;padding-left:4px;}
+.reward_policy .policy_list li  b{margin:0 4px;}
+.reward_policy .policy_list li a{text-decoration:underline;}
+.reward_policy .anniu{position: absolute;top:62px;right:22px;}
+.reward_policy .font_button{clear:both;display:block;color:#fff;}
+.reward_policy .font_button:hover{background:#ff6c00;}
+.policy_table{padding-top:8px;}
+.policy_table h3{padding-bottom:10px}
+.policy_table h3  button.batch{margin:0 6px 0 22px;}
+.policy_table h3 a{text-decoration:underline;color:#0055aa;margin-left:10px;}
+.policy_table h3 span{margin-top:7px;}
+.policy_table .policy_one {border:1px solid #00adee;margin-bottom:12px;}
+.policy_table .policy_one a{text-decoration:underline;}
+.policy_table .policy_one .font_green,.policy_table .policy_one .bule_ahover{margin-left:10px;}
+.policy_table .policy_one thead th{background:#f5f5f5;padding:6px 0;}
+.policy_table .policy_one tr td{line-height:18px;}
+.policy_table .policy_one tbody{border-top:1px solid #ddd;}
+.policy_table .policy_one tbody td{padding-left:30px;padding:10px 0 8px 0;}
+.policy_table .policy_one tfoot{border-top:2px solid #40b5e2;}
+.policy_table .policy_one tfoot  tr{border-bottom:1px solid #ddd;}
+.policy_table .policy_one tfoot  tr:last-child{border-bottom:0 ;}
+.policy_table .policy_one tfoot td{padding:14px 0 14px 20px;color:#333333;background:#ffffee;border-right:1px solid #ddd;position: relative;}
+.policy_table .policy_one tfoot td:last-child{border-right:0 ;}
+.policy_table .policy_one tfoot .adult_policy{background:#e4f7fc;}
+
+.policy_origin{position: relative;}
+.policy_one_detail{width:294px;height:20px;border:1px solid #699aff;color:#101010;padding-left:10px;line-height:20px;background:#fcfcc6;position:absolute;left:99px;display:none;}
+.modify{background:#fcfcc6;border:1px solid #699aff;width:202px;padding:6px 0 12px 10px;position: absolute;z-index: 999;right:-104px;display:none;}
+.modify li{margin-bottom:4px;width:100%;}
+.modify input,.modify li .tank{width:108px;height:22px;background:#fff;border:1px solid #ddd;margin-right:8px;}
+.modify label{display: inline-block;width:60px;text-align: right;}
+.modify label em{color:#ff0000;}
+.modify li .tank{width:110px;}
+/*政策管理  政策挂起*/
+.policy_hangs{padding:6px 27px 8px 22px;border:1px solid #ddd;margin-bottom:20px;overflow: hidden;}
+.policy_hangs select, .policy_hangs .serial{width:108px;height:24px;border:1px solid #ddd;background:#fff;}
+.policy_hangs .font_button{display: inline-block;color:#fff;float:right;}
+.policy_hangs .font_button:hover{background:#ff6c00;}
+.policy_hangs label{margin-right:30px }
+/*政策管理  政策排名*/
+.ranking-list .anniu {top:20px;}
+.ranking-list .anniu .font_button{margin-bottom:14px; }
+.ranking-list .anniu .font_button_bule{background:#00adee;}
+.ranking-list .anniu .font_button_bule:hover{background:#008cee;}
+.ranking_tabel_list table{border:1px solid #ddd;}
+.ranking_tabel_list tr{text-align: center;}
+.ranking_tabel_list thead th{padding:8px 0; background:#f5f5f5;}
+.ranking_tabel_list tbody td{padding:10px 0;border-top:1px solid #ddd;color:#333;}
+.ranking_tabel_detail{display: inline-block;position: relative;}
+.ranking_tabel_detail .policy_one_detail{left: 0;padding-left:6px;text-align:left;display:none;}
+.ranking_tabel_list .code_tabel {display:inline-block;width:148px;overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.ranking_tabel_list tbody td.font_red{font-size:18px;color:#ff0000;}
+/*特殊产品管理*/
+.cpgl  tr{text-align:left; }
+.cpgl  tr td,.cpgl  tr th{padding-left:40px;}
+/*政策行程*/
+.fRed{color:#ff0000;}
+.fGray{color:#999;}
+#showDPortList,#showAPortList,#showEntrepotList{color:#0055aa;text-decoration:underline;}
+.divSTable {padding-top:20px;}
+.divSTable .eptable tr td{padding-bottom:12px;color:#333;}
+input[type="radio" i] {
+margin: 0px 3px 0px 5px;
+}
+/*时间及舱位*/
+.time_space h3,.conditions_limit h3{font-size:14px;color:#333333;margin:18px 0 6px;font-weight:bold;}
+.time_space_lex ol li{margin-bottom:12px;color:#333333;}
+.time_space_lex li span{display:inline-block;width:80px;text-align:right;margin-right:0px;margin-left:14px;}
+.tab_toshow .fRed {color:#ff0000;}
+.tab_toshow input[type="checkbox" i] {
+  margin: 0px 6px 0px 12px;
+}
+.time_qualified{clear:both;}
+.time_qualified h4{width:140px;height:32px;background:#fba72d;color:#fff;text-align:center;margin: auto;line-height:32px;font-size:14px;}
+.qualified_detail{border:1px solid #fba72d;padding:24px 0 38px;width:100%;}
+.qualified_detail .qualified_border{border-bottom:1px dashed  #ddd;overflow:hidden;padding:0 66px 14px 56px;}
+.qualified_detail .qualified_border li{float:left;display:inline;margin-bottom:4px;}
+.qualified_detail .qualified_border li:nth-child(odd){margin-right:82px;}
+.qualified_detail .qualified_border input[type="text" i],.qualified_time_border dd input[type="text" i]{width:124px;height:26px;border:1px solid #ddd;padding-left:4px;}
+.qualified_detail .qualified_border li b,.qualified_time_border dd b{margin:0 6px; }
+.qualified_detail .qualified_border li span,.qualified_time_border dt{display:inline-block;width:108px;text-align:right;margin-right:10px;color:#333;}
+.qualified_detail .qualified_border li em{color:#ff0000;margin-right:2px;}
+.qualified_time_border{overflow:hidden;clear:both;}
+.qualified_time_border {padding:12px 47px  16px 58px;}
+.qualified_time_border dt,.qualified_time_border dd{float:left;display:inline; overflow:hidden;}
+.qualified_time_border dt{margin-top:38px;}
+.qualified_time_border dd p{margin-bottom:4px;}
+.shipping_space{width:912px;margin:auto;padding:10px 28px 18px 12px;border:1px solid #ddd;}
+.shipping_space h5{color:#666666;}
+.shipping_space  li{margin-bottom:4px;}
+.shipping_space span{display:inline-block;width:106px;text-align: right;margin-right:22px;}
+.shipping_space input[type="text" i]{
+	  width:60px;height:24px;border:1px solid #ddd;margin:0 6px;
+}
+.shipping_space input.gaoduan{width:332px;padding-left:4px;color:#999;}
+.shipping_space .hc{width:78px;height:22px;border:1px solid #ddd;}
+.shipping_space_anniu{text-align:center;margin:10px 0;}
+.shipping_space_anniu button{width:108px;height:28px;}
+/*条件限制*/
+.conditions_limit .conditions em{color:#ff0000;}
+.conditions_limit dl{overflow:hidden;color:#333;}
+.conditions_limit dl  dt,.conditions_limit dl  dd{float:left;}
+.conditions_limit dl  dt,.kp_time span{display:inline-block;width:120px;text-align: right;margin-top:10px;margin-right:12px;}
+.conditions_limit dl  dd p{line-height:30px;}
+.conditions_limit dl  dd label{margin-right:6px;}
+
+.conditions_limit dl input[type="checkbox" i] {
+  margin: 0px 5px;
+}
+
+.kp_time h4{font-weight:bold;font-size:14px;margin:22px 0 24px}
+.kp_time  li.kp_time_rq{overflow:hidden;}
+.kp_time  li.kp_time_rq span,.kp_time  li.kp_time_rq div {float:left;}
+.conditions_limit .kp_time  input[type="checkbox" i] {
+  margin: 0px 0px;
+}
+.conditions_limit .kp_time  label{margin-right:12px;}
+.conditions_limit .kp_time  b{margin:0 8px;}
+.conditions_limit .kp_time p{margin-bottom:8px;}
+.conditions_limit .kp_time button.add{margin-left:6px;}
+.conditions_limit  input[type="text" i]{
+	border:1px solid #ddd;
+}
+.conditions_limit .kp_time select{width:52px;height:22px;border:1px solid #ddd;}
+.conditions_limit .kp_time select.qxz{width:80px;height:22px;}
+.tab_toshow{display:none;}
+/*政策规则编辑*/
+.policy_editor {padding-top:22px;}
+.policy_editor dl{margin-bottom:6px;}
+.policy_editor dt span {display:inline-block;width:80px;text-align:right;color:#333333;font-weight:bold;}
+.policy_editor dt input[type="text" i] {
+ border:1px solid #ddd;
+}
+.policy_editor dt .editor_serial{width:126px;height:24px;}
+.policy_editor dt .editor_department{width:370px;height:24px;}
+.policy_editor  .editor_public{width:48px;height:22px;margin:4px;}
+.policy_editor  .float{overflow:hidden;}
+.policy_editor  .float dt{height:480px;}
+.policy_editor  .float dt,.policy_editor  .float dd{float:left;}
+.policy_editor  .float dd h2{color:#333;font-weight:bold;}
+.policy_editor  .float dd h3{margin-bottom:12px;}
+.policy_editor .bhd{width:158px;height:24px;margin-right:8px;}
+.policy_editor_anniu{text-align:center;padding-top:90px;}
+.policy_editor_anniu .font_button{display:inline-block;color:#fff;}
+.policy_editor  .float dd strong{display:inline-block;width:98px;text-align:right;}
+
+.policy_editor  .float .no_reward{margin-left: 108px;}
+
+/*国际价单政策*/
+.international_price .policy_list li{margin-right:44px;}
+.international_price  .anniu{top:22px;}
+.zc_policy .policy_one{border:1px solid #ddd;}
+/*编辑价单政策*/
+.edit_price_list{padding-top:16px;}
+.edit_price_list .bj_price_list li{clear:both;}
+.edit_price_list  li{margin-bottom:20px;overflow:hidden;color:#333333;position:relative;}
+.edit_price_list li span{display:inline-block;width:110px;text-align:right;margin-right:8px;}
+.edit_price_list li select{border:1px solid #ddd;height:26px;width:108px;}
+.edit_price_list  li input[type ="text" i]{
+	 border:1px solid #ddd;width:122px;height:22px; 
+}
+.edit_price_list  b{margin:0 4px;}
+.edit_price_list li em,.setoff_base li strong{color:#ff0000;}
+.edit_price_list li.qc_fc p{margin-bottom:6px;}
+.edit_price_list li input.hggs{width:42px;}
+
+.setoff_base,.setoff_base_seat{clear:both;}
+.setoff_base li{float:left;overflow:hidden;}
+.setoff_base li h4{margin-bottom:10px;}
+.setoff_base li.hbzh,.setoff_base li.conditions{margin-top:28px;}
+
+.setoff_base li.margin_20{margin-right:20px;}
+.setoff_base li .pai_chu{margin:0 12px 0 22px;}
+.setoff_base li input.hcjc{width:54px;}
+
+
+.setoff_base_seat li.zqi label{margin-right:18px;}
+ 
+.setoff_base_seat  li input[type ="text" i]{
+	 border:1px solid #ddd;width:58px;height:22px;margin-right: 4px;
+}
+.setoff_base_seat  li input[type ="checkbox" i]{
+	 margin-right: 4px;
+}
+.setoff_base_seat  li input.policy_tab{width:186px;height:22px;}
+.setoff_base_seat  li.textarea span{margin-top:30px;}
+/*添加特殊产品*/
+.product_parameter  h4{width:74px;height:26px;background:#00a000;color:#fff;text-align:center;line-height:26px;margin-bottom:14px;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

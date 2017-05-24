@@ -1,0 +1,330 @@
+*{box-sizing:border-box;-webkit-box-sizing:border-box;}
+@import "reset.css";
+@import "order.less";
+
+
+.pagecont{width:980px;margin:0 auto;}
+.flyHead{
+	
+}
+.searchForms{
+	.formline{padding-left:100px;position:relative;margin-bottom:15px;.in();
+		&>i{width:90px;position:absolute;left:0;top:0;font-size:12px;color:#888;font-style:normal;text-align:right;line-height:32px;}
+	}
+	input[type='text']{
+		border:1px solid #ccc;outline:none;appearance:none;-webkit-appearance:none;padding:6px 5px 7px;width:220px;font-size:13px;
+		color:#444;
+		&:focus{
+			border:1px solid @blue;
+		}
+		.focus{border:1px solid @blue;}
+	}
+	.date,.local,.selects{cursor:pointer;}
+	
+	.date{
+		background:#fff url(../imgs/ico/date.png) no-repeat right center;color:@blue;
+	}
+	
+	
+	.toggle{
+		width:20px;height:20px;border:none;position: absolute;right:-28px;top:30px;background:#eee;text-align:center;border:1px solid #ddd;
+		line-height:20px;cursor:pointer;
+		&:hover{
+			border:1px solid @blue;color:@blue;
+			background: light(@blue,34%);
+			&:after,&:before{
+				border-color:@blue;
+			}
+		}
+		&:after,&:before{content:'';display:block;border:1px solid #ddd;width:33px;height:20px;position:absolute;border-left:none;
+			left:-24px;z-index:-1;
+		}
+		&:before{bottom:-20px;border-top:none;}
+		&:after{top:-20px;border-bottom:none;}
+	}
+	.selects{
+		background:#fff url(../imgs/ico/arr.png) no-repeat top right;
+		
+	}
+	.focus{
+			background-position:bottom right ;
+		}
+	.loacal{
+		background:#fff url(../imgs/ico/local.png) no-repeat right center;color:@blue;font-weight:700;
+		
+	}
+	.moreBtn{
+		margin-left:100px;margin-bottom:10px;color:@blue;cursor:pointer;display:block;
+	}
+}
+.footbar{
+	clear:both;padding:10px 0 0;padding-left:100px;
+	.searchBtn{
+		.btn();.btn-b();
+		font-size:16px;padding:10px 32px;font-size:16px;
+	}
+}
+.flyType{
+	font-size:12px;position:relative;font-size:0;
+	a{.in();padding:10px 20px;border:1px solid #ddd;margin-bottom:-1px;border-bottom:1px solid @blue;font-size:18px;margin-left:-1px;
+		position:relative;cursor:pointer;
+		&.active{
+			background:@blue;color:#fff;border:1px solid @blue;z-index:10;
+		}
+	}
+}
+.typeCont{
+	border:1px solid @blue;padding:20px;padding-top:30px;
+}
+.searchForms{
+	
+}
+.tpyeBox{
+	&>div{display:none;}
+}
+.flyHead{margin-top:20px;}
+
+.selectlist{
+	position:absolute;top:100%;left:100px;right:0;background:#fff;border: 1px solid @blue;z-index:999;margin-top:-1px;
+	display:none;
+	dd{
+		padding:6px 10px;cursor:pointer;
+		&:hover{background:@blue;color:#fff;}
+	}
+	&.open{
+		display:block;
+	}
+}
+.searchBar{
+	padding:10px;border:1px solid #ddd;position:relative;margin:20px 0;
+	.bar{
+		position:absolute;right:10px;top:14px;font-size:0;
+		a{
+			.in();border:1px solid #ccc;margin-left:-1px;padding:5px 15px;font-size:12px;position:relative;
+			&:hover{border:1px solid @blue;color:@blue;cursor:pointer;z-index:10;}
+			&.active{
+				background:@blue;border:1px solid @blue;z-index:10;color:#fff;
+			}
+		}
+	}
+	
+	.selectall{
+		background:url(../imgs/ico/arrs.png) no-repeat right center;cursor:pointer;position:relative;
+		.in();border:1px solid #ccc;padding-right:20px;
+		label{padding:8px 20px 8px 10px;display:block;cursor:pointer;}
+		&.focus{
+			border:1px solid @blue;
+		}
+		
+		.dropmenu{display:none;position:absolute;left:-1px;right:-1px;top:100%;background:#fff;z-index:999;
+			border:1px solid @blue;
+			a{
+				display:block;padding:6px 10px;
+				
+			}
+			
+		}
+		.open{
+			display:block;
+		}
+	}
+}
+
+
+.flightCard{
+	border:1px solid #ccc;padding:20px;position:relative;margin-bottom:-1px;
+	transition:.5s;background:#fff;
+	&:hover{
+		z-index:10;transform:scale(1.01);box-shadow:0px 2px 5px rgba(0, 0, 0, 0.1);
+	}
+}
+
+.flightInfo{
+	position:relative;
+	.flightsName,.linebars{
+	.in();
+	}
+}
+@orange:#ff8520;
+.linebars{
+	position:absolute;right:200px;left:200px;
+	.time{font-size:24px;top:0;width:150px;
+		b{font-size:13px;color:#999;display:block;line-height:30px;}
+	}
+	.times{
+		color:#333;
+	}
+	.star{position:absolute;left:0;text-align:right;}
+	.end{position:absolute;right:0;text-align:left;}
+	.line{text-align:center;
+		sub,sub{line-height:36px;}
+		.alltime{
+			display:block;line-height:30px;
+		}
+		.transfer{
+			.in();position:relative;line-height:30px;color:@orange;
+			&:after,&:before{
+				content:'';display:block;position:absolute;
+			}
+			&:after{left:-34px;right:-34px;top:0;height:2px;border-top:2px solid #ccc;
+				
+			}
+			&:before{
+				border:6px solid transparent;border-left-color:#ccc;right:-46px;top:-5px;
+			}
+		}
+		sup{color:@orange;
+			
+		}
+	}
+	.dateAdd{
+		.in();font-size:12px;color:@orange;width:18px;height:18px;line-height:18px;text-align:center;vertical-align:top;margin-left:4px;
+	}
+}
+.roundInfo{
+	border-bottom:1px solid #eee;padding:20px 0;
+}
+.personBar{
+	margin-top:20px;
+}
+.flightsName{
+	h1{font-size:18px;color:@blue;}
+	img{margin-right:4px;}
+	p{line-height:1.5;color:#999;text-indent:30px;}
+}
+.personLine{
+	margin:0 0;position:relative;border-bottom:1px dashed #ededed;padding:22px 0;
+	&>div{.in();
+		width:100px;
+	}
+	.price{color:@orange;font-size:14px;position:absolute;right:0;top:50%;margin-top:-16px;
+		p{color:#999;font-size:12px;line-height:20px;}
+	}
+}
+.flightTool{
+	position:absolute;right:20px;top:20px;text-align:center;
+	a.btn{padding:10px 20px;font-size:14px;}
+	.viewMore{
+		text-decoration:underline;color:@blue;display:block;margin:10px;cursor:pointer;
+	}
+}
+.paged{
+	text-align:center;margin:20px 0;font-size:0;
+a{.in();font-size:13px;padding:6px 12px;border:1px solid #ddd;margin-left:-1px;position:relative;cursor:pointer;
+	transition:.4s;
+	&:hover{
+		border:1px solid @blue;color:@blue;z-index:9;
+	}
+	&.active{
+		background:@blue;color:#fff;z-index:9;border:1px solid @blue;
+	}
+}
+}
+//详情 details
+.flightDetails{
+	background:#f6f6f6;padding:20px;margin:30px 0 10px;border:1px solid #ededed;
+	display:none;
+}
+.flines{
+	position:relative;padding-left:80px;
+}
+.lineStep{
+	position:absolute;left:0;top:0;font-size:14px;padding:6px;
+	background:@blue;color:#fff;
+	
+}
+.timeline{
+	position:relative;margin-top:14px;min-height:50px;
+	.star,.end{
+		//position:absolute;top:0;
+	}
+	.star{
+		//left:30px;text-align:right;
+	}
+	.end{
+		//right:0;text-align:left;
+	}
+	p{line-height:1.6;.in();}
+	.bar{text-align:center;
+		position:absolute;top:0;left:0;right:0;
+	}
+	.flightTime{
+		.in();position:relative;line-height:26px;
+/*
+		&:after,&:before{content:'';display:block;position:absolute;}
+		&:after{
+			height:2px;left:-50px;right:-50px;background:#ccc;bottom:0;
+		}
+		&:before{
+			border:6px solid transparent;border-left-color:#ccc;
+			right:-58px;bottom:-5px;
+		}
+*/
+	}
+	.time{
+		color:#999;
+	}
+}
+.fname {
+	padding-left:30px;position:relative;
+	h2{font-size:14px;margin-bottom:8px;color:@blue;}
+	span{
+		color:#999;
+	}
+	img{position:absolute;left:0;top:0;}
+	sub{
+	
+}
+}
+.transferName{text-align:center;position:relative;
+	margin:25px 0;
+	&:after{
+		
+		content:'';display:block;height:1px;position:absolute;left:100px;right:0;top:50%;
+		border-top:1px dashed #ccc;
+	}
+	.time{
+		.in();padding:4px 10px;
+		background:#fff;border:1px solid #ccc;z-index:9;position:relative;border-radius:80px;
+		
+	}
+}
+
+.detailsItem{
+	position:relative;
+}
+
+.priceTable{
+	margin-bottom:10px;overflow:hidden;white-space: nowrap;
+}
+.tableAttr{
+	.in();
+	&>div{
+		line-height:30px;border:1px solid #ddd;margin-bottom:-1px;padding:0 10px;
+	}
+}
+.tabledd{
+	.in();
+	&>div{line-height:30px;border:1px solid #ddd;margin-left:-1px;margin-bottom:-1px;padding:0 10px;color:@orange;}
+	.name{color:#333;
+		background:#fafafa;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

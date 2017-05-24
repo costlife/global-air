@@ -1,0 +1,340 @@
+.ofh {
+    overflow: hidden;
+}
+.cb {
+    clear: both;
+}
+.content_right {
+    width:988px;
+    margin-left:19px;
+}
+.content_right-title-notice {
+    padding:4px 12px 4px 14px;
+    background-color: #ffffe1;
+    border:1px solid #fadfb2;
+    line-height:20px;
+}
+.content_right-title h3{font-size:14px;overflow:hidden;}
+.content_right-title h3 b{float:left;display:inline;width:28px;height:24px;background:url(../images/fly.png) center no-repeat;}
+.content_right-title h3 strong{float:left;display:inline;margin:4px 0 0 6px;font-weight:bold;}
+.content_right-title .steps_number{margin-bottom:24px;}
+.content_right-title .steps_number dt{display:inline-block;margin-right:8px;font-size:14px;}
+
+.content_right-title .steps_number span{width:60px;height:12px;background:url(../images/right_radio.png) no-repeat;float:left;display:inline;}
+.content_right-title .steps_number label{float:left;margin-left:8px;display:inline;}
+.content_right-title .steps_number dt.hover span{background:url(../images/right_back.png) no-repeat;}
+.content_right-title .steps_number dt.hover  label{color:#00adee;}
+.flight-info {
+    line-height: 28px;
+    margin-top: 18px;
+    padding:4px 16px 14px 16px;
+    border:1px solid #ddd;
+    border-top:2px solid #00a0e9;
+}
+.flight-info table {
+    color: #333;
+}
+.flight-info-content td {
+    line-height: 40px;
+}
+.flight-info-content h3 p {
+    line-height: 30px;
+    font-size:14px;
+    color: #333;
+    font-weight:bold;
+    margin-right:24px;
+}
+.flight-info-content h3 font {
+    font-size: 24px;
+    color: #ff0000;
+}
+.flight-info-content .flight-info-content-price {
+    line-height: 24px;
+}
+.policy-details {
+}
+.policy-details .viewpolicy-details {
+    border: none;
+    color: #0082ff;
+    background-color: #fff;
+    outline-style: none;
+    text-align: right;
+}
+.policy-details-div table {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    color: #666;
+}
+.policy-details-div thead {
+    border-top:1px solid #ddd;
+}
+.policy-details-div thead th {
+    background-color: #f5f5f5;
+}
+.policy-details-div-p1 {
+    padding-top:8px;
+}
+.policy-details-div-p1 input {
+    width: 128px;
+    height: 26px;
+    border:1px solid #ddd;
+    margin-right:42px;
+}
+.policy-details-content {
+    border-top: none;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+.policy-details-content-hd {
+    line-height: 34px;
+    font-size:14px;
+}
+.policy-details-content-hd h3 {
+    color: #666;
+    font-weight:bold;
+}
+.policy-details-content-hd-notice {
+    position: relative;
+    left:24px;
+}
+.policy-details-content-hd-search span,.policy-details-content-hd-search input {
+    margin-left:12px;
+}
+.policy-details-content-hd-search select {
+    margin-left:20px;
+    height: 26px;
+    border:1px solid #ccc;
+}
+.policy-details-content-hd-search .btn-policy-details-content-hd-search {
+    margin-left:6px;
+    border:1px solid #ccc;
+    color: #333;
+    background-color: #f3f2f3;
+    padding:0 20px;
+    line-height: 26px;
+}
+.policy-details thead {
+    border-bottom:none;
+}
+.policy-details th {
+    background-color: #fff;
+}
+.policy-details tr {
+    border:1px solid #ddd;
+    border-top:none;
+}
+.policy-details p {
+    text-align: left;
+}
+.paddingl30 {
+    padding-left:30px;
+}
+.mt18 {
+    margin-top: 18px;
+}
+.policy-details-passenger {
+    border:1px solid #f7f7f7;
+    padding:20px 12px;
+}
+.policy-details-passenger-info {
+    border:1px solid #ddd;
+    padding:4px 18px 12px 14px;
+}
+.policy-details-passenger-info.bg{
+    background-color: #f8f8f8;
+}
+.policy-details-passenger-div1 {
+    line-height: 28px;
+}
+.policy-details-passenger-div1 .p1 {
+    color: #333;
+    font-weight:bold;
+}
+.policy-details-passenger-div1 .p2 input[type=button] {
+    border:none;
+    outline:none;
+    background-color: #fff;
+    color: #05a;
+    margin-right:20px;
+}
+.hangnei {
+    display: inline-block;
+}
+.qiantaowai {
+    background-color: #ddd;
+    width: 108px;
+    height: 26px;
+    padding:1px;
+    position: relative;
+
+}
+.qiantaonei {
+    background-color: #fff;
+    width:108px;
+    height: 26px;
+}
+.qiantaonei input {
+    width: 88px;
+    outline:none;
+    border:none;
+    text-indent:4px;
+}
+.policy-details-passenger-div2 input {
+    margin-right:6px;
+}
+.policy-details-passenger-div2 span {
+    margin-right: 18px;
+}
+.policy-details-passenger-div2 p {
+    float: left;
+    line-height: 42px;
+}
+.mb12 {
+    margin-bottom:12px;
+}
+.mb14 {
+    margin-bottom: 14px;
+}
+.mb20 {
+    margin-bottom: 20px;
+}
+.mb22 {
+    margin-bottom: 22px;
+}
+.policy-details-passenger .t-align-r {
+    text-align: right;
+}
+.t-align-r p input {
+    border:none;
+    outline:none;
+    color: #fff;
+    background-color: #ff8800;
+    cursor: pointer;
+}
+.t-align-r p {
+    width: 88px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    background-color: #ff8800;
+    cursor: pointer;
+}
+.p-relative {
+    position: relative;
+}
+.p-absolute {
+    position: absolute;
+}
+.p-absolute-content {
+    width: 336px;
+    background-color: #ffffe1;
+    padding:4px 6px;
+    border:2px solid #699aff;
+    top:16px;
+    right:-220px;
+    line-height: 22px;
+    display:none;
+    z-index:999;
+}
+.p-absolute-content img {
+    top:-2px;
+    left:-10px;
+}
+.policy-details-passenger-add p {
+    width: 185px;
+    float: left;
+    line-height: 38px;
+}
+.policy-details-passenger-add .xingxing {
+    color: red;
+    margin-right:1px;
+}
+.policy-details-passenger-add input[type=text] {
+    border:1px solid #ddd;
+    width: 108px;
+    height:26px;
+    text-indent:4px;
+}
+.ml20 {
+    margin-left:20px;
+}
+
+.policy-details-passenger-addinfo p {
+    width: 208px;
+    float: left;
+    line-height: 38px;
+}
+.policy-details-passenger-addinfo .xingxing {
+    color: red;
+    margin-right:1px;
+}
+.policy-details-passenger-addinfo input[type=text] {
+    border:1px solid #ddd;
+    width: 108px;
+    height:26px;
+    text-indent:4px;
+}
+.policy-details-passenger-addinfoNotice {
+    padding-left:76px;
+    border:2px solid #fadfb2;
+    background-color: #ffffe1;
+    line-height: 24px;
+}
+.policy-details-passenger-addinfoNotice span {
+    top:0;
+    left:20px;
+    color: #ff0000;
+}
+.policy-details-price {
+    border:1px solid #f7f7f7;
+    padding:20px 12px;
+    line-height: 22px;
+}
+.generate {width:130px;margin: auto;padding:20px 0;}
+.generate a{display:block;width:130px;height:30px;background:#ff8800;color:#fff;line-height:30px;text-align:center;}
+.generate a:hover{background:#ff6c00;}
+
+
+  .flight_window{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0 !important;
+    filter: Alpha(opacity=60);
+    z-index: 999;
+    display: block;
+}
+
+.flight_window .prompt_window{
+     width:414px;
+     position: absolute;
+    top: 300px;
+    left: 50%;
+    margin-left: -207px;
+    background: #fff;
+}
+.flight_window .prompt_window h2{
+    background:#89b5e9;
+    padding: 10px 0 10px 19px;
+    color: #333333;
+    font-size: 14px;
+    color:#fff;
+}
+.flight_window h2 .shut_down {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url(../images/sut_down_b.png) no-repeat;
+    position: absolute;
+    top: 9px;
+    right: 20px;
+}
+.flight_window .prompt_window{position:relative;padding-bottom:48px;}
+.flight_window .prompt_window p{color:#333333;font-size:14px;text-align:center;margin:56px 0 88px;padding-left: 52px;}
+.flight_window .prompt_window span{display:block;width:72px;height:70px;background:url(../images/prompt.png) no-repeat;position:absolute;top:64px;left:66px;}
+.flight_window .prompt_window span.prompt_true{background-position:-80px 0;}
+.flight_window .prompt_window .suyt{width:96px;height:30px;display:block;background:#ff8800;color:#fff;text-align:center;line-height:30px;margin: auto;}

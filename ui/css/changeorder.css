@@ -1,0 +1,47 @@
+﻿/*--航变订单--*/
+.air_change{text-align:right;width:100%;margin-bottom:6px;}
+.air_change a{color:#0055aa;text-decoration:underline;font-size:14px;}
+.itinerary_text .order_status .hcxx{font-size:14px;color:#666666;font-weight:bold;padding:20px 0 6px;}
+.itinerary_text  dl.change_order{border:1px solid #3998ed;padding-left:18px;color:#333333;}
+.itinerary_text  dl.change_order  dt{float:none}
+.itinerary_text  dl.change_order dt span{margin-right:10px;}
+.itinerary_text  dl.change_order dd{overflow:hidden;margin-bottom:26px;}
+.change_order .order_left_change, .change_order .order_right_change,  .change_order .triangle{float:left;display:inline;}
+.change_order .order_left_change{width:422px;height:98px;background:url(../images/order_left.png) no-repeat;padding-top:20px;}
+.change_order .order_right_change{width:452px;height:98px;background:url(../images/order_right.png) no-repeat;padding-top:20px;}
+.change_order .triangle{width:60px;height:118px; background:url(../images/tranle.png) no-repeat;margin:0 8px 0 12px;}
+.itinerary_text  dl.change_order dd li{float:left;width:190px}
+.itinerary_text  dl.change_order dd li:nth-child(odd) {padding-left:40px;width:150px}
+.itinerary_text  dl.change_order dt.note{clear:both;}
+
+.changeorder_window  dl{padding-top:20px;padding-left:66px;color:#333;}
+.changeorder_window  dt{width:100%;margin-bottom:6px;}
+.changeorder_window  dt label{display:inline-block;width:66px;text-align:right;}
+.changeorder_window  dt input{width:128px;height:22px;border:1px solid #ddd;}
+.changeorder_window  dt em{margin:0 8px;}
+.changeorder_window  dt  strong{margin-left:6px;}
+.changeorder_window  dt span{color:#ff0000;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

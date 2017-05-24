@@ -1,0 +1,71 @@
+/*----------创建申请单---------------*/
+.place_order{width:988px;margin-left:20px;}
+.place_one_order{width:988px;}
+.place_one_order h2{font-size:14px;margin-bottom:6px;font-weight:bold;.divcke .table0 .th0 .passengers.divcke .table0 .th0 .passengers}
+.divST{padding:9px 0 10px 20px;border:1px solid #ddd;}
+.divST .table3 tr td{padding-bottom:10px;}
+ .divST .table3 tr td .shipping_company{color:#a3a2a2;}
+ .divST .table3 tr td  .zutuan{width:80px;height:26px;}
+ .divST .table3 tr td span{display:inline-block;width:98px;text-align:right;}
+.flight_information {border:1px solid #ddd;}
+.flight_information .tablelist tr{text-align:center;}
+.flight_information .departure tr{background:#f5f5f5;}
+.flight_information .departure tr th{padding:8px 0;}
+.flight_information .departure .fRed{color:#ff0000;}
+.flight_information #segmentList {border-top:1px solid #ddd;border-bottom:1px solid #ddd;}
+.flight_information #segmentList td{padding:6px 0 ;line-height:24px;vertical-align: inherit;color: #333;}
+.flight_information #segmentList  a{color:#0055aa;text-decoration:underline;}
+.flight_information  .eptable{background:#f5f5f5;}
+.flight_information  .eptable tr{text-align:left;}
+.flight_information  .eptable .requirement th{padding:14px 0 14px 14px;}
+.flight_information #requirementInfo{margin:0  12px 0 12px;width:97%;padding-left:4px;}
+.flight_information  .eptable:last-child #requirementInfo{margin-bottom:28px;}
+.flight_information_title{overflow:hidden;padding:12px 0 6px;}
+ .flight_information_title h2{color:#666;font-size:14px;font-weight:bold;float:left;}
+.flight_information_title p{float:right;font-size:14px;}
+.flight_information_title p a{text-decoration: underline;color:#0055aa;font-size:14px;margin-right:8px;}
+ .flight_information_title p .zutuan{width:80px;height:28px;}
+/*乘客信息*/
+.divcke {padding-top:12px;}
+#adtNum_n,#chdNum_n,#babyNum_n{width:76px;height:22px;margin-right:18px;padding-left:4px;}
+.divcke .table0 .th0 { font-weight: normal; font-size: 14px; padding: 0px 0px 0px 10px;color: #666; text-align: left; height: 28px;padding-bottom:8px;}
+.divcke .table0 .th0 .passengers{margin-right:30px;font-weight:bold;color:#666;}
+.divcke .tablelist{border:1px solid #ddd;text-align: center;border-bottom:0;}
+.divcke .tablelist thead tr{background:#f5f5f5;}
+.divcke .tablelist thead tr th{padding:12px 0;}
+.divcke .tablelist #reqPassengerView td{padding:14px 0;border-top:1px solid #ddd;border-bottom:1px solid #ddd;color:#333;}
+.divcke .tablelist #reqPassengerView a{color:#0055aa;text-decoration:underline;}
+.divcke .tablelist #reqPassengerView em{color:#0055aa;margin:0px 6px;}
+.divcke .fBlue{font-size:14px;margin-left:14px;cursor:pointer;} 
+/*乘客信息*/
+#divOrderRmk {border:1px solid #ddd;margin-top:22px;}
+#divOrderRmk #tbRemark tr{background:#f5f5f5;}
+#divOrderRmk #tbRemark tr th{padding:12px 0; }
+#divOrderRmk #tbRemark .rmknote{text-align:left;padding-left:14px ;}
+#divOrderRmk .table3 td{background:#f5f5f5;padding:14px}
+#divOrderRmk .table3 tr{padding-left:14px}
+#divOrderRmk .table3 .inputtext{width:638px;height:26px;}
+
+.return_save {width:100%;text-align:center;padding-top: 60px;}
+.return_save a{display: inline-block;}
+.return_save a.save{width:80px;color:#fff;margin-right:14px;}
+.return_save a.save:hover{background:#ff6c00;}
+.return_save a.returm{text-decoration: underline;}
+#remarkType{width:80px;height:26px;}
+/*弹窗文本导入*/
+.create_shadow p{padding:52px 0 26px 0;}
+.create_shadow .font_button{background:#fe5f5f;}
+.passengers dl,.voyage dl{width:544px;border:1px solid #ddd;margin: auto;margin-top:12px;padding-top:14px;padding-bottom:18px;padding-left:16px;clear:both;overflow:hidden;zoom: -1;}
+.passengers dl dt ,.voyage dl dt {float:left;width:260px;display:inline-block;margin-bottom: 12px;}
+.passengers dl dt label,.voyage dl dt label{display:inline-block;width:66px;text-align:right;}
+.passengers dl  span,.voyage dl span{color:#ff0000;}
+.passengers dl dt input{width:124px;height:24px;padding-left:6px;line-height:28px;border:1px solid #ddd;}
+.passengers dl dd{clear:both;}
+.passengers .Save_continue{background:#00adee;}
+.passengers .font_big_bule{text-decoration: underline;}
+.voyage {overflow: hidden;}
+.voyage dl dt input,.voyage dl dt .zutuan{width:124px;height:22px;padding-left:4px;}
+.voyage dl dt .zutuan{height:27px;}
+.voyage dl dt label{width:79px;}
+.voyage dl dt  b{margin:0 36px;}
+.voyage .save{background:#ff8800;width:94px;}
