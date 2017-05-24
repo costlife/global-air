@@ -63,6 +63,7 @@
 		"index": 51,
 		"airlineSet": "大韩航空(KE);韩亚航空(OZ);",
 		"transferCitySet": "首尔;",
+		"duration": "14小时30分",
 		"fareList": [{
 			"physicalClassName": "经济舱",
 			"baggagesRemark": [{
@@ -283,7 +284,7 @@
 			"arrivalAirport": "NGO",
 			"aPortName": "中部航空国际机场",
 			"departureTime": 1494904800000,
-			"arriveTime": 1494921600000,
+			"arriveTime": 1494951600000,
 			"duration": "5:30",
 			"transferTime": "1:50",
 			"transferCity": "首尔 ",
@@ -311,7 +312,7 @@
 				"plane": "73H",
 				"meal": "O",
 				"depTerm": "1",
-				"arrTerm": "",
+				"arrTerm": "1",
 				"classStr": "J:9,C:9,D:8,I:8,Z:3,Y:9,B:9,M:9,S:9,H:9,E:9,K:9,L:9,U:9,Q:9,N:9,T:9",
 				"duration": "1小时50分钟",
 				"codeshare": false
@@ -336,7 +337,7 @@
 				"plane": "321",
 				"meal": "S",
 				"depTerm": "",
-				"arrTerm": "",
+				"arrTerm": "3",
 				"classStr": "Y:9,B:9,M:9,H:9,E:9,Q:9,K:9,S:9,V:9,W:9,T:9,L:7",
 				"duration": "1小时50分钟",
 				"codeshare": false
@@ -377,7 +378,7 @@
 				"plane": "77W",
 				"meal": "S",
 				"depTerm": "",
-				"arrTerm": "",
+				"arrTerm": "1",
 				"classStr": "R:5,A:2,J:9,C:9,D:9,I:9,Z:6,Y:9,B:9,M:9,S:9,H:9,E:9,K:9,L:9,U:9,Q:9,N:9,T:9",
 				"duration": "2小时",
 				"codeshare": false
@@ -660,7 +661,7 @@
 				"plane": "73H",
 				"meal": "O",
 				"depTerm": "1",
-				"arrTerm": "",
+				"arrTerm": "3",
 				"classStr": "J:9,C:9,D:8,I:8,Z:3,Y:9,B:9,M:9,S:9,H:9,E:9,K:9,L:9,U:9,Q:9,N:9,T:9",
 				"duration": "1小时50分钟",
 				"codeshare": false

@@ -1,8 +1,21 @@
 import React, { Component } from 'react';
 import moment from 'moment';
+import PriceTag from './PriceTag';
 import './index.less';
 
 class Dialog extends Component {
+
+    static propTypes = {
+        adultCount: React.PropTypes.number,
+        babyCount: React.PropTypes.number,
+        childCount: React.PropTypes.number,
+    };
+
+    static defaultProps = {
+        adultCount: 1,
+        babyCount: 1,
+        childCount: 1,
+    };
 
     /**
      * @description 构造函数
@@ -12,6 +25,10 @@ class Dialog extends Component {
         this.state = {
             showMoreInfo: false
         };
+    }
+
+    isJumpDay(startTime, endTime) {
+        return new Date(endTime).getDate() - new Date(startTime).getDate() > 0;
     }
 
     unixToTimeFormat(value) {
@@ -42,18 +59,31 @@ class Dialog extends Component {
                 <div className="linebars">
                     <div className="time star">
                         <div className="times">{this.unixToTimeFormat(startTime)}</div>
-                        <b>{detail.odlist[0].aPortName}</b>
+                        <b>
+                            {firstOD.dPortName}
+                            {firstOD.flightDetail[0].depTerm 
+                                && <span>T{firstOD.flightDetail[0].depTerm}</span>
+                            }
+                        </b>
                     </div>
                     <div className="line">
-                        <div className="alltime">14小时20分钟</div>
-                        <div className="transfer">转 <b>基辅KBP</b></div>
+                        <div className="alltime">{detail.duration}</div>
+                        {detail.transferCitySet && 
+                            <div className="transfer">转 <b>{detail.transferCitySet}</b></div>
+                        }
                     </div>
                     <div className="time end">
                         <div className="times">
                             {this.unixToTimeFormat(endTime)}
-                            <div className="dateAdd">+1</div>
+                            {this.isJumpDay(firstOD.flightDetail[0].departureTime, lastOD.flightDetail[lastOD.flightDetail.length - 1].arriveTime) 
+                                && <div className="dateAdd">+1</div>
+                            }
                         </div>
-                        <b>{detail.odlist[1].aPortName}</b>
+                        <b>
+                            {lastOD.aPortName}
+                            {lastOD.flightDetail[lastOD.flightDetail.length - 1].arrTerm 
+                                && <span>T{lastOD.flightDetail[lastOD.flightDetail.length - 1].arrTerm}</span>}
+                        </b>
                     </div>
                 </div>
                 <div className="flightTool">
@@ -79,11 +109,16 @@ class Dialog extends Component {
                     <div className="linebars">
                         <div className="time star">
                             <div className="times">{this.unixToTimeFormat(startTime)}</div>
-                            <b>{oditem.dPortName}</b>
+                            <b>
+                                {oditem.dPortName}
+                                {oditem.flightDetail[0].depTerm && <span>T{oditem.flightDetail[0].depTerm}</span>}
+                            </b>
                         </div>
                         <div className="line">
                             <div className="alltime">{this.durationFormat(oditem.duration)}</div>
-                            <div className="transfer">转 <b>基辅KBP</b></div>
+                            {oditem.transferCity && 
+                                <div className="transfer">转 <b>{oditem.transferCity}</b></div>
+                            }
                         </div>
                         <div className="time end">
                             <div className="times">
@@ -92,7 +127,10 @@ class Dialog extends Component {
                                     <div className="dateAdd">+{differDay}</div> : null
                                 }
                             </div>
-                            <b>{oditem.flightDetail[oditem.flightDetail.length - 1].aPortName}</b>
+                            <b>
+                                {oditem.flightDetail[1].aPortName}
+                                {oditem.flightDetail[1].arrTerm && <span>T{oditem.flightDetail[1].arrTerm}</span>}
+                            </b>
                         </div>
                     </div>
                 </div>
@@ -103,7 +141,7 @@ class Dialog extends Component {
     render() {
         const { detail } = this.props;
         const { showMoreInfo } = this.state;
-        console.log(detail);
+        
         return (
             <div className="flightCard">
                 {this.renderFlightInfo(detail)}
@@ -172,28 +210,8 @@ class Dialog extends Component {
                     </div>
                 </div>
                 <div className="personBar">
-                    <div className="personLine">
-                        <div>ssww=8</div>
-                        <div>成人/普通</div>
-                        <div>退改签规定</div>
-                        <div>票面价：800</div>
-                        <div>政策：5%,6%,8%</div>
-                        <div className="price">
-                            <b>¥9800.00</b>
-                            <p>含税费¥8900</p>
-                        </div>
-                    </div>
-                    <div className="personLine">
-                        <div>ssww=8</div>
-                        <div>成人/普通</div>
-                        <div>退改签规定</div>
-                        <div>票面价：800</div>
-                        <div>政策：5%,6%,8%</div>
-                        <div className="price">
-                            <b>¥9800.00</b>
-                            <p>含税费¥8900</p>
-                        </div>
-                    </div>
+                    <PriceTag fare={detail.fareList[0]} type={1} count={2}/>
+                    <PriceTag fare={detail.fareList[0]} type={2} count={3}/>
                 </div>
             
             </div>
