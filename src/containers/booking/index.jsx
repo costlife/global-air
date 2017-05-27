@@ -5,10 +5,10 @@ import actions from './actions';
 import './index.less';
 import $ from 'jquery';
 
-import fakeData from '../../mock/RT.json';
 
 import TicketCard from '../../components/ticket-card';
 import Pagination from '../../components/pagination';
+import TicketFilter from '../../components/ticket-filter';
 /*
 @Des:组件容器
 */
@@ -19,9 +19,7 @@ class Home extends Component {
     */
     constructor(props) {
         super(props);
-        console.log(fakeData)
         this.state = {
-            total: fakeData.avFlightList.length,
             current: 1,
             size: 5,
         }
@@ -37,27 +35,34 @@ class Home extends Component {
         });
     }
 
-    getTicketList(total, current, size) {
+    getTicketList(ticketList, total, current, size) {
         let start = (current - 1) * size;
         let end = Math.min(current * size, total) - 1;
         let list = [];
         for (var i = start; i <= end; i++) {
-            list.push(<TicketCard key={i} detail={fakeData.avFlightList[i]}/>)
+            list.push(<TicketCard key={i} detail={ticketList.avFlightList[i]}/>)
         }
         return list;
     }
 
+    checkDirectOnly() {
+        this.props.actions.checkDirectOnly();
+    }
     /**
      * 渲染index 入口
      * @return {React.DOM} 
      */
     render() {
-        const { total, current, size } = this.state;
+        const { ticketList } = this.props.booking;
+        const { current, size } = this.state;
+        const total = ticketList.avFlightList.length;
+        console.log(ticketList)
         return (
             <div className="global-air">
                 <div style={{marginTop: '20px'}}>
                 </div>
-                {this.getTicketList(total, current, size)}
+                <TicketFilter checkDirectOnly={this.checkDirectOnly.bind(this)}/>
+                {this.getTicketList(ticketList, total, current, size)}
                 <Pagination total={Math.ceil(total / size)} current={current} onPageChange={this.onPageChange.bind(this)}/>
                 <button onClick={()=>this.initHome()}>Click Me!</button>
             </div>

@@ -99,7 +99,6 @@ class Dialog extends Component {
             let startTime = oditem.flightDetail[0].departureTime;
             let endTime = oditem.flightDetail[oditem.flightDetail.length - 1].arriveTime;
             let differDay = Math.floor((endTime - startTime) / 86400000);
-            console.log(differDay)
             return (
                 <div key={index} className="flightInfo">
                     <div className="flightsName">

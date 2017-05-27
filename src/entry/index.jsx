@@ -43,9 +43,11 @@ render(
                 </div>
                 <div>
                     <Menu/>
-                    <Switch>
-                        <Route path="" component={Booking} />
-                    </Switch>
+                    <main>
+                        <Switch>
+                            <Route path="" component={Booking} />
+                        </Switch>
+                    </main>
                 </div>
                 <Footer/>
             </div>

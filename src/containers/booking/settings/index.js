@@ -1,3 +1,5 @@
+
+import fakeData from '../../../mock/RT.json';
 export default {
-    data: 111
+    ticketList: fakeData
 }
