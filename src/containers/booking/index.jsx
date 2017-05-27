@@ -15,7 +15,7 @@ import TicketFilter from '../../components/ticket-filter';
 
 class Home extends Component {
     /*
-    @Des：构造函数 
+    @Des：构造函数
     */
     constructor(props) {
         super(props);
@@ -25,8 +25,8 @@ class Home extends Component {
         }
     }
 
-    initHome() {
-        this.props.actions.initHome();
+    initBooking() {
+        this.props.actions.initBooking();
     }
 
     onPageChange(value) {
@@ -48,9 +48,17 @@ class Home extends Component {
     checkDirectOnly() {
         this.props.actions.checkDirectOnly();
     }
+
+    selectTransferCity(e) {
+        this.props.actions.selectTransferCity(e.target.value);
+    }
+
+    departHourRange(e) {
+        this.props.actions.departHourRange(e.target.value);
+    }
     /**
      * 渲染index 入口
-     * @return {React.DOM} 
+     * @return {React.DOM}
      */
     render() {
         const { ticketList } = this.props.booking;
@@ -61,10 +69,14 @@ class Home extends Component {
             <div className="global-air">
                 <div style={{marginTop: '20px'}}>
                 </div>
-                <TicketFilter checkDirectOnly={this.checkDirectOnly.bind(this)}/>
+                <TicketFilter
+                    checkDirectOnly={this.checkDirectOnly.bind(this)}
+                    selectTransferCity={this.selectTransferCity.bind(this)}
+                    departHourRange={this.departHourRange.bind(this)}
+                />
                 {this.getTicketList(ticketList, total, current, size)}
                 <Pagination total={Math.ceil(total / size)} current={current} onPageChange={this.onPageChange.bind(this)}/>
-                <button onClick={()=>this.initHome()}>Click Me!</button>
+                <button onClick={()=>this.initBooking()}>Click Me!</button>
             </div>
         )
     }

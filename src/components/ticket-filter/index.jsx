@@ -11,12 +11,16 @@ class Dialog extends Component {
         airline: React.PropTypes.array,
         transferCity: React.PropTypes.array,
         checkDirectOnly: React.PropTypes.func,
+        selectTransferCity: React.PropTypes.func,
+        departHourRange: React.PropTypes.func,
     };
 
     static defaultProps = {
         airline: [{airlineName:'东方航空'}, {airlineName:'南方航空'}],
         transferCity: ['上海','首尔', '东京'],
         checkDirectOnly: () => {},
+        selectTransferCity: () => {},
+        departHourRange: () => {},
     };
 
     /**
@@ -43,20 +47,21 @@ class Dialog extends Component {
         )
     }
 
-    renderLaunch() {
+    renderLaunch(departHourRange) {
         return (
-            <select>
+            <select onChange={departHourRange}>
                 <option value="0">选择起飞时间</option>
                 <option value="[6,12]">上午(6-12点)</option>
                 <option value="[12,18]">下午(12-18点)</option>
                 <option value="[18,24]">晚上(18-24点)</option>
+                <option value="[18,24]">凌晨(0-6点)</option>
             </select>
         )
     }
 
-    renderTransferCity(transferCity) {
+    renderTransferCity(transferCity, selectTransferCity) {
         return (
-            <select>
+            <select onChange={selectTransferCity}>
                 {transferCity.map((item, i) => <option key={i} value={item}>{item}</option>)}
             </select>
         )
@@ -72,9 +77,9 @@ class Dialog extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {data.body.map((item, i) => 
+                        {data.body.map((item, i) =>
                             <tr key={i}>
-                                {item.map((data, i) => 
+                                {item.map((data, i) =>
                                     <td key={i}>{data}</td>
                                 )}
                             </tr>
@@ -86,7 +91,7 @@ class Dialog extends Component {
     }
 
     render() {
-        const { airline, transferCity, checkDirectOnly } = this.props;
+        const { airline, transferCity, checkDirectOnly, selectTransferCity, departHourRange } = this.props;
         const { showTable } = this.state;
         const data = {
             head: ['厦门航空','东方航空','南方航空','吉祥航空'],
@@ -102,9 +107,9 @@ class Dialog extends Component {
                 {showTable && this.renderTable(data)}
                 <div className="flight-filter">
                     航空公司：{this.renderAirline(airline)}
-                    起飞时间：{this.renderLaunch(airline)}
-                    回程起飞：{this.renderLaunch(airline)}
-                    中转城市：{this.renderTransferCity(transferCity)}
+                    起飞时间：{this.renderLaunch(departHourRange)}
+                    回程起飞：{this.renderLaunch()}
+                    中转城市：{this.renderTransferCity(transferCity, selectTransferCity)}
                     <input type="checkbox" onClick={checkDirectOnly}/>仅看直飞
 
                     <span className="tax-filter">

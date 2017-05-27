@@ -1,0 +1,54 @@
+{
+    "journeyType": "MS",
+    "adtRules": [{
+        "departureDate": "1495086900000",
+        "refOne": "GEPY01(USER(BJS,'1E',&lt;&gt;,Y,DEPT(&lt;&gt;,&lt;&gt;),&lt;&gt;,&lt;&gt;,&lt;&gt;),PF2(Y,[(AGENCY(PEK429),IATANUM('08317212'),N)],[],[],[],N,&lt;&gt;),&lt;&gt;)",
+        "refTwo": "0083U04EHNADTN0030000100ATP8P",
+        "tktAirline": "3U",
+        "arrivalAirport": "HKG",
+        "departureAirport": "CTU",
+        "fareReference": "EL1MHK"
+    }, {
+        "departureDate": "1495086900000",
+        "refOne": "GEPY01(USER(BJS,'1E',&lt;&gt;,Y,DEPT(&lt;&gt;,&lt;&gt;),&lt;&gt;,&lt;&gt;,&lt;&gt;),PF2(Y,[(AGENCY(PEK429),IATANUM('08317212'),N)],[],[],[],N,&lt;&gt;),&lt;&gt;)",
+        "refTwo": "0083U04EHNADTN0030000100ATP8P",
+        "tktAirline": "3U",
+        "arrivalAirport": "CTU",
+        "departureAirport": "HKG",
+        "fareReference": "EL1MHK"
+    }],
+    "chdRules": [{
+        "departureDate": "1495086900000",
+        "refOne": "GEPY01(USER(BJS,'1E',&lt;&gt;,Y,DEPT(&lt;&gt;,&lt;&gt;),&lt;&gt;,&lt;&gt;,&lt;&gt;),PF2(Y,[(AGENCY(PEK429),IATANUM('08317212'),N)],[],[],[],N,&lt;&gt;),&lt;&gt;)",
+        "refTwo": "0083U04EHNADTN0030000100ATP8P",
+        "tktAirline": "3U",
+        "arrivalAirport": "HKG",
+        "departureAirport": "CTU",
+        "fareReference": "EL1MHK"
+    }, {
+        "departureDate": "1495086900000",
+        "refOne": "GEPY01(USER(BJS,'1E',&lt;&gt;,Y,DEPT(&lt;&gt;,&lt;&gt;),&lt;&gt;,&lt;&gt;,&lt;&gt;),PF2(Y,[(AGENCY(PEK429),IATANUM('08317212'),N)],[],[],[],N,&lt;&gt;),&lt;&gt;)",
+        "refTwo": "0083U04EHNADTN0030000100ATP8P",
+        "tktAirline": "3U",
+        "arrivalAirport": "CTU",
+        "departureAirport": "HKG",
+        "fareReference": "EL1MHK"
+    }],
+    "infRules": [{
+        "departureDate": "1495086900000",
+        "refOne": "GEPY01(USER(BJS,'1E',&lt;&gt;,Y,DEPT(&lt;&gt;,&lt;&gt;),&lt;&gt;,&lt;&gt;,&lt;&gt;),PF2(Y,[(AGENCY(PEK429),IATANUM('08317212'),N)],[],[],[],N,&lt;&gt;),&lt;&gt;)",
+        "refTwo": "0083U04EHNADTN0030000100ATP8P",
+        "tktAirline": "3U",
+        "arrivalAirport": "HKG",
+        "departureAirport": "CTU",
+        "fareReference": "EL1MHK"
+    }, {
+        "departureDate": "1495086900000",
+        "refOne": "GEPY01(USER(BJS,'1E',&lt;&gt;,Y,DEPT(&lt;&gt;,&lt;&gt;),&lt;&gt;,&lt;&gt;,&lt;&gt;),PF2(Y,[(AGENCY(PEK429),IATANUM('08317212'),N)],[],[],[],N,&lt;&gt;),&lt;&gt;)",
+        "refTwo": "0083U04EHNADTN0030000100ATP8P",
+        "tktAirline": "3U",
+        "arrivalAirport": "CTU",
+        "departureAirport": "HKG",
+        "fareReference": "EL1MHK"
+    }]
+}

@@ -1,0 +1,1267 @@
+﻿{
+/*中转次数筛选条件。0：直飞;1：1程中转；2： 2程中转及以上*/
+    "transfer": [
+        2
+    ],
+     /*各航司的最低价格表*/
+    "priceTable": [
+        {
+            "airlineName": "国泰航空(CX)",
+            "lp": null,/*直飞最低价，null代表无对应价格*/
+            "lpo": null,/*1次中转最低价*/
+            "lpt": 4738.33333333333 /*2次及以上中转最低价*/
+        },
+        {
+            "airlineName": "港龙航空(KA)",
+            "lp": null,
+            "lpo": null,
+            "lpt": 4738.33333333333
+        },
+        {
+            "airlineName": "土耳其航空(TK)",
+            "lp": null,
+            "lpo": null,
+            "lpt": 4908
+        }
+    ],
+    /*中转城市集合*/
+    "transferCity": [
+        "伊斯坦布尔",
+        "香港"
+    ],
+    "error": null,
+    "errorCode": null,
+    /*每个成员是一个完整的航班方案。每个航班方案包含ODlist 和fareList。ODlist包含了这个行程的航段信息。fareList 里每个fare是一个运价信息*/
+    "avFlightList": [
+        {
+            "index": 1,
+            "airlineSet": "港龙航空(KA);国泰航空(CX);",
+            "transferCitySet": "香港;",
+            "fareList": [
+                {
+                     /*舱位名称，如果各航班的舱位不同，是”多种舱位提醒“*/
+                    "physicalClassName": "经济舱",
+                    /*行李额提醒*/
+                    "baggagesRemark": [
+                        {
+                            "text": "第1段",
+                            "content": "北京-香港：成人:2件,儿童:2件"
+                        },
+                        {
+                            "text": "第2段",
+                            "content": "香港-纽约：成人:2件,儿童:2件"
+                        },
+                        {
+                            "text": "第3段",
+                            "content": "纽约-香港：成人:2件,儿童:2件"
+                        },
+                        {
+                            "text": "第4段",
+                            "content": "香港-北京：成人:2件,儿童:2件"
+                        }
+                    ],
+                    /*每个航班的具体舱位等级*/
+                    "classInfo": [
+                        {
+                            "depAirport": "PEK",
+                            "arriveAirport": "HKG",
+                            "cabin": "Q",
+                            "physicalClass": "ECONOMY",
+                            "physicalClassName": "经济舱",
+                            "cityName": "北京-香港"
+                        },
+                        {
+                            "depAirport": "HKG",
+                            "arriveAirport": "EWR",
+                            "cabin": "Q",
+                            "physicalClass": "ECONOMY",
+                            "physicalClassName": "经济舱",
+                            "cityName": "香港-纽约"
+                        },
+                        {
+                            "depAirport": "JFK",
+                            "arriveAirport": "HKG",
+                            "cabin": "Q",
+                            "physicalClass": "ECONOMY",
+                            "physicalClassName": "经济舱",
+                            "cityName": "纽约-香港"
+                        },
+                        {
+                            "depAirport": "HKG",
+                            "arriveAirport": "PEK",
+                            "cabin": "Q",
+                            "physicalClass": "ECONOMY",
+                            "physicalClassName": "经济舱",
+                            "cityName": "香港-北京"
+                        }
+                    ],
+                    /*可用座位数，<9是需要显示出来*/
+                    "seats": "4",
+                    /*此运价的开票航司*/
+                    "ticketingCarrier": "CX",
+                    "connector": "=",
+                    /*所有乘客的总票面价*/
+                    "totalTicketPrice": 10450,
+                    /*所有乘客的结算价（不含税)*/
+                    "totalSettlementPrice": 10450,
+                    /*所有乘客的含税结算价*/
+                    "totalSettlementPriceWithTax": 14215,
+                    /*所有乘客的总税金*/
+                    "totalTax": 3765,
+                    /*乘客总人数*/
+                    "totalPassengerCount": 3,
+                    /*成人的价格信息*/
+                    "adultPrice": {
+                        "ticketPrice": 3800,
+                        "settlementPrice": 3800,
+                        "tax": 1285,
+                        "qcharge": 0,
+                        "policyInfo": {
+                            "policyId": "",
+                            "formulaId": "0",
+                            "passgerType": "ADT",
+                            "adjustPrice": 3800,
+                            "ticketPrice": 3800,
+                            "qCharge": 0,
+                            "tax": 1285,
+                            "proxyRate": 0,
+                            "poundageUp": 0,
+                            "rebatePointUp": 0,
+                            "settlementPriceUp": 3800,
+                            "policyRemarkUp": "混舱跨季跨航线组合方式：无<br/>是否全程默认政策：是<br/>Q值金额(包含S值)：0.00<br/>Q值是否计奖：不计奖<br/>全程代理费：0.00<br/>全程税费：1285<br/>全程计奖价：3800<br/>全程后返：0.00<br/>全程手续费：0<br/>-----------------------------------------<br/>无备注信息",
+                            "poundageDown": 0,
+                            "rebatePointDown": 0,
+                            "settlementPriceDown": 3800,
+                            "policyRemarkDown": "混舱跨季跨航线组合方式：无<br/>是否全程默认政策：是<br/>Q值金额(包含S值)：0.00<br/>Q值是否计奖：不计奖<br/>全程代理费：0.00<br/>全程税费：1285<br/>全程计奖价：3800<br/>全程后返：0.00<br/>全程手续费：0<br/>-----------------------------------------<br/>无备注信息",
+                            "defaultPolicy": true
+                        },
+                        "passengerType": "ADT",
+                        "passengerCount": 2,
+                        "tktAirline": "CX",
+                        /*此种乘客类型的客规查询参数*/
+                        "ticketRuleRQ": {
+                            "journeyType": "RT",
+                            "tktRules": [
+                                {
+                                    "departureDate": 1495515600000,
+                                    "refOne": "GEPY01(USER(BJS,'1E',&lt;&gt;,Y,DEPT(&lt;&gt;,&lt;&gt;),&lt;&gt;,&lt;&gt;,&lt;&gt;),PF2(Y,[(AGENCY(PEK429),IATANUM('08317212'),N)],[],[],[],N,&lt;&gt;),&lt;&gt;)",
+                                    "refTwo": "864178DPANADTY0070000100ATP6YCAT/2578038278",
+                                    "tktAirline": "CX",
+                                    "arrivalAirport": "NYC",
+                                    "departureAirport": "BJS",
+                                    "fareReference": "Q6MCNT2"
+                                },
+                                {
+                                    "departureDate": 1495720500000,
+                                    "refOne": "GEPY01(USER(BJS,'1E',&lt;&gt;,Y,DEPT(&lt;&gt;,&lt;&gt;),&lt;&gt;,&lt;&gt;,&lt;&gt;),PF2(Y,[(AGENCY(PEK429),IATANUM('08317212'),N)],[],[],[],N,&lt;&gt;),&lt;&gt;)",
+                                    "refTwo": "864178DPANADTY0070000100ATP6YCAT/2578038278",
+                                    "tktAirline": "CX",
+                                    "arrivalAirport": "BJS",
+                                    "departureAirport": "NYC",
+                                    "fareReference": "Q6MCNT2"
+                                }
+                            ]
+                        },
+                         /*此种乘客类型的行李额*/
+                        "baggages": [
+                            {
+                                "depAirport": "PEK",
+                                "arriveAirport": "HKG",
+                                "baggagePieces": "2",
+                                "baggageWeight": null,
+                                "baggageWeightUnit": null,
+                                "freeBaggage": "2件"
+                            },
+                            {
+                                "depAirport": "HKG",
+                                "arriveAirport": "EWR",
+                                "baggagePieces": "2",
+                                "baggageWeight": null,
+                                "baggageWeightUnit": null,
+                                "freeBaggage": "2件"
+                            },
+                            {
+                                "depAirport": "JFK",
+                                "arriveAirport": "HKG",
+                                "baggagePieces": "2",
+                                "baggageWeight": null,
+                                "baggageWeightUnit": null,
+                                "freeBaggage": "2件"
+                            },
+                            {
+                                "depAirport": "HKG",
+                                "arriveAirport": "PEK",
+                                "baggagePieces": "2",
+                                "baggageWeight": null,
+                                "baggageWeightUnit": null,
+                                "freeBaggage": "2件"
+                            }
+                        ],
+                        "fareBasesCode": "nullQ6MCNT2;Q6MCNT2;",
+                        "settlementPriceWithTax": 5085
+                    },
+                    "childPrice": {
+                        "ticketPrice": 2850,
+                        "settlementPrice": 2850,
+                        "tax": 1195,
+                        "qcharge": 0,
+                        "policyInfo": {
+                            "policyId": "",
+                            "formulaId": "0",
+                            "passgerType": "CNN",
+                            "adjustPrice": 2850,
+                            "ticketPrice": 2850,
+                            "qCharge": 0,
+                            "tax": 1195,
+                            "proxyRate": 0,
+                            "poundageUp": 0,
+                            "rebatePointUp": 0,
+                            "settlementPriceUp": 2850,
+                            "policyRemarkUp": "混舱跨季跨航线组合方式：无<br/>是否全程默认政策：是<br/>Q值金额(包含S值)：0.00<br/>Q值是否计奖：不计奖<br/>全程代理费：0.00<br/>全程税费：1195<br/>全程计奖价：2850<br/>全程后返：0.00<br/>全程手续费：0<br/>-----------------------------------------<br/>无备注信息",
+                            "poundageDown": 0,
+                            "rebatePointDown": 0,
+                            "settlementPriceDown": 2850,
+                            "policyRemarkDown": "混舱跨季跨航线组合方式：无<br/>是否全程默认政策：是<br/>Q值金额(包含S值)：0.00<br/>Q值是否计奖：不计奖<br/>全程代理费：0.00<br/>全程税费：1195<br/>全程计奖价：2850<br/>全程后返：0.00<br/>全程手续费：0<br/>-----------------------------------------<br/>无备注信息",
+                            "defaultPolicy": true
+                        },
+                        "passengerType": "CHD",
+                        "passengerCount": 1,
+                        "tktAirline": "CX",
+                        
+                        "ticketRuleRQ": {
+                            "journeyType": "RT",
+                            "tktRules": [
+                                {
+                                    "departureDate": 1495515600000,
+                                    "refOne": "GEPY01(USER(BJS,'1E',&lt;&gt;,Y,DEPT(&lt;&gt;,&lt;&gt;),&lt;&gt;,&lt;&gt;,&lt;&gt;),PF2(Y,[(AGENCY(PEK429),IATANUM('08317212'),N)],[],[],[],N,&lt;&gt;),&lt;&gt;)",
+                                    "refTwo": "864178DPANCNNY0070000100ATP6YCAT/1900078315/2578038278",
+                                    "tktAirline": "CX",
+                                    "arrivalAirport": "NYC",
+                                    "departureAirport": "BJS",
+                                    "fareReference": "Q6MCNT2"
+                                },
+                                {
+                                    "departureDate": 1495720500000,
+                                    "refOne": "GEPY01(USER(BJS,'1E',&lt;&gt;,Y,DEPT(&lt;&gt;,&lt;&gt;),&lt;&gt;,&lt;&gt;,&lt;&gt;),PF2(Y,[(AGENCY(PEK429),IATANUM('08317212'),N)],[],[],[],N,&lt;&gt;),&lt;&gt;)",
+                                    "refTwo": "864178DPANCNNY0070000100ATP6YCAT/1900078315/2578038278",
+                                    "tktAirline": "CX",
+                                    "arrivalAirport": "BJS",
+                                    "departureAirport": "NYC",
+                                    "fareReference": "Q6MCNT2"
+                                }
+                            ]
+                        },
+                       
+                        "baggages": [
+                            {
+                                "depAirport": "PEK",
+                                "arriveAirport": "HKG",
+                                "baggagePieces": "2",
+                                "baggageWeight": null,
+                                "baggageWeightUnit": null,
+                                "freeBaggage": "2件"
+                            },
+                            {
+                                "depAirport": "HKG",
+                                "arriveAirport": "EWR",
+                                "baggagePieces": "2",
+                                "baggageWeight": null,
+                                "baggageWeightUnit": null,
+                                "freeBaggage": "2件"
+                            },
+                            {
+                                "depAirport": "JFK",
+                                "arriveAirport": "HKG",
+                                "baggagePieces": "2",
+                                "baggageWeight": null,
+                                "baggageWeightUnit": null,
+                                "freeBaggage": "2件"
+                            },
+                            {
+                                "depAirport": "HKG",
+                                "arriveAirport": "PEK",
+                                "baggagePieces": "2",
+                                "baggageWeight": null,
+                                "baggageWeightUnit": null,
+                                "freeBaggage": "2件"
+                            }
+                        ],
+                        "fareBasesCode": "nullQ6MCNT2;Q6MCNT2;",
+                        "settlementPriceWithTax": 4045
+                    },
+                    /*婴儿价格信息，查询条件中婴儿>0时才会出现*/
+                    "infPrice": null,
+                    
+                    "sourcePolicyContent": "{\"ptcSpBreakdowns\":[{\"passengerType\":\"ADT\",\"spTotals\":[{\"basePrice\":3800,\"company\":\"在路上航空\",\"isDefaultFare\":true,\"poundage\":0,\"poundageUp\":0,\"proxyRate\":0.0,\"rebatePoint\":0,\"rebatePointUp\":0,\"resultFormulaId\":\"0\",\"settlementPrice\":3800,\"settlementPriceUp\":3800.00,\"spParts\":[],\"taxes\":1285,\"totalSettlementPrice\":5085,\"totalSettlementPriceUp\":5085.00}]},{\"passengerType\":\"CNN\",\"spTotals\":[{\"basePrice\":2850,\"company\":\"在路上航空\",\"isDefaultFare\":true,\"poundage\":0,\"poundageUp\":0,\"proxyRate\":0.0,\"rebatePoint\":0,\"rebatePointUp\":0,\"resultFormulaId\":\"0\",\"settlementPrice\":2850,\"settlementPriceUp\":2850.00,\"spParts\":[],\"taxes\":1195,\"totalSettlementPrice\":4045,\"totalSettlementPriceUp\":4045.00}]}]}"
+                }
+            ],
+            "departHour": 13,
+            "rtDepartHour": 21,
+            "transfer": 2,
+            "journeyType": "RT",
+            "directFlightsOnly": "0",
+            "odlist": [
+                {
+                    "index": 1,
+                    "gdsRph": "010001",
+                    /*出发机场*/
+                    "departureAirport": "PEK",
+                    "dPortName": "首都国际机场",
+                    /*抵达机场*/
+                    "arrivalAirport": "EWR",
+                    "aPortName": "纽瓦克国际机场",
+                    "departureTime": 1495515600000,
+                    "arriveTime": 1495532700000,
+                    /*这个OD的总时长*/
+                    "duration": "20:35",
+                    /*这个OD的转机时长*/
+                    "transferTime": "1:20",
+                    /*这个OD的航班信息*/
+                    "flightDetail": [
+                        {
+                            "rph": "01000101",
+                            "airline": "KA",
+                            "airlineName": "港龙航空",
+                            "airFlightNo": "1109",
+                            /*实际承运航司*/
+                            "airCarrierAline": "CA",
+                            "airCarrierName": null,
+                            /*实际承运航班号*/
+                            "airCarrierFlight": "109",
+                            "departureTime": 1495515600000,
+                            "arriveTime": 1495527900000,
+                            "week": null,
+                            "departureAirport": "PEK",
+                            "dPortName": "首都国际机场",
+                            "arriveAirport": "HKG",
+                            "aPortName": "赤腊角国际机场",
+                            "tpm": "1239",
+                            "stop": "0",
+                            /*这个航班的经停信息*/
+                            "stopInfoList": null,
+                            "plane": "33A",
+                            "meal": "",
+                            /*出发机场航站楼*/
+                            "depTerm": "T3",
+                            /抵达机场航站楼
+                            "arrTerm": "1",
+                            "classStr": "J:4,C:4,W:9,R:9,E:9,Y:4,B:4,H:4,K:4,M:4,L:4,V:4,S:4,N:4,Q:4,O:4",
+                            "duration": "3小时25分钟",
+                            /*是否运价共享航变*/
+                            "codeshare": true
+                        },
+                        {
+                            "rph": "01000102",
+                            "airline": "CX",
+                            "airlineName": "国泰航空",
+                            "airFlightNo": "890",
+                            "airCarrierAline": null,
+                            "airCarrierName": null,
+                            "airCarrierFlight": null,
+                            "departureTime": 1495532700000,
+                            "arriveTime": 1495546500000,
+                            "week": null,
+                            "departureAirport": "HKG",
+                            "dPortName": "赤腊角国际机场",
+                            "arriveAirport": "EWR",
+                            "aPortName": "纽瓦克国际机场",
+                            "tpm": "8041",
+                            "stop": "0",
+                            "stopInfoList": null,
+                            "plane": "77W",
+                            "meal": "B",
+                            "depTerm": "1",
+                            "arrTerm": "B",
+                            "classStr": "J:9,C:9,D:8,I:7,W:8,R:6,E:5,Y:9,B:9,H:9,K:9,M:9,L:9,V:9,G:9,S:9,N:9,Q:9,O:9",
+                            "duration": "15小时50分钟",
+                            "codeshare": false
+                        }
+                    ]
+                },
+                {
+                    "index": 3,
+                    "gdsRph": "020001",
+                    "departureAirport": "JFK",
+                    "dPortName": "肯尼迪国际机场",
+                    "arrivalAirport": "PEK",
+                    "aPortName": "首都国际机场",
+                    "departureTime": 1495720500000,
+                    "arriveTime": 1495846800000,
+                    "duration": "26:25",
+                    "transferTime": "2:45",
+                    "flightDetail": [
+                        {
+                            "rph": "02000101",
+                            "airline": "CX",
+                            "airlineName": "国泰航空",
+                            "airFlightNo": "889",
+                            "airCarrierAline": null,
+                            "airCarrierName": null,
+                            "airCarrierFlight": null,
+                            "departureTime": 1495720500000,
+                            "arriveTime": 1495836900000,
+                            "week": null,
+                            "departureAirport": "JFK",
+                            "dPortName": "肯尼迪国际机场",
+                            "arriveAirport": "HKG",
+                            "aPortName": "赤腊角国际机场",
+                            "tpm": "8041",
+                            "stop": "1",
+                            "stopInfoList": [
+                                {
+                                    "airport": "YVR",
+                                    "cityName": "温哥华",
+                                    "airportName": "温哥华国际机场",
+                                    "duration": "1:15"
+                                }
+                            ],
+                            "plane": "77W",
+                            "meal": "M",
+                            "depTerm": "",
+                            "arrTerm": "",
+                            "classStr": "F:2,A:2,J:9,C:9,D:8,I:9,W:9,R:9,E:9,Y:9,B:9,H:9,K:9,M:9,L:9,V:9,G:9,S:9,N:9,Q:9",
+                            "duration": "20小时20分钟",
+                            "codeshare": false
+                        },
+                        {
+                            "rph": "02000102",
+                            "airline": "KA",
+                            "airlineName": "港龙航空",
+                            "airFlightNo": "5390",
+                            "airCarrierAline": "CX",
+                            "airCarrierName": null,
+                            "airCarrierFlight": "390",
+                            "departureTime": 1495846800000,
+                            "arriveTime": 1495858800000,
+                            "week": null,
+                            "departureAirport": "HKG",
+                            "dPortName": "赤腊角国际机场",
+                            "arriveAirport": "PEK",
+                            "aPortName": "首都国际机场",
+                            "tpm": "1239",
+                            "stop": "0",
+                            "stopInfoList": null,
+                            "plane": "772",
+                            "meal": "B",
+                            "depTerm": "1",
+                            "arrTerm": "3",
+                            "classStr": "J:9,C:9,D:9,I:9,Y:9,B:9,H:9,K:9,M:9,L:9,V:9,S:9,N:9,Q:9,O:9",
+                            "duration": "3小时20分钟",
+                            "codeshare": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "index": 0,
+            "airlineSet": "土耳其航空(TK);",
+            "transferCitySet": "伊斯坦布尔;",
+            "fareList": [
+                {
+                    "physicalClassName": "经济舱",
+                    "baggagesRemark": [
+                        {
+                            "text": "第1段",
+                            "content": "北京-伊斯坦布尔：成人:2件,儿童:2件"
+                        },
+                        {
+                            "text": "第2段",
+                            "content": "伊斯坦布尔-纽约：成人:2件,儿童:2件"
+                        },
+                        {
+                            "text": "第3段",
+                            "content": "纽约-伊斯坦布尔：成人:2件,儿童:2件"
+                        },
+                        {
+                            "text": "第4段",
+                            "content": "伊斯坦布尔-北京：成人:2件,儿童:2件"
+                        }
+                    ],
+                    "classInfo": [
+                        {
+                            "depAirport": "PEK",
+                            "arriveAirport": "IST",
+                            "cabin": "W",
+                            "physicalClass": "ECONOMY",
+                            "physicalClassName": "经济舱",
+                            "cityName": "北京-伊斯坦布尔"
+                        },
+                        {
+                            "depAirport": "IST",
+                            "arriveAirport": "JFK",
+                            "cabin": "W",
+                            "physicalClass": "ECONOMY",
+                            "physicalClassName": "经济舱",
+                            "cityName": "伊斯坦布尔-纽约"
+                        },
+                        {
+                            "depAirport": "JFK",
+                            "arriveAirport": "IST",
+                            "cabin": "V",
+                            "physicalClass": "ECONOMY",
+                            "physicalClassName": "经济舱",
+                            "cityName": "纽约-伊斯坦布尔"
+                        },
+                        {
+                            "depAirport": "IST",
+                            "arriveAirport": "PEK",
+                            "cabin": "V",
+                            "physicalClass": "ECONOMY",
+                            "physicalClassName": "经济舱",
+                            "cityName": "伊斯坦布尔-北京"
+                        }
+                    ],
+                    "seats": "3",
+                    "ticketingCarrier": "TK",
+                    "connector": "=",
+                    "totalTicketPrice": 1100,
+                    "totalSettlementPrice": 1089,
+                    "totalSettlementPriceWithTax": 14724,
+                    "totalTax": 13635,
+                    "totalPassengerCount": 3,
+                    "adultPrice": {
+                        "ticketPrice": 400,
+                        "settlementPrice": 396,
+                        "tax": 4575,
+                        "qcharge": 0,
+                        "policyInfo": {
+                            "policyId": "",
+                            "formulaId": "0",
+                            "passgerType": "ADT",
+                            "adjustPrice": 400,
+                            "ticketPrice": 400,
+                            "qCharge": 0,
+                            "tax": 4575,
+                            "proxyRate": 1,
+                            "poundageUp": 0,
+                            "rebatePointUp": 0,
+                            "settlementPriceUp": 396,
+                            "policyRemarkUp": "混舱跨季跨航线组合方式：无<br/>是否全程默认政策：是<br/>Q值金额(包含S值)：0.00<br/>Q值是否计奖：不计奖<br/>全程代理费：1.00<br/>全程税费：4575<br/>全程计奖价：400<br/>全程后返：0.00<br/>全程手续费：0<br/>-----------------------------------------<br/>无备注信息",
+                            "poundageDown": 0,
+                            "rebatePointDown": 0,
+                            "settlementPriceDown": 396,
+                            "policyRemarkDown": "混舱跨季跨航线组合方式：无<br/>是否全程默认政策：是<br/>Q值金额(包含S值)：0.00<br/>Q值是否计奖：不计奖<br/>全程代理费：1.00<br/>全程税费：4575<br/>全程计奖价：400<br/>全程后返：0.00<br/>全程手续费：0<br/>-----------------------------------------<br/>无备注信息",
+                            "defaultPolicy": true
+                        },
+                        "passengerType": "ADT",
+                        "passengerCount": 2,
+                        "tktAirline": "TK",
+                        "ticketRuleRQ": {
+                            "journeyType": "RT",
+                            "tktRules": [
+                                {
+                                    "departureDate": 1495469400000,
+                                    "refOne": "GEPY01(USER(BJS,'1E',&lt;&gt;,Y,DEPT(&lt;&gt;,&lt;&gt;),&lt;&gt;,&lt;&gt;,&lt;&gt;),PF2(Y,[(AGENCY(PEK429),IATANUM('08317212'),N)],[],[],[],N,&lt;&gt;),&lt;&gt;)",
+                                    "refTwo": "001PRO4ATNADTN0050000200ATP84",
+                                    "tktAirline": "TK",
+                                    "arrivalAirport": "NYC",
+                                    "departureAirport": "BJS",
+                                    "fareReference": "WF2XPC"
+                                },
+                                {
+                                    "departureDate": 1495727700000,
+                                    "refOne": "GEPY01(USER(BJS,'1E',&lt;&gt;,Y,DEPT(&lt;&gt;,&lt;&gt;),&lt;&gt;,&lt;&gt;,&lt;&gt;),PF2(Y,[(AGENCY(PEK429),IATANUM('08317212'),N)],[],[],[],N,&lt;&gt;),&lt;&gt;)",
+                                    "refTwo": "001PRO4ATNADTN0050000200ATP84",
+                                    "tktAirline": "TK",
+                                    "arrivalAirport": "BJS",
+                                    "departureAirport": "NYC",
+                                    "fareReference": "VF2XPC"
+                                }
+                            ]
+                        },
+                        "baggages": [
+                            {
+                                "depAirport": "PEK",
+                                "arriveAirport": "IST",
+                                "baggagePieces": "2",
+                                "baggageWeight": null,
+                                "baggageWeightUnit": null,
+                                "freeBaggage": "2件"
+                            },
+                            {
+                                "depAirport": "IST",
+                                "arriveAirport": "JFK",
+                                "baggagePieces": "2",
+                                "baggageWeight": null,
+                                "baggageWeightUnit": null,
+                                "freeBaggage": "2件"
+                            },
+                            {
+                                "depAirport": "JFK",
+                                "arriveAirport": "IST",
+                                "baggagePieces": "2",
+                                "baggageWeight": null,
+                                "baggageWeightUnit": null,
+                                "freeBaggage": "2件"
+                            },
+                            {
+                                "depAirport": "IST",
+                                "arriveAirport": "PEK",
+                                "baggagePieces": "2",
+                                "baggageWeight": null,
+                                "baggageWeightUnit": null,
+                                "freeBaggage": "2件"
+                            }
+                        ],
+                        "fareBasesCode": "nullWF2XPC;VF2XPC;",
+                        "settlementPriceWithTax": 4971
+                    },
+                    "childPrice": {
+                        "ticketPrice": 300,
+                        "settlementPrice": 297,
+                        "tax": 4485,
+                        "qcharge": 0,
+                        "policyInfo": {
+                            "policyId": "",
+                            "formulaId": "0",
+                            "passgerType": "CNN",
+                            "adjustPrice": 300,
+                            "ticketPrice": 300,
+                            "qCharge": 0,
+                            "tax": 4485,
+                            "proxyRate": 1,
+                            "poundageUp": 0,
+                            "rebatePointUp": 0,
+                            "settlementPriceUp": 297,
+                            "policyRemarkUp": "混舱跨季跨航线组合方式：无<br/>是否全程默认政策：是<br/>Q值金额(包含S值)：0.00<br/>Q值是否计奖：不计奖<br/>全程代理费：1.00<br/>全程税费：4485<br/>全程计奖价：300<br/>全程后返：0.00<br/>全程手续费：0<br/>-----------------------------------------<br/>无备注信息",
+                            "poundageDown": 0,
+                            "rebatePointDown": 0,
+                            "settlementPriceDown": 297,
+                            "policyRemarkDown": "混舱跨季跨航线组合方式：无<br/>是否全程默认政策：是<br/>Q值金额(包含S值)：0.00<br/>Q值是否计奖：不计奖<br/>全程代理费：1.00<br/>全程税费：4485<br/>全程计奖价：300<br/>全程后返：0.00<br/>全程手续费：0<br/>-----------------------------------------<br/>无备注信息",
+                            "defaultPolicy": true
+                        },
+                        "passengerType": "CHD",
+                        "passengerCount": 1,
+                        "tktAirline": "TK",
+                        "ticketRuleRQ": {
+                            "journeyType": "RT",
+                            "tktRules": [
+                                {
+                                    "departureDate": 1495469400000,
+                                    "refOne": "GEPY01(USER(BJS,'1E',&lt;&gt;,Y,DEPT(&lt;&gt;,&lt;&gt;),&lt;&gt;,&lt;&gt;,&lt;&gt;),PF2(Y,[(AGENCY(PEK429),IATANUM('08317212'),N)],[],[],[],N,&lt;&gt;),&lt;&gt;)",
+                                    "refTwo": "001PRO4ATNCNNN0050000200ATP84CAT/1900008666",
+                                    "tktAirline": "TK",
+                                    "arrivalAirport": "NYC",
+                                    "departureAirport": "BJS",
+                                    "fareReference": "WF2XPC"
+                                },
+                                {
+                                    "departureDate": 1495727700000,
+                                    "refOne": "GEPY01(USER(BJS,'1E',&lt;&gt;,Y,DEPT(&lt;&gt;,&lt;&gt;),&lt;&gt;,&lt;&gt;,&lt;&gt;),PF2(Y,[(AGENCY(PEK429),IATANUM('08317212'),N)],[],[],[],N,&lt;&gt;),&lt;&gt;)",
+                                    "refTwo": "001PRO4ATNCNNN0050000200ATP84CAT/1900008666",
+                                    "tktAirline": "TK",
+                                    "arrivalAirport": "BJS",
+                                    "departureAirport": "NYC",
+                                    "fareReference": "VF2XPC"
+                                }
+                            ]
+                        },
+                        "baggages": [
+                            {
+                                "depAirport": "PEK",
+                                "arriveAirport": "IST",
+                                "baggagePieces": "2",
+                                "baggageWeight": null,
+                                "baggageWeightUnit": null,
+                                "freeBaggage": "2件"
+                            },
+                            {
+                                "depAirport": "IST",
+                                "arriveAirport": "JFK",
+                                "baggagePieces": "2",
+                                "baggageWeight": null,
+                                "baggageWeightUnit": null,
+                                "freeBaggage": "2件"
+                            },
+                            {
+                                "depAirport": "JFK",
+                                "arriveAirport": "IST",
+                                "baggagePieces": "2",
+                                "baggageWeight": null,
+                                "baggageWeightUnit": null,
+                                "freeBaggage": "2件"
+                            },
+                            {
+                                "depAirport": "IST",
+                                "arriveAirport": "PEK",
+                                "baggagePieces": "2",
+                                "baggageWeight": null,
+                                "baggageWeightUnit": null,
+                                "freeBaggage": "2件"
+                            }
+                        ],
+                        "fareBasesCode": "nullWF2XPC;VF2XPC;",
+                        "settlementPriceWithTax": 4782
+                    },
+                    "infPrice": null,
+                    "sourcePolicyContent": "{\"ptcSpBreakdowns\":[{\"passengerType\":\"ADT\",\"spTotals\":[{\"basePrice\":400,\"company\":\"在路上航空\",\"isDefaultFare\":true,\"poundage\":0,\"poundageUp\":0,\"proxyRate\":1.0,\"rebatePoint\":0,\"rebatePointUp\":0,\"resultFormulaId\":\"0\",\"settlementPrice\":396,\"settlementPriceUp\":396.00,\"spParts\":[],\"taxes\":4575,\"totalSettlementPrice\":4971,\"totalSettlementPriceUp\":4971.00}]},{\"passengerType\":\"CNN\",\"spTotals\":[{\"basePrice\":300,\"company\":\"在路上航空\",\"isDefaultFare\":true,\"poundage\":0,\"poundageUp\":0,\"proxyRate\":1.0,\"rebatePoint\":0,\"rebatePointUp\":0,\"resultFormulaId\":\"0\",\"settlementPrice\":297,\"settlementPriceUp\":297.00,\"spParts\":[],\"taxes\":4485,\"totalSettlementPrice\":4782,\"totalSettlementPriceUp\":4782.00}]}]}"
+                }
+            ],
+            "departHour": 0,
+            "rtDepartHour": 23,
+            "transfer": 2,
+            "journeyType": "RT",
+            "directFlightsOnly": "0",
+            "odlist": [
+                {
+                    "index": 1,
+                    "gdsRph": "010003",
+                    "departureAirport": "PEK",
+                    "dPortName": "首都国际机场",
+                    "arrivalAirport": "JFK",
+                    "aPortName": "肯尼迪国际机场",
+                    "departureTime": 1495469400000,
+                    "arriveTime": 1495493100000,
+                    "duration": "22:35",
+                    "transferTime": "1:20",
+                    "flightDetail": [
+                        {
+                            "rph": "01000301",
+                            "airline": "TK",
+                            "airlineName": "土耳其航空",
+                            "airFlightNo": "021",
+                            "airCarrierAline": null,
+                            "airCarrierName": null,
+                            "airCarrierFlight": null,
+                            "departureTime": 1495469400000,
+                            "arriveTime": 1495488300000,
+                            "week": null,
+                            "departureAirport": "PEK",
+                            "dPortName": "首都国际机场",
+                            "arriveAirport": "IST",
+                            "aPortName": "伊斯坦布尔机场",
+                            "tpm": "4386",
+                            "stop": "0",
+                            "stopInfoList": null,
+                            "plane": "77W",
+                            "meal": "M",
+                            "depTerm": "3",
+                            "arrTerm": "I",
+                            "classStr": "C:4,D:4,Z:4,K:4,J:4,R:1,Y:9,B:9,M:9,A:9,H:9,S:9,O:9,E:9,Q:9,T:9,L:9,V:9,P:9,W:9,U:9,N:9,I:4,X:9",
+                            "duration": "10小时15分钟",
+                            "codeshare": false
+                        },
+                        {
+                            "rph": "01000302",
+                            "airline": "TK",
+                            "airlineName": "土耳其航空",
+                            "airFlightNo": "003",
+                            "airCarrierAline": null,
+                            "airCarrierName": null,
+                            "airCarrierFlight": null,
+                            "departureTime": 1495493100000,
+                            "arriveTime": 1495507500000,
+                            "week": null,
+                            "departureAirport": "IST",
+                            "dPortName": "伊斯坦布尔机场",
+                            "arriveAirport": "JFK",
+                            "aPortName": "肯尼迪国际机场",
+                            "tpm": "5012",
+                            "stop": "0",
+                            "stopInfoList": null,
+                            "plane": "333",
+                            "meal": "M",
+                            "depTerm": "I",
+                            "arrTerm": "1",
+                            "classStr": "C:4,D:4,Z:4,K:4,J:4,R:1,Y:9,B:9,M:9,A:9,H:9,S:9,O:9,E:9,Q:9,T:9,L:9,V:9,P:9,W:9,U:9,N:9,I:4,X:9",
+                            "duration": "11小时",
+                            "codeshare": false
+                        }
+                    ]
+                },
+                {
+                    "index": 3,
+                    "gdsRph": "020003",
+                    "departureAirport": "JFK",
+                    "dPortName": "肯尼迪国际机场",
+                    "arrivalAirport": "PEK",
+                    "aPortName": "首都国际机场",
+                    "departureTime": 1495727700000,
+                    "arriveTime": 1495819500000,
+                    "duration": "27:30",
+                    "transferTime": "8:40",
+                    "flightDetail": [
+                        {
+                            "rph": "02000301",
+                            "airline": "TK",
+                            "airlineName": "土耳其航空",
+                            "airFlightNo": "012",
+                            "airCarrierAline": null,
+                            "airCarrierName": null,
+                            "airCarrierFlight": null,
+                            "departureTime": 1495727700000,
+                            "arriveTime": 1495788300000,
+                            "week": null,
+                            "departureAirport": "JFK",
+                            "dPortName": "肯尼迪国际机场",
+                            "arriveAirport": "IST",
+                            "aPortName": "伊斯坦布尔机场",
+                            "tpm": "5012",
+                            "stop": "0",
+                            "stopInfoList": null,
+                            "plane": "333",
+                            "meal": "M",
+                            "depTerm": "1",
+                            "arrTerm": "I",
+                            "classStr": "C:4,D:4,Z:4,K:4,J:2,Y:9,B:9,M:9,A:9,H:9,S:9,O:9,E:9,Q:9,T:9,L:9,V:3,X:9",
+                            "duration": "9小时50分钟",
+                            "codeshare": false
+                        },
+                        {
+                            "rph": "02000302",
+                            "airline": "TK",
+                            "airlineName": "土耳其航空",
+                            "airFlightNo": "020",
+                            "airCarrierAline": null,
+                            "airCarrierName": null,
+                            "airCarrierFlight": null,
+                            "departureTime": 1495819500000,
+                            "arriveTime": 1495869900000,
+                            "week": null,
+                            "departureAirport": "IST",
+                            "dPortName": "伊斯坦布尔机场",
+                            "arriveAirport": "PEK",
+                            "aPortName": "首都国际机场",
+                            "tpm": "4386",
+                            "stop": "0",
+                            "stopInfoList": null,
+                            "plane": "77W",
+                            "meal": "M",
+                            "depTerm": "I",
+                            "arrTerm": "3",
+                            "classStr": "C:4,D:4,Z:4,K:4,Y:9,B:9,M:9,A:9,H:9,S:9,O:9,E:9,Q:9,T:9,L:9,V:9,P:9,W:9,U:6,X:9",
+                            "duration": "9小时",
+                            "codeshare": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "index": 2,
+            "airlineSet": "国泰航空(CX);",
+            "transferCitySet": "香港;",
+            "fareList": [
+                {
+                    "physicalClassName": "经济舱",
+                    "baggagesRemark": [
+                        {
+                            "text": "第1段",
+                            "content": "北京-香港：成人:2件,儿童:2件"
+                        },
+                        {
+                            "text": "第2段",
+                            "content": "香港-纽约：成人:2件,儿童:2件"
+                        },
+                        {
+                            "text": "第3段",
+                            "content": "纽约-香港：成人:2件,儿童:2件"
+                        },
+                        {
+                            "text": "第4段",
+                            "content": "香港-北京：成人:2件,儿童:2件"
+                        }
+                    ],
+                    "classInfo": [
+                        {
+                            "depAirport": "PEK",
+                            "arriveAirport": "HKG",
+                            "cabin": "Q",
+                            "physicalClass": "ECONOMY",
+                            "physicalClassName": "经济舱",
+                            "cityName": "北京-香港"
+                        },
+                        {
+                            "depAirport": "HKG",
+                            "arriveAirport": "EWR",
+                            "cabin": "Q",
+                            "physicalClass": "ECONOMY",
+                            "physicalClassName": "经济舱",
+                            "cityName": "香港-纽约"
+                        },
+                        {
+                            "depAirport": "JFK",
+                            "arriveAirport": "HKG",
+                            "cabin": "Q",
+                            "physicalClass": "ECONOMY",
+                            "physicalClassName": "经济舱",
+                            "cityName": "纽约-香港"
+                        },
+                        {
+                            "depAirport": "HKG",
+                            "arriveAirport": "PEK",
+                            "cabin": "Q",
+                            "physicalClass": "ECONOMY",
+                            "physicalClassName": "经济舱",
+                            "cityName": "香港-北京"
+                        }
+                    ],
+                    "seats": "4",
+                    "ticketingCarrier": "CX",
+                    "connector": "=",
+                    "totalTicketPrice": 10450,
+                    "totalSettlementPrice": 10450,
+                    "totalSettlementPriceWithTax": 14215,
+                    "totalTax": 3765,
+                    "totalPassengerCount": 3,
+                    "adultPrice": {
+                        "ticketPrice": 3800,
+                        "settlementPrice": 3800,
+                        "tax": 1285,
+                        "qcharge": 0,
+                        "policyInfo": {
+                            "policyId": "",
+                            "formulaId": "0",
+                            "passgerType": "ADT",
+                            "adjustPrice": 3800,
+                            "ticketPrice": 3800,
+                            "qCharge": 0,
+                            "tax": 1285,
+                            "proxyRate": 0,
+                            "poundageUp": 0,
+                            "rebatePointUp": 0,
+                            "settlementPriceUp": 3800,
+                            "policyRemarkUp": "混舱跨季跨航线组合方式：无<br/>是否全程默认政策：是<br/>Q值金额(包含S值)：0.00<br/>Q值是否计奖：不计奖<br/>全程代理费：0.00<br/>全程税费：1285<br/>全程计奖价：3800<br/>全程后返：0.00<br/>全程手续费：0<br/>-----------------------------------------<br/>无备注信息",
+                            "poundageDown": 0,
+                            "rebatePointDown": 0,
+                            "settlementPriceDown": 3800,
+                            "policyRemarkDown": "混舱跨季跨航线组合方式：无<br/>是否全程默认政策：是<br/>Q值金额(包含S值)：0.00<br/>Q值是否计奖：不计奖<br/>全程代理费：0.00<br/>全程税费：1285<br/>全程计奖价：3800<br/>全程后返：0.00<br/>全程手续费：0<br/>-----------------------------------------<br/>无备注信息",
+                            "defaultPolicy": true
+                        },
+                        "passengerType": "ADT",
+                        "passengerCount": 2,
+                        "tktAirline": "CX",
+                        "ticketRuleRQ": {
+                            "journeyType": "RT",
+                            "tktRules": [
+                                {
+                                    "departureDate": 1495515600000,
+                                    "refOne": "GEPY01(USER(BJS,'1E',&lt;&gt;,Y,DEPT(&lt;&gt;,&lt;&gt;),&lt;&gt;,&lt;&gt;,&lt;&gt;),PF2(Y,[(AGENCY(PEK429),IATANUM('08317212'),N)],[],[],[],N,&lt;&gt;),&lt;&gt;)",
+                                    "refTwo": "864178DPANADTY0070000100ATP6YCAT/2578038278",
+                                    "tktAirline": "CX",
+                                    "arrivalAirport": "NYC",
+                                    "departureAirport": "BJS",
+                                    "fareReference": "Q6MCNT2"
+                                },
+                                {
+                                    "departureDate": 1495720500000,
+                                    "refOne": "GEPY01(USER(BJS,'1E',&lt;&gt;,Y,DEPT(&lt;&gt;,&lt;&gt;),&lt;&gt;,&lt;&gt;,&lt;&gt;),PF2(Y,[(AGENCY(PEK429),IATANUM('08317212'),N)],[],[],[],N,&lt;&gt;),&lt;&gt;)",
+                                    "refTwo": "864178DPANADTY0070000100ATP6YCAT/2578038278",
+                                    "tktAirline": "CX",
+                                    "arrivalAirport": "BJS",
+                                    "departureAirport": "NYC",
+                                    "fareReference": "Q6MCNT2"
+                                }
+                            ]
+                        },
+                        "baggages": [
+                            {
+                                "depAirport": "PEK",
+                                "arriveAirport": "HKG",
+                                "baggagePieces": "2",
+                                "baggageWeight": null,
+                                "baggageWeightUnit": null,
+                                "freeBaggage": "2件"
+                            },
+                            {
+                                "depAirport": "HKG",
+                                "arriveAirport": "EWR",
+                                "baggagePieces": "2",
+                                "baggageWeight": null,
+                                "baggageWeightUnit": null,
+                                "freeBaggage": "2件"
+                            },
+                            {
+                                "depAirport": "JFK",
+                                "arriveAirport": "HKG",
+                                "baggagePieces": "2",
+                                "baggageWeight": null,
+                                "baggageWeightUnit": null,
+                                "freeBaggage": "2件"
+                            },
+                            {
+                                "depAirport": "HKG",
+                                "arriveAirport": "PEK",
+                                "baggagePieces": "2",
+                                "baggageWeight": null,
+                                "baggageWeightUnit": null,
+                                "freeBaggage": "2件"
+                            }
+                        ],
+                        "fareBasesCode": "nullQ6MCNT2;Q6MCNT2;",
+                        "settlementPriceWithTax": 5085
+                    },
+                    "childPrice": {
+                        "ticketPrice": 2850,
+                        "settlementPrice": 2850,
+                        "tax": 1195,
+                        "qcharge": 0,
+                        "policyInfo": {
+                            "policyId": "",
+                            "formulaId": "0",
+                            "passgerType": "CNN",
+                            "adjustPrice": 2850,
+                            "ticketPrice": 2850,
+                            "qCharge": 0,
+                            "tax": 1195,
+                            "proxyRate": 0,
+                            "poundageUp": 0,
+                            "rebatePointUp": 0,
+                            "settlementPriceUp": 2850,
+                            "policyRemarkUp": "混舱跨季跨航线组合方式：无<br/>是否全程默认政策：是<br/>Q值金额(包含S值)：0.00<br/>Q值是否计奖：不计奖<br/>全程代理费：0.00<br/>全程税费：1195<br/>全程计奖价：2850<br/>全程后返：0.00<br/>全程手续费：0<br/>-----------------------------------------<br/>无备注信息",
+                            "poundageDown": 0,
+                            "rebatePointDown": 0,
+                            "settlementPriceDown": 2850,
+                            "policyRemarkDown": "混舱跨季跨航线组合方式：无<br/>是否全程默认政策：是<br/>Q值金额(包含S值)：0.00<br/>Q值是否计奖：不计奖<br/>全程代理费：0.00<br/>全程税费：1195<br/>全程计奖价：2850<br/>全程后返：0.00<br/>全程手续费：0<br/>-----------------------------------------<br/>无备注信息",
+                            "defaultPolicy": true
+                        },
+                        "passengerType": "CHD",
+                        "passengerCount": 1,
+                        "tktAirline": "CX",
+                        "ticketRuleRQ": {
+                            "journeyType": "RT",
+                            "tktRules": [
+                                {
+                                    "departureDate": 1495515600000,
+                                    "refOne": "GEPY01(USER(BJS,'1E',&lt;&gt;,Y,DEPT(&lt;&gt;,&lt;&gt;),&lt;&gt;,&lt;&gt;,&lt;&gt;),PF2(Y,[(AGENCY(PEK429),IATANUM('08317212'),N)],[],[],[],N,&lt;&gt;),&lt;&gt;)",
+                                    "refTwo": "864178DPANCNNY0070000100ATP6YCAT/1900078315/2578038278",
+                                    "tktAirline": "CX",
+                                    "arrivalAirport": "NYC",
+                                    "departureAirport": "BJS",
+                                    "fareReference": "Q6MCNT2"
+                                },
+                                {
+                                    "departureDate": 1495720500000,
+                                    "refOne": "GEPY01(USER(BJS,'1E',&lt;&gt;,Y,DEPT(&lt;&gt;,&lt;&gt;),&lt;&gt;,&lt;&gt;,&lt;&gt;),PF2(Y,[(AGENCY(PEK429),IATANUM('08317212'),N)],[],[],[],N,&lt;&gt;),&lt;&gt;)",
+                                    "refTwo": "864178DPANCNNY0070000100ATP6YCAT/1900078315/2578038278",
+                                    "tktAirline": "CX",
+                                    "arrivalAirport": "BJS",
+                                    "departureAirport": "NYC",
+                                    "fareReference": "Q6MCNT2"
+                                }
+                            ]
+                        },
+                        "baggages": [
+                            {
+                                "depAirport": "PEK",
+                                "arriveAirport": "HKG",
+                                "baggagePieces": "2",
+                                "baggageWeight": null,
+                                "baggageWeightUnit": null,
+                                "freeBaggage": "2件"
+                            },
+                            {
+                                "depAirport": "HKG",
+                                "arriveAirport": "EWR",
+                                "baggagePieces": "2",
+                                "baggageWeight": null,
+                                "baggageWeightUnit": null,
+                                "freeBaggage": "2件"
+                            },
+                            {
+                                "depAirport": "JFK",
+                                "arriveAirport": "HKG",
+                                "baggagePieces": "2",
+                                "baggageWeight": null,
+                                "baggageWeightUnit": null,
+                                "freeBaggage": "2件"
+                            },
+                            {
+                                "depAirport": "HKG",
+                                "arriveAirport": "PEK",
+                                "baggagePieces": "2",
+                                "baggageWeight": null,
+                                "baggageWeightUnit": null,
+                                "freeBaggage": "2件"
+                            }
+                        ],
+                        "fareBasesCode": "nullQ6MCNT2;Q6MCNT2;",
+                        "settlementPriceWithTax": 4045
+                    },
+                    "infPrice": null,
+                    "sourcePolicyContent": "{\"ptcSpBreakdowns\":[{\"passengerType\":\"ADT\",\"spTotals\":[{\"basePrice\":3800,\"company\":\"在路上航空\",\"isDefaultFare\":true,\"poundage\":0,\"poundageUp\":0,\"proxyRate\":0.0,\"rebatePoint\":0,\"rebatePointUp\":0,\"resultFormulaId\":\"0\",\"settlementPrice\":3800,\"settlementPriceUp\":3800.00,\"spParts\":[],\"taxes\":1285,\"totalSettlementPrice\":5085,\"totalSettlementPriceUp\":5085.00}]},{\"passengerType\":\"CNN\",\"spTotals\":[{\"basePrice\":2850,\"company\":\"在路上航空\",\"isDefaultFare\":true,\"poundage\":0,\"poundageUp\":0,\"proxyRate\":0.0,\"rebatePoint\":0,\"rebatePointUp\":0,\"resultFormulaId\":\"0\",\"settlementPrice\":2850,\"settlementPriceUp\":2850.00,\"spParts\":[],\"taxes\":1195,\"totalSettlementPrice\":4045,\"totalSettlementPriceUp\":4045.00}]}]}"
+                }
+            ],
+            "departHour": 13,
+            "rtDepartHour": 21,
+            "transfer": 2,
+            "journeyType": "RT",
+            "directFlightsOnly": "0",
+            "odlist": [
+                {
+                    "index": 1,
+                    "gdsRph": "010002",
+                    "departureAirport": "PEK",
+                    "dPortName": "首都国际机场",
+                    "arrivalAirport": "EWR",
+                    "aPortName": "纽瓦克国际机场",
+                    "departureTime": 1495515600000,
+                    "arriveTime": 1495532700000,
+                    "duration": "20:35",
+                    "transferTime": "1:20",
+                    "flightDetail": [
+                        {
+                            "rph": "01000201",
+                            "airline": "CX",
+                            "airlineName": "国泰航空",
+                            "airFlightNo": "6109",
+                            "airCarrierAline": "CA",
+                            "airCarrierName": null,
+                            "airCarrierFlight": "109",
+                            "departureTime": 1495515600000,
+                            "arriveTime": 1495527900000,
+                            "week": null,
+                            "departureAirport": "PEK",
+                            "dPortName": "首都国际机场",
+                            "arriveAirport": "HKG",
+                            "aPortName": "赤腊角国际机场",
+                            "tpm": "1239",
+                            "stop": "0",
+                            "stopInfoList": null,
+                            "plane": "33A",
+                            "meal": "",
+                            "depTerm": "T3",
+                            "arrTerm": "1",
+                            "classStr": "J:4,C:4,W:4,R:4,E:4,Y:4,B:4,H:4,K:4,M:4,L:4,V:4,S:4,N:4,Q:4,O:4",
+                            "duration": "3小时25分钟",
+                            "codeshare": true
+                        },
+                        {
+                            "rph": "01000202",
+                            "airline": "CX",
+                            "airlineName": "国泰航空",
+                            "airFlightNo": "890",
+                            "airCarrierAline": null,
+                            "airCarrierName": null,
+                            "airCarrierFlight": null,
+                            "departureTime": 1495532700000,
+                            "arriveTime": 1495546500000,
+                            "week": null,
+                            "departureAirport": "HKG",
+                            "dPortName": "赤腊角国际机场",
+                            "arriveAirport": "EWR",
+                            "aPortName": "纽瓦克国际机场",
+                            "tpm": "8041",
+                            "stop": "0",
+                            "stopInfoList": null,
+                            "plane": "77W",
+                            "meal": "B",
+                            "depTerm": "1",
+                            "arrTerm": "B",
+                            "classStr": "J:9,C:9,D:8,I:7,W:8,R:6,E:5,Y:9,B:9,H:9,K:9,M:9,L:9,V:9,G:9,S:9,N:9,Q:9,O:9",
+                            "duration": "15小时50分钟",
+                            "codeshare": false
+                        }
+                    ]
+                },
+                {
+                    "index": 3,
+                    "gdsRph": "020002",
+                    "departureAirport": "JFK",
+                    "dPortName": "肯尼迪国际机场",
+                    "arrivalAirport": "PEK",
+                    "aPortName": "首都国际机场",
+                    "departureTime": 1495720500000,
+                    "arriveTime": 1495846800000,
+                    "duration": "26:25",
+                    "transferTime": "2:45",
+                    "flightDetail": [
+                        {
+                            "rph": "02000201",
+                            "airline": "CX",
+                            "airlineName": "国泰航空",
+                            "airFlightNo": "889",
+                            "airCarrierAline": null,
+                            "airCarrierName": null,
+                            "airCarrierFlight": null,
+                            "departureTime": 1495720500000,
+                            "arriveTime": 1495836900000,
+                            "week": null,
+                            "departureAirport": "JFK",
+                            "dPortName": "肯尼迪国际机场",
+                            "arriveAirport": "HKG",
+                            "aPortName": "赤腊角国际机场",
+                            "tpm": "8041",
+                            "stop": "1",
+                            "stopInfoList": [
+                                {
+                                    "airport": "YVR",
+                                    "cityName": "温哥华",
+                                    "airportName": "温哥华国际机场",
+                                    "duration": "1:15"
+                                }
+                            ],
+                            "plane": "77W",
+                            "meal": "M",
+                            "depTerm": "",
+                            "arrTerm": "",
+                            "classStr": "F:2,A:2,J:9,C:9,D:8,I:9,W:9,R:9,E:9,Y:9,B:9,H:9,K:9,M:9,L:9,V:9,G:9,S:9,N:9,Q:9",
+                            "duration": "20小时20分钟",
+                            "codeshare": false
+                        },
+                        {
+                            "rph": "02000202",
+                            "airline": "CX",
+                            "airlineName": "国泰航空",
+                            "airFlightNo": "390",
+                            "airCarrierAline": null,
+                            "airCarrierName": null,
+                            "airCarrierFlight": null,
+                            "departureTime": 1495846800000,
+                            "arriveTime": 1495858800000,
+                            "week": null,
+                            "departureAirport": "HKG",
+                            "dPortName": "赤腊角国际机场",
+                            "arriveAirport": "PEK",
+                            "aPortName": "首都国际机场",
+                            "tpm": "1239",
+                            "stop": "0",
+                            "stopInfoList": null,
+                            "plane": "772",
+                            "meal": "B",
+                            "depTerm": "1",
+                            "arrTerm": "3",
+                            "classStr": "J:9,C:9,D:9,I:9,Y:9,B:9,H:9,K:9,M:9,L:9,V:9,G:9,S:9,N:9,Q:9,O:9",
+                            "duration": "3小时20分钟",
+                            "codeshare": false
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "airFlightSearchRQ": {
+        "carrier": null,
+        "avjourneys": null,
+        "office": "PEK429",
+        "isInternational": "1",
+        "clientType": 1,
+        "journeyType": "RT",
+        "oriCode": "BJS",
+        "desCode": "BJS",
+        "departureDate": "1494892800000",
+        "returnDate": "1495497600000",
+        "connectionCodes": null,
+        "returnConnections": null,
+        "directFlightsOnly": "0",
+        "passengerType": [
+            {
+                "passgerType": "ADT",
+                "passgerIdentity": "0",
+                "passgerNumber": 1
+            }
+        ],
+        "negotiatedFareCode": null,
+        "physicalCabin": "ECONOMY",
+        "flightSegments": null,
+        "channelInfo": {
+            "operator": "fjzl",
+            "channelName": "福建中旅",
+            "channelId": "17",
+            "operatorId": "22",
+            "operatorAccount": "fjzl"
+        }
+    },
+    "agencyType": 1
+}

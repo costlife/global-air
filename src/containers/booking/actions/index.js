@@ -1,15 +1,35 @@
+
+import fakeData from '../../../mock/RT.json';
+
 const HomeActions = {
-    initHome: (data) => (dispatch, getState) => {
+    initBooking: (data) => (dispatch, getState) => {
         dispatch({
-            type: 'HOME_INIT',
-            data: '2222'
+            type: 'BOOKING_INIT',
+            data: {
+                ticketList: fakeData
+            }
         });
     },
     checkDirectOnly: (data) => (dispatch, getState) => {
         dispatch({
             type: 'CHECK_DIRECT_ONLY',
+        });
+    },
+
+    selectTransferCity: (data) => (dispatch, getState) => {
+        dispatch({
+            type: 'SELECT_TRANSFER_CITY',
             data: {
-            	directOnly: true
+                city: data
+            }
+        });
+    },
+
+    departHourRange: (data) => (dispatch, getState) => {
+        dispatch({
+            type: 'DEPART_HOUR_FILTER',
+            data: {
+                departHourRange: data
             }
         });
     },
