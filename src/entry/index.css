@@ -1248,34 +1248,7 @@ a.Alink {
 	position: relative;
 	margin: 20px 0
 }
-.searchBar .bar {
-	position: absolute;
-	right: 10px;
-	top: 14px;
-	font-size: 0
-}
-.searchBar .bar a {
-	display: inline-block;
-	*display: inline;
-	zoom: 1;
-	border: 1px solid #ccc;
-	margin-left: -1px;
-	padding: 5px 15px;
-	font-size: 12px;
-	position: relative
-}
-.searchBar .bar a:hover {
-	border: 1px solid #2993d1;
-	color: #2993d1;
-	cursor: pointer;
-	z-index: 10
-}
-.searchBar .bar a.active {
-	background: #2993d1;
-	border: 1px solid #2993d1;
-	z-index: 10;
-	color: #fff
-}
+
 .searchBar .selectall {
 	// background: url(../imgs/ico/arrs.png) no-repeat right center;
 	cursor: pointer;

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import moment from 'moment';
 
 import Title from './Title.jsx';
+import Sorter from './Sorter.jsx';
+import FilterSelect from '../filter-select';
 
 import './index.less';
 
@@ -13,14 +15,45 @@ class Dialog extends Component {
         checkDirectOnly: React.PropTypes.func,
         selectTransferCity: React.PropTypes.func,
         departHourRange: React.PropTypes.func,
+        onSortChange: React.PropTypes.func,
     };
 
     static defaultProps = {
         airline: [{airlineName:'东方航空'}, {airlineName:'南方航空'}],
-        transferCity: ['上海','首尔', '东京'],
+        transferCity: [{
+            text: '上海',
+            value: '上海',
+            price: null,
+        },{
+            text: '首尔',
+            value: '首尔',
+            price: null,
+        },{
+            text: '东京',
+            value: '东京',
+            price: null,
+        }],
+        dateRangeData: [{
+            text: '上午(6-12点)',
+            value: '[6,12]',
+            price: null,
+        },{
+            text: '下午(12-18点)',
+            value: '[12,18]',
+            price: null,
+        },{
+            text: '晚上(18-24点)',
+            value: '[18,24]',
+            price: null,
+        },{
+            text: '凌晨(0-6点)',
+            value: '[0,6]',
+            price: null,
+        }],
         checkDirectOnly: () => {},
         selectTransferCity: () => {},
         departHourRange: () => {},
+        onSortChange: () => {},
     };
 
     /**
@@ -39,38 +72,14 @@ class Dialog extends Component {
         });
     }
 
-    renderAirline(airline) {
-        return (
-            <select>
-                {airline.map((item, i) => <option key={i} value={item.airlineName}>{item.airlineName}</option>)}
-            </select>
-        )
-    }
-
-    renderLaunch(departHourRange) {
-        return (
-            <select onChange={departHourRange}>
-                <option value="0">选择起飞时间</option>
-                <option value="[6,12]">上午(6-12点)</option>
-                <option value="[12,18]">下午(12-18点)</option>
-                <option value="[18,24]">晚上(18-24点)</option>
-                <option value="[18,24]">凌晨(0-6点)</option>
-            </select>
-        )
-    }
-
-    renderTransferCity(transferCity, selectTransferCity) {
-        return (
-            <select onChange={selectTransferCity}>
-                {transferCity.map((item, i) => <option key={i} value={item}>{item}</option>)}
-            </select>
-        )
+    onChangeSorter(value) {
+        this.props.onSortChange(value);
     }
 
     renderTable(data) {
         return (
             <div>
-                <table>
+                <table className="ticket-table">
                     <thead>
                         <tr>
                             {data.head.map((item, i) => <th key={i}>{item}</th>)}
@@ -91,7 +100,15 @@ class Dialog extends Component {
     }
 
     render() {
-        const { airline, transferCity, checkDirectOnly, selectTransferCity, departHourRange } = this.props;
+        const { 
+            airline, 
+            transferCity, 
+            checkDirectOnly, 
+            selectTransferCity, 
+            departHourRange,
+            rtDepartHourRange,
+            dateRangeData,
+        } = this.props;
         const { showTable } = this.state;
         const data = {
             head: ['厦门航空','东方航空','南方航空','吉祥航空'],
@@ -102,18 +119,19 @@ class Dialog extends Component {
             ]
         };
         return (
-            <div>
+            <div className="flight-filter">
                 <Title onOpen={this.toggleTable.bind(this)}/>
                 {showTable && this.renderTable(data)}
-                <div className="flight-filter">
-                    航空公司：{this.renderAirline(airline)}
-                    起飞时间：{this.renderLaunch(departHourRange)}
-                    回程起飞：{this.renderLaunch()}
-                    中转城市：{this.renderTransferCity(transferCity, selectTransferCity)}
+                <div className="filter">
+                    {/*{this.renderAirline(airline)}*/}
+                    <FilterSelect/>
+                    <FilterSelect label="起飞时间" data={dateRangeData} onChange={departHourRange}/>
+                    <FilterSelect label="返程时间" data={dateRangeData} onChange={rtDepartHourRange}/>
+                    <FilterSelect label="中转城市" data={transferCity} onChange={selectTransferCity}/>
                     <input type="checkbox" onClick={checkDirectOnly}/>仅看直飞
-
-                    <span className="tax-filter">
-                        <a>不含税价</a>
+                    <Sorter onChange={this.onChangeSorter.bind(this)}/>
+                    <span className="bar tax-filter">
+                        <a className="active">不含税价</a>
                         <a>含税价</a>
                     </span>
                 </div>

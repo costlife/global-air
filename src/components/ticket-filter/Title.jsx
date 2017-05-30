@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 
-import './index.less';
-
 class Dialog extends Component {
 
     static propTypes = {

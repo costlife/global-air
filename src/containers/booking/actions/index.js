@@ -33,6 +33,25 @@ const HomeActions = {
             }
         });
     },
+
+    rtDepartHourRange: (data) => (dispatch, getState) => {
+        dispatch({
+            type: 'RTDEPART_HOUR_FILTER',
+            data: {
+                rtDepartHourRange: data
+            }
+        });
+    },
+
+    sortChange: (data) => (dispatch, getState) => {
+        dispatch({
+            type: 'SORT_CHANGE',
+            data: {
+                sort: data
+            }
+        });
+    },
+
 };
 
 export default HomeActions;

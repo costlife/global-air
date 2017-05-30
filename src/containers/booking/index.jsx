@@ -56,6 +56,14 @@ class Home extends Component {
     departHourRange(e) {
         this.props.actions.departHourRange(e.target.value);
     }
+
+    rtDepartHourRange(e) {
+        this.props.actions.departHourRange(e.target.value);
+    }
+
+    onSortChange(value) {
+        this.props.actions.sortChange(value);
+    }
     /**
      * 渲染index 入口
      * @return {React.DOM}
@@ -73,6 +81,8 @@ class Home extends Component {
                     checkDirectOnly={this.checkDirectOnly.bind(this)}
                     selectTransferCity={this.selectTransferCity.bind(this)}
                     departHourRange={this.departHourRange.bind(this)}
+                    rtDepartHourRange={this.rtDepartHourRange.bind(this)}
+                    onSortChange={this.onSortChange.bind(this)}
                 />
                 {this.getTicketList(ticketList, total, current, size)}
                 <Pagination total={Math.ceil(total / size)} current={current} onPageChange={this.onPageChange.bind(this)}/>

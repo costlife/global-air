@@ -19,6 +19,7 @@ import Booking from '../containers/booking';
 
 /* router end */
 
+import 'font-awesome/css/font-awesome.css';
 import './index.css';
 /*
 @Des:获取store
