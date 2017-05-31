@@ -13,12 +13,12 @@ class Dialog extends Component {
             {
                 text: '起飞时间',
                 value: 'departHour'
-            }, 
+            },
 
             {
                 text: '抵达时间',
                 value: 'rtDepartHour'
-            }, 
+            },
             {
                 text: '耗时',
                 value: 'duration'
@@ -29,6 +29,7 @@ class Dialog extends Component {
             }
         ],
         active: 0,
+        desc: true,
         onChange: React.PropTypes.func,
     };
 
@@ -40,23 +41,36 @@ class Dialog extends Component {
         this.state = this.props;
     }
 
-    onChangeSorter(index) {
+    onChangeSorter(index, curActive) {
+        let desc = index == curActive ? !this.state.desc: true;
         this.setState({
-            active: index
+            active: index,
+            desc: desc
         });
-        this.props.onChange(this.state.sorter[index]);
+        let sort = this.state.sorter[index];
+        sort.desc = desc;
+        this.props.onChange(sort);
     }
 
     render() {
-        const { sorter, active, onChange } = this.state;
-        
+        const { sorter, active, onChange, desc } = this.state;
+
         return (
             <div className="bar">
                 {sorter.map((item, i) => {
+                    let isCurrent = i == active;
                     let className = classNames({
-                        active: i == active
+                        active: isCurrent
                     });
-                    return <a key={i} onClick={this.onChangeSorter.bind(this, i)} className={className}>{item.text}</a>
+                    let iconClass = classNames({
+                        'fa': true,
+                        'fa-angle-down': desc,
+                        'fa-angle-up': !desc,
+                    })
+                    return <a key={i} onClick={this.onChangeSorter.bind(this, i, active)} className={className}>
+                        {item.text}
+                        {isCurrent && <i className={iconClass} aria-hidden="true"></i>}
+                    </a>
                 })}
             </div>
         );

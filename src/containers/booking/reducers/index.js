@@ -22,6 +22,10 @@ export default function ( state = {}, { type, data } ) {
             paramsFilter.transferCity = data.city;
             return newState(state, paramsFilter);
 
+        case 'SELECT_AIRLINE':
+            paramsFilter.airline = data.airline;
+            return newState(state, paramsFilter);
+
         case 'DEPART_HOUR_FILTER':
             paramsFilter.departHourRange = data.departHourRange;
             return newState(state, paramsFilter);
@@ -29,7 +33,7 @@ export default function ( state = {}, { type, data } ) {
         case 'RTDEPART_HOUR_FILTER':
             paramsFilter.rtDepartHourRange = data.rtDepartHourRange;
             return newState(state, paramsFilter);
-            
+
         case 'SORT_CHANGE':
             paramsFilter.sort = data.sort;
             return newState(state, paramsFilter);

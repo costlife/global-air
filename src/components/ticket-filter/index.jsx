@@ -13,26 +13,14 @@ class Dialog extends Component {
         airline: React.PropTypes.array,
         transferCity: React.PropTypes.array,
         checkDirectOnly: React.PropTypes.func,
-        selectTransferCity: React.PropTypes.func,
+        transferCityChange: React.PropTypes.func,
         departHourRange: React.PropTypes.func,
         onSortChange: React.PropTypes.func,
     };
 
     static defaultProps = {
-        airline: [{airlineName:'东方航空'}, {airlineName:'南方航空'}],
-        transferCity: [{
-            text: '上海',
-            value: '上海',
-            price: null,
-        },{
-            text: '首尔',
-            value: '首尔',
-            price: null,
-        },{
-            text: '东京',
-            value: '东京',
-            price: null,
-        }],
+        airline: [],
+        transferCity: [],
         dateRangeData: [{
             text: '上午(6-12点)',
             value: '[6,12]',
@@ -51,7 +39,7 @@ class Dialog extends Component {
             price: null,
         }],
         checkDirectOnly: () => {},
-        selectTransferCity: () => {},
+        transferCityChange: () => {},
         departHourRange: () => {},
         onSortChange: () => {},
     };
@@ -76,20 +64,33 @@ class Dialog extends Component {
         this.props.onSortChange(value);
     }
 
-    renderTable(data) {
+    getMinPrice(arr) {
+        arr = arr.filter(item => item != null);
+        return Math.min.apply(this, arr);
+    }
+
+    renderTable(priceTable) {
+        console.log(priceTable)
+        let head = [], body = [[], [], []];
+        priceTable.map(item => {
+            head.push(item.airlineName);
+            body[0].push(item.lp);
+            body[1].push(item.lpo);
+            body[2].push(item.lpt);
+        });
         return (
             <div>
                 <table className="ticket-table">
                     <thead>
                         <tr>
-                            {data.head.map((item, i) => <th key={i}>{item}</th>)}
+                            {head.map((item, i) => <th key={i}>{item}</th>)}
                         </tr>
                     </thead>
                     <tbody>
-                        {data.body.map((item, i) =>
+                        {body.map((item, i) =>
                             <tr key={i}>
                                 {item.map((data, i) =>
-                                    <td key={i}>{data}</td>
+                                    <td key={i}>{data || '-'}</td>
                                 )}
                             </tr>
                         )}
@@ -100,34 +101,33 @@ class Dialog extends Component {
     }
 
     render() {
-        const { 
-            airline, 
-            transferCity, 
-            checkDirectOnly, 
-            selectTransferCity, 
+        const {
+            airline,
+            airlineChange,
+            transferCity,
+            transferCityChange,
+            checkDirectOnly,
             departHourRange,
             rtDepartHourRange,
             dateRangeData,
         } = this.props;
         const { showTable } = this.state;
-        const data = {
-            head: ['厦门航空','东方航空','南方航空','吉祥航空'],
-            body: [
-                ['2000', '-', '-', '-'],
-                ['2000', '-', '-', '1000'],
-                ['2000', '-', '3000', '-']
-            ]
-        };
         return (
             <div className="flight-filter">
                 <Title onOpen={this.toggleTable.bind(this)}/>
-                {showTable && this.renderTable(data)}
+                {showTable && this.renderTable(airline)}
                 <div className="filter">
-                    {/*{this.renderAirline(airline)}*/}
-                    <FilterSelect/>
+                    <FilterSelect
+                        label="航空公司"
+                        data={airline.map(item => { return {
+                            text: item.airlineName,
+                            value: item.airlineName,
+                            price: this.getMinPrice([item.lp, item.lpo, item.lpt])
+                        }})}
+                        onChange={airlineChange}/>
                     <FilterSelect label="起飞时间" data={dateRangeData} onChange={departHourRange}/>
                     <FilterSelect label="返程时间" data={dateRangeData} onChange={rtDepartHourRange}/>
-                    <FilterSelect label="中转城市" data={transferCity} onChange={selectTransferCity}/>
+                    <FilterSelect label="中转城市" data={transferCity.map(item => { return { text: item, value: item, price: null }})} onChange={transferCityChange}/>
                     <input type="checkbox" onClick={checkDirectOnly}/>仅看直飞
                     <Sorter onChange={this.onChangeSorter.bind(this)}/>
                     <span className="bar tax-filter">

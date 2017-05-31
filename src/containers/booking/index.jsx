@@ -49,16 +49,20 @@ class Home extends Component {
         this.props.actions.checkDirectOnly();
     }
 
-    selectTransferCity(e) {
-        this.props.actions.selectTransferCity(e.target.value);
+    airlineChange(data) {
+        this.props.actions.airlineChange(data);
     }
 
-    departHourRange(e) {
-        this.props.actions.departHourRange(e.target.value);
+    transferCityChange(data) {
+        this.props.actions.transferCityChange(data);
     }
 
-    rtDepartHourRange(e) {
-        this.props.actions.departHourRange(e.target.value);
+    departHourRange(data) {
+        this.props.actions.departHourRange(data);
+    }
+
+    rtDepartHourRange(data) {
+        this.props.actions.rtDepartHourRange(data);
     }
 
     onSortChange(value) {
@@ -72,16 +76,18 @@ class Home extends Component {
         const { ticketList } = this.props.booking;
         const { current, size } = this.state;
         const total = ticketList.avFlightList.length;
-        console.log(ticketList)
         return (
             <div className="global-air">
                 <div style={{marginTop: '20px'}}>
                 </div>
                 <TicketFilter
-                    checkDirectOnly={this.checkDirectOnly.bind(this)}
-                    selectTransferCity={this.selectTransferCity.bind(this)}
+                    airline={ticketList.priceTable}
+                    airlineChange={this.airlineChange.bind(this)}
+                    transferCity={ticketList.transferCity}
+                    transferCityChange={this.transferCityChange.bind(this)}
                     departHourRange={this.departHourRange.bind(this)}
                     rtDepartHourRange={this.rtDepartHourRange.bind(this)}
+                    checkDirectOnly={this.checkDirectOnly.bind(this)}
                     onSortChange={this.onSortChange.bind(this)}
                 />
                 {this.getTicketList(ticketList, total, current, size)}

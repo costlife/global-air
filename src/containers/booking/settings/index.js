@@ -6,8 +6,8 @@ export default {
     paramsFilter: {
         isDirect: false,
         sort: {
-        	text: '起飞时间',
-        	value: 'departHour'
+            text: '起飞时间',
+            value: 'departHour'
         }
     }
 }

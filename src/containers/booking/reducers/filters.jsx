@@ -9,12 +9,16 @@ function filterTickets(ticketListStorage, paramsFilter) {
         newAvFlightList = transferFilter(newAvFlightList, paramsFilter.transferCity);
     }
 
+    if (paramsFilter.airline) {
+        newAvFlightList = airlineFilter(newAvFlightList, paramsFilter.airline);
+    }
+
     if (paramsFilter.departHourRange) {
         newAvFlightList = departHourFilter(newAvFlightList, paramsFilter.departHourRange);
     }
 
     if (paramsFilter.rtDepartHourRange) {
-        newAvFlightList = departHourFilter(newAvFlightList, paramsFilter.rtDepartHourRange);
+        newAvFlightList = rtDepartHourFilter(newAvFlightList, paramsFilter.rtDepartHourRange);
     }
 
     if (paramsFilter.sort) {
@@ -37,52 +41,95 @@ function directFilter(flightList) {
 
 function transferFilter(flightList, transferCity) {
     let nextFlightList = [];
-    flightList.map((flight) => {
-        if (flight.transferCitySet.indexOf(transferCity) >= 0){
-            nextFlightList.push(flight);
-        }
-    });
+    if (transferCity.length > 0) {
+        flightList.map((flight) => {
+            if (transferCity.indexOf(flight.transferCitySet.split(';')[0]) >= 0){
+                nextFlightList.push(flight);
+            }
+        });
+    } else {
+        nextFlightList = flightList;
+    }
+
+    return nextFlightList;
+}
+
+function airlineFilter(flightList, airline) {
+    let nextFlightList = [];
+    if (airline.length > 0) {
+        flightList.map((flight) => {
+            for (let i = 0; i < airline.length; i++) {
+                if (flight.airlineSet.indexOf(airline[i]) >= 0) {
+                    nextFlightList.push(flight);
+                    break;
+                }
+            }
+        });
+    } else {
+        nextFlightList = flightList;
+    }
+
     return nextFlightList;
 }
 
 function departHourFilter(flightList, departHourRange) {
     let nextFlightList = [];
-    let depart = JSON.parse(departHourRange);
-    flightList.map((flight) => {
-        if (flight.departHour < depart[1] && flight.departHour > depart[0]){
-            nextFlightList.push(flight);
-        }
-    });
+    departHourRange = departHourRange.map(item => JSON.parse(item));
+    if (departHourRange.length > 0) {
+        flightList.map((flight) => {
+            departHourRange.map((depart) => {
+                if (flight.departHour < depart[1] && flight.departHour > depart[0]){
+                    nextFlightList.push(flight);
+                }
+            })
+        });
+    } else {
+        nextFlightList = flightList;
+    }
+
     return nextFlightList;
 }
 
 function rtDepartHourFilter(flightList, rtDepartHourRange) {
     let nextFlightList = [];
-    let depart = JSON.parse(rtDepartHourRange);
-    flightList.map((flight) => {
-        if (flight.rtDepartHour < depart[1] && flight.rtDepartHour > depart[0]){
-            nextFlightList.push(flight);
-        }
-    });
+    rtDepartHourRange = rtDepartHourRange.map(item => JSON.parse(item));
+    if (rtDepartHourRange.length > 0) {
+        flightList.map((flight) => {
+            rtDepartHourRange.map((depart) => {
+                if (flight.rtDepartHour < depart[1] && flight.rtDepartHour > depart[0]){
+                    nextFlightList.push(flight);
+                }
+            })
+        });
+    } else {
+        nextFlightList = flightList;
+    }
+
     return nextFlightList;
 }
 
 function sortFilter(flightList, sort) {
+    console.log(sort)
+
     flightList.sort((a, b) => {
         switch(sort.value) {
             case 'departHour':
-                return a.departHour - b.departHour;
+                return desc(sort.desc, a.departHour, b.departHour);
             case 'rtDepartHour':
-                return a.rtDepartHour - b.rtDepartHour;
+                return desc(sort.desc, a.rtDepartHour, b.rtDepartHour);
             case 'duration':
-                return (a.rtDepartHour - a.departHour) - (b.rtDepartHour - b.departHour);
+                return desc(sort.desc, a.rtDepartHour - a.departHour, b.rtDepartHour - b.departHour);
             case 'price':
-                return a.totalPrice - b.totalPrice;
+                return desc(sort.desc, a.avgSettlementPriceWithTax, b.avgSettlementPriceWithTax);
             default:
                 return;
         }
     });
     return flightList;
+}
+
+function desc(desc, a, b) {
+    return desc ? b - a : a - b;
 }
 
 export default filterTickets

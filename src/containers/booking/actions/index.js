@@ -16,7 +16,16 @@ const HomeActions = {
         });
     },
 
-    selectTransferCity: (data) => (dispatch, getState) => {
+    airlineChange: (data) => (dispatch, getState) => {
+        dispatch({
+            type: 'SELECT_AIRLINE',
+            data: {
+                airline: data
+            }
+        });
+    },
+
+    transferCityChange: (data) => (dispatch, getState) => {
         dispatch({
             type: 'SELECT_TRANSFER_CITY',
             data: {
