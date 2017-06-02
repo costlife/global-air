@@ -1,0 +1,143 @@
+.city-suggest {
+    position: absolute;
+    z-index: 10;
+    .address_hot {
+        background-color: #FFFFFF;
+        font-size: 12px;
+        width: 332px;
+        padding-top: 5px;
+        border: 1px solid #999;
+        position: static
+    }
+
+    .address_hotcity_fd {
+        color: #999;
+        margin-bottom: 10px;
+    }
+
+    .address_hotcity_fd .close {
+        float: right;
+        width: 20px;
+        height: 20px;
+        margin-top: 3px;
+        text-align: center;
+        font: bold 16px/20px Simsun;
+        text-decoration: none;
+        color: #666;
+    }
+
+    .address_hotlist {
+        overflow: hidden;
+    }
+
+    .address_hot li,
+      .address_hot_abb,
+      .address_hot_adress {
+        list-style: none outside none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .address_hot_abb {
+        width: 100%;
+        height: 22px;
+        margin-bottom: 2px;
+        margin-top: 0;
+        border-bottom: 2px solid #ccc;
+    }
+
+    .address_hot_abb li {
+        position: relative;
+        float: left;
+        display: inline;
+        margin-right: 2px;
+        line-height: 22px;
+        cursor: pointer;
+        margin-bottom: -2px;
+    }
+
+    .address_hot_abb li span {
+        padding: 0 8px;
+        font-family: Verdana;
+    }
+
+    .address_hot_abb li .hot_selected {
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 2px solid #06c;
+        font-weight: bold;
+        color: #06c;
+        height: 22px;
+        display: inline-block;
+    }
+
+    ul.address_hot_adress {
+        padding-top: 4px;
+    }
+
+    dl.address_hot_adress {
+        padding-left: 30px;
+        padding-top: 4px;
+        clear: both;
+    }
+
+    .address_hot_adress li {
+        float: left;
+        height: 24px;
+        overflow: hidden;
+        width: 67px;
+        padding-right: 2px;
+    }
+
+    .address_hot_adress li a {
+        color: #000;
+        display: block;
+        height: 22px;
+        line-height: 22px;
+        padding-left: 8px;
+    }
+
+    .address_hot_adress li a:hover {
+        background-color: #2577E3;
+        color: #FFF;
+        text-decoration: none;
+    }
+
+    .address_hot_adress a {
+        text-decoration: none;
+    }
+
+    .address_hot_adress dt {
+        float: left;
+        _display: inline;
+        width: 20px;
+        margin-left: -25px;
+        text-align: center;
+        font-family: Verdana;
+        color: #E56700;
+        line-height: 22px;
+    }
+
+    .address_hot_adress dd {
+        overflow: hidden;
+        *zoom: 1;
+    }
+
+    .address_hot_adress dd a {
+        width: 52px;
+        padding-left: 8px;
+        height: 22px;
+        float: left;
+        color: #000;
+        line-height: 22px;
+        overflow: hidden;
+        margin: 0 2px 2px 0;
+    }
+
+    .address_hot_adress dd a:hover {
+        background-color: #2577E3;
+        color: #FFF;
+        text-decoration: none;
+    }
+}

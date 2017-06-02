@@ -6,6 +6,7 @@ import './index.less';
 import $ from 'jquery';
 
 
+import Search from '../../partials/search';
 import TicketCard from '../../components/ticket-card';
 import Pagination from '../../components/pagination';
 import TicketFilter from '../../components/ticket-filter';
@@ -22,10 +23,14 @@ class Home extends Component {
         this.state = {
             current: 1,
             size: 5,
+            showResult: false
         }
     }
 
     initBooking() {
+        this.setState({
+            showResult: true
+        });
         this.props.actions.initBooking();
     }
 
@@ -74,25 +79,29 @@ class Home extends Component {
      */
     render() {
         const { ticketList } = this.props.booking;
-        const { current, size } = this.state;
+        const { current, size, showResult } = this.state;
         const total = ticketList.avFlightList.length;
         return (
             <div className="global-air">
                 <div style={{marginTop: '20px'}}>
                 </div>
-                <TicketFilter
-                    airline={ticketList.priceTable}
-                    airlineChange={this.airlineChange.bind(this)}
-                    transferCity={ticketList.transferCity}
-                    transferCityChange={this.transferCityChange.bind(this)}
-                    departHourRange={this.departHourRange.bind(this)}
-                    rtDepartHourRange={this.rtDepartHourRange.bind(this)}
-                    checkDirectOnly={this.checkDirectOnly.bind(this)}
-                    onSortChange={this.onSortChange.bind(this)}
-                />
-                {this.getTicketList(ticketList, total, current, size)}
-                <Pagination total={Math.ceil(total / size)} current={current} onPageChange={this.onPageChange.bind(this)}/>
-                <button onClick={()=>this.initBooking()}>Click Me!</button>
+                <Search onSearch={()=>this.initBooking()}/>
+                {showResult &&
+                    <div>
+                        <TicketFilter
+                            airline={ticketList.priceTable}
+                            airlineChange={this.airlineChange.bind(this)}
+                            transferCity={ticketList.transferCity}
+                            transferCityChange={this.transferCityChange.bind(this)}
+                            departHourRange={this.departHourRange.bind(this)}
+                            rtDepartHourRange={this.rtDepartHourRange.bind(this)}
+                            checkDirectOnly={this.checkDirectOnly.bind(this)}
+                            onSortChange={this.onSortChange.bind(this)}
+                        />
+                        {this.getTicketList(ticketList, total, current, size)}
+                        <Pagination total={Math.ceil(total / size)} current={current} onPageChange={this.onPageChange.bind(this)}/>
+                    </div>
+                }
             </div>
         )
     }
