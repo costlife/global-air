@@ -1,0 +1,101 @@
+.city-choose {
+    position: absolute;
+    z-index: 10;
+
+    .c_address_box {
+        padding: 10px;
+        width: 408px;
+        border: 1px solid #999;
+        background-color: #fff;
+    }
+
+    .c_address_box .close {
+        float: right;
+        width: 20px;
+        height: 20px;
+        color: #666;
+        text-align: center;
+        font: bold 16px / 20px Simsun;
+    }
+
+    .c_address_box .close:hover {
+        color: #FFA800;
+        text-decoration: none;
+    }
+
+    .c_address_box .c_address_ol {
+        margin-top: 0;
+        margin-bottom: 6px;
+        padding-bottom: 22px;
+        width: 100%;
+        height: 22px;
+        border-bottom: 2px solid #ccc;
+    }
+
+    .c_address_box .c_address_ol li {
+        position: relative;
+        display: inline;
+        float: left;
+        margin-right: 2px;
+        line-height: 22px;
+        cursor: pointer;
+    }
+
+    .c_address_box .c_address_ol li span {
+        white-space: nowrap;
+        display: block;
+        padding: 0 8px;
+    }
+
+    .c_address_box .c_address_ol .hot_selected {
+        display: block;
+        padding: 0 7px;
+        margin-bottom: -2px;
+        border-bottom: 2px solid #06c;
+        color: #06c;
+        font-weight: bold;
+    }
+
+    .c_address_box .c_address_ul {
+        display: inline-block;
+        overflow: hidden;
+        *zoom: 1;
+    }
+
+    .c_address_box .c_address_ul li {
+        float: left;
+        height: 22px;
+        overflow: hidden;
+        width: 92px;
+    }
+
+    .c_address_box .c_address_ul a {
+        display: block;
+        overflow: hidden;
+        margin: 0 2px 2px 0;
+        padding-left: 5px;
+        height: 22px;
+        color: #333;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        line-height: 22px;
+    }
+
+    .c_address_box .c_address_ul a:hover {
+        background-color: #2577E3;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .c_address_hd,
+    .c_address_hd_error {
+        margin-bottom: 10px;
+        color: #999;
+    }
+
+    .c_address_select .c_address_hd,
+    .c_address_select .c_address_hd_error {
+        padding: 5px 10px;
+    }
+
+}

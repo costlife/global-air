@@ -22,43 +22,9 @@ class FlightSearch extends Component {
      */
     constructor(props) {
         super(props);
-        this.state = {
-            showFrom: false,
-            showTo: false,
-        };
-    }
-
-    componentDidMount() {
-        $(document.body).on('click', (e) => {
-            if ($(e.target).parents('.search-city').length == 0) {
-                this.hideCityFrom()
-                this.hideCityTo();
-            }
-        });
-    }
-
-    componentWillUnmount() {
-        $(document.body).off('click');
-    }
-
-    showCityFrom() {
-        this.setState({showFrom: true, showTo: false});
-    }
-
-    hideCityFrom() {
-        this.setState({showFrom: false});
-    }
-
-    showCityTo() {
-        this.setState({showTo: true, showFrom: false});
-    }
-
-    hideCityTo() {
-        this.setState({showTo: false});
     }
 
     render() {
-        const { showFrom, showTo } = this.state;
         const { onSearch } = this.props;
         return (
             <div className="flyHead">
@@ -72,11 +38,8 @@ class FlightSearch extends Component {
                         <div>
                             <div className="searchForms">
                                 <div className="formline search-city">
-                                    <i>出发地</i><input type="text" className="loacal" placeholder="支持中文/拼音/英文/三字码" onFocus={this.showCityFrom.bind(this)}/>
-                                    {showFrom &&<CitySuggest
-                                        onChangeCategory={this.showCityFrom.bind(this)}
-                                        onChangeCity={this.showCityFrom.bind(this)}
-                                    />}
+                                    <i>出发地</i>
+                                    <CitySuggest />
                                     <div className="toggle">换</div>
                                 </div>
                                 <div className="formline">
@@ -87,11 +50,8 @@ class FlightSearch extends Component {
                                         onChange={this.handleChange} />
                                 </div>
                                 <div className="formline search-city">
-                                    <i>到达地</i><input type="text" className="loacal" placeholder="支持中文/拼音/英文/三字码" onFocus={this.showCityTo.bind(this)}/>
-                                    {showTo &&<CitySuggest
-                                        onChangeCategory={this.showCityTo.bind(this)}
-                                        onChangeCity={this.showCityTo.bind(this)}
-                                    />}
+                                    <i>到达地</i>
+                                    <CitySuggest />
                                     <s className="ico-time"></s>
                                 </div>
                                 <div className="formline">

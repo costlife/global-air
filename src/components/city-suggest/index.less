@@ -1,143 +1,145 @@
 .city-suggest {
-    position: absolute;
-    z-index: 10;
-    .address_hot {
-        background-color: #FFFFFF;
+    position: relative;
+    .poi_suggest {
+        font-family: Tahoma, Arial, sans-serif;
+        width: auto;
+        position: absolute;
+        left: 0;
+        top: 30px;
+        *top: 30px;
+        zoom: 1;
         font-size: 12px;
-        width: 332px;
-        padding-top: 5px;
         border: 1px solid #999;
-        position: static
+        background-color: #fff;
+        z-index: 10;
     }
 
-    .address_hotcity_fd {
-        color: #999;
-        margin-bottom: 10px;
+    .poi_suggest tbody,
+    .poi_suggest tr,
+    .poi_suggest td {
+        display: block
     }
 
-    .address_hotcity_fd .close {
-        float: right;
-        width: 20px;
-        height: 20px;
-        margin-top: 3px;
-        text-align: center;
-        font: bold 16px/20px Simsun;
-        text-decoration: none;
-        color: #666;
+    .poi_suggest table {
+        width: 300px
     }
 
-    .address_hotlist {
-        overflow: hidden;
-    }
-
-    .address_hot li,
-      .address_hot_abb,
-      .address_hot_adress {
-        list-style: none outside none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .address_hot_abb {
-        width: 100%;
-        height: 22px;
-        margin-bottom: 2px;
-        margin-top: 0;
-        border-bottom: 2px solid #ccc;
-    }
-
-    .address_hot_abb li {
-        position: relative;
-        float: left;
-        display: inline;
-        margin-right: 2px;
-        line-height: 22px;
+    .poi_suggest td {
+        padding: 6px 30px 6px 10px;
+        text-align: left;
+        white-space: nowrap;
         cursor: pointer;
-        margin-bottom: -2px;
+        background-color: #fff;
+        color: #545454
     }
 
-    .address_hot_abb li span {
-        padding: 0 8px;
-        font-family: Verdana;
+    .poi_suggest th {
+        padding: 6px 30px 6px 10px;
+        font-weight: normal;
+        background-color: #fff;
+        color: #545454;
+        text-align: left
     }
 
-    .address_hot_abb li .hot_selected {
-        border-top: 0;
-        border-left: 0;
-        border-right: 0;
-        border-bottom: 2px solid #06c;
-        font-weight: bold;
-        color: #06c;
-        height: 22px;
-        display: inline-block;
+    .poi_suggest th b {
+        color: #2577e3
     }
 
-    ul.address_hot_adress {
-        padding-top: 4px;
+    .poi_suggest th.error {
+        color: #c01111
     }
 
-    dl.address_hot_adress {
-        padding-left: 30px;
-        padding-top: 4px;
-        clear: both;
+    .poi_suggest td b {
+        color: #06c
     }
 
-    .address_hot_adress li {
-        float: left;
-        height: 24px;
-        overflow: hidden;
-        width: 67px;
-        padding-right: 2px;
+    .poi_suggest .active td {
+        background-color: #2577e3;
+        color: #fff
     }
 
-    .address_hot_adress li a {
-        color: #000;
-        display: block;
-        height: 22px;
-        line-height: 22px;
-        padding-left: 8px;
+    .poi_suggest .active td b {
+        color: #fff
     }
 
-    .address_hot_adress li a:hover {
-        background-color: #2577E3;
-        color: #FFF;
-        text-decoration: none;
+    .poi_suggest .airport_nearby {
+        background-image: url(http://pic.c-ctrip.com/fltdomestic111027/icon_search_pop.png);
+        background-repeat: no-repeat;
+        background-position: 12px -344px;
+        *background-position: 12px -346px;
+        color: #000
     }
 
-    .address_hot_adress a {
-        text-decoration: none;
+    .poi_suggest .airport_nearby {
+        padding-left: 30px
     }
 
-    .address_hot_adress dt {
-        float: left;
-        _display: inline;
-        width: 20px;
-        margin-left: -25px;
-        text-align: center;
-        font-family: Verdana;
-        color: #E56700;
-        line-height: 22px;
+    .poi_suggest .active .airport_nearby {
+        background-position: 12px -379px;
+        *background-position: 12px -381px;
+        color: #fff
     }
 
-    .address_hot_adress dd {
-        overflow: hidden;
-        *zoom: 1;
+    .poi_suggest .icon_city,
+    .poi_suggest .icon_airport,
+    .poi_suggest .icon_scenic,
+    .poi_suggest .icon_province,
+    .poi_suggest .icon_country {
+        background-image: url(http://pic.c-ctrip.com/fltdomestic111027/icon_search_pop.png);
+        background-repeat: no-repeat;
+        border-top: 1px solid #ccc
     }
 
-    .address_hot_adress dd a {
-        width: 52px;
-        padding-left: 8px;
-        height: 22px;
-        float: left;
-        color: #000;
-        line-height: 22px;
-        overflow: hidden;
-        margin: 0 2px 2px 0;
+    .poi_suggest .item_first {
+        border-top: 0
     }
 
-    .address_hot_adress dd a:hover {
-        background-color: #2577E3;
-        color: #FFF;
-        text-decoration: none;
+    .poi_suggest .icon_city {
+        background-position: 98% 5px
     }
+
+    .poi_suggest .active .icon_city {
+        background-position: 98% -30px
+    }
+
+    .poi_suggest .icon_airport {
+        background-position: 98% -65px
+    }
+
+    .poi_suggest .active .icon_airport {
+        background-position: 98% -100px
+    }
+
+    .poi_suggest .icon_scenic {
+        background-position: 98% -135px
+    }
+
+    .poi_suggest .active .item_scenic,
+    .poi_suggest .active .no_airport {
+        background-color: #fff;
+        cursor: default;
+        color: #545454
+    }
+
+    .poi_suggest .active .item_scenic b,
+    .poi_suggest .active .no_airport b {
+        color: #06c
+    }
+
+    .poi_suggest .icon_country {
+        background-position: 98% -205px
+    }
+
+    .item_city .active .icon_country {
+        background-position: 98% -240px
+    }
+
+    .poi_suggest .icon_province {
+        background-position: 98% -275px
+    }
+
+    .item_city .active .icon_province {
+        background-position: 98% -310px
+    }
+
 }
