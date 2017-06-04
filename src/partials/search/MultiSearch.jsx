@@ -20,7 +20,6 @@ class CityChoose extends Component {
 
     render() {
         return (
-            <div className="city-choose">
                 <div className="searchForms">
                     <div className="flightlinebox">
                         <div className="no">1</div>
@@ -54,7 +53,7 @@ class CityChoose extends Component {
                         </div>
                     </div>
                     
-    、               
+                   
                     <div className="addflight">添加航程</div>
     
                     <div className="flightlinebox passengersinfo">
@@ -132,8 +131,7 @@ class CityChoose extends Component {
                     </div>
                     <div className="moreBtn">查看更多搜索条件</div>
                     
-                </div>  
-            </div>
+                </div>
         )
     }
 }

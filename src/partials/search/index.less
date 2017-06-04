@@ -1,8 +1,12 @@
+@import "../../static/css/mixin.less";
+
 .selectlist {
     &.active {
         display: block;
     }
+
 }
+
 .selects {
     border: 1px solid #ccc;
     outline: none;
@@ -15,7 +19,206 @@
     background: #fff;
     height: 30px;
 }
+
 input:disabled {
     background-color: #eee;
     opacity: 0.6;
+}
+
+.searchForms {
+    .formline {
+        padding-left: 100px;
+        position: relative;
+        margin-bottom: 15px;
+        .in();
+
+        &>i {
+            width: 90px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 12px;
+            color: #888;
+            font-style: normal;
+            text-align: right;
+            line-height: 32px;
+        }
+
+    }
+
+    input[type='text'] {
+        border: 1px solid #ccc;
+        outline: none;
+        appearance: none;
+        -webkit-appearance: none;
+        padding: 6px 5px 7px;
+        width: 220px;
+        font-size: 13px;
+        color: #444;
+
+        &:focus {
+            border: 1px solid @blue;
+        }
+
+        .focus {
+            border: 1px solid @blue;
+        }
+
+    }
+
+    .date,
+    .local,
+    .selects {
+        cursor: pointer;
+    }
+
+    .date {
+        //background: #fff url(../imgs/ico/date.png) no-repeat right center;
+        color: @blue;
+    }
+
+    .toggle {
+        width: 20px;
+        height: 20px;
+        border: none;
+        position: absolute;
+        right: -28px;
+        top: 30px;
+        background: #eee;
+        text-align: center;
+        border: 1px solid #ddd;
+        line-height: 20px;
+        cursor: pointer;
+
+        &:hover {
+            border: 1px solid @blue;
+            color: @blue;
+            background: light(@blue, 34%);
+
+            &:after,
+            &:before {
+                border-color: @blue;
+            }
+
+        }
+
+        &:after,
+        &:before {
+            content: '';
+            display: block;
+            border: 1px solid #ddd;
+            width: 33px;
+            height: 20px;
+            position: absolute;
+            border-left: none;
+            left: -24px;
+            z-index: -1;
+        }
+
+        &:before {
+            bottom: -20px;
+            border-top: none;
+        }
+
+        &:after {
+            top: -20px;
+            border-bottom: none;
+        }
+
+    }
+
+    .selects {
+        //background: #fff url(../imgs/ico/arr.png) no-repeat top right;
+    }
+
+    .focus {
+        background-position: bottom right;
+    }
+
+    .loacal {
+        //background: #fff url(../imgs/ico/local.png) no-repeat right center;
+        color: @blue;
+        font-weight: 700;
+    }
+
+    .moreBtn {
+        margin-left: 100px;
+        margin-bottom: 10px;
+        color: @blue;
+        cursor: pointer;
+        display: block;
+    }
+
+}
+
+
+
+.passengersinfo {
+    .selectlist {
+    }
+
+    .formline {
+        padding-left: 80px;
+
+        i {
+            width: 70px;
+            text-align: right;
+        }
+
+    }
+
+    .selectlist {
+        left: 80px;
+    }
+
+    input[type='text'] {
+        width: 80px;
+
+        &.selectlist_width {
+            width: 135px;
+        }
+
+    }
+
+}
+
+.addflight {
+    border: 1px dashed #eee;
+    color: @blue;
+    padding: 8px;
+    margin-left: 20px;
+    transition-duration: .5s;
+    margin-bottom: 20px;
+
+    &:hover {
+        border: 1px dashed @blue;
+        color: @blue;
+    }
+
+}
+
+.flightlinebox {
+    margin-bottom: 10px;
+
+    .no {
+        width: 20px;
+        height: 20px;
+        background: @blue;
+        color: #fff;
+        .in();
+        line-height: 20px;
+        text-align: center;
+        border-radius: 90px;
+    }
+
+    .formline {
+        padding-left: 60px;
+
+        &>i {
+            width: 50px !important;
+            text-align: right;
+        }
+
+    }
+
 }

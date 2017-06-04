@@ -1058,41 +1058,6 @@ a.Alink {
     width: 980px;
     margin: 0 auto
 }
-.searchForms .formline {
-    padding-left: 100px;
-    position: relative;
-    margin-bottom: 15px;
-    display: inline-block;
-    *display: inline;
-    zoom: 1
-}
-.searchForms .formline>i {
-    width: 90px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 12px;
-    color: #888;
-    font-style: normal;
-    text-align: right;
-    line-height: 32px
-}
-.searchForms input[type='text'] {
-    border: 1px solid #ccc;
-    outline: none;
-    appearance: none;
-    -webkit-appearance: none;
-    padding: 6px 5px 7px;
-    width: 220px;
-    font-size: 13px;
-    color: #444
-}
-.searchForms input[type='text']:focus {
-    border: 1px solid #2993d1
-}
-.searchForms input[type='text'] .focus {
-    border: 1px solid #2993d1
-}
 .searchForms .date, .searchForms .local, .searchForms .selects {
     cursor: pointer
 }
@@ -1212,7 +1177,8 @@ a.Alink {
 .typeCont {
     border: 1px solid #2993d1;
     padding: 20px;
-    padding-top: 30px
+    padding-top: 30px;
+    width: 980px;
 }
 // .tpyeBox>div {
 //     display: none
