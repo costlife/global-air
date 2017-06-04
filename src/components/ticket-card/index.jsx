@@ -88,7 +88,6 @@ class TicketCard extends Component {
                 </div>
                 <div className="flightTool">
                     <a className="viewMore" onClick={this.showMoreInfoAction.bind(this)}>航班详情</a>
-                    <a className="btn selbtn btn-o">选为去程</a>
                 </div>
             </div>
         )
