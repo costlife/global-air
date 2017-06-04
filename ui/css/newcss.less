@@ -94,7 +94,9 @@
 	&.open{
 		display:block;
 	}
+	
 }
+
 .searchBar{
 	padding:10px;border:1px solid #ddd;position:relative;margin:20px 0;
 	.bar{
@@ -229,7 +231,7 @@ a{.in();font-size:13px;padding:6px 12px;border:1px solid #ddd;margin-left:-1px;p
 	position:relative;padding-left:80px;
 }
 .lineStep{
-	position:absolute;left:0;top:0;font-size:14px;padding:6px;
+	position:absolute;left:0;top:0;font-size:12px;padding:6px;
 	background:@blue;color:#fff;
 	
 }
@@ -312,6 +314,42 @@ a{.in();font-size:13px;padding:6px 12px;border:1px solid #ddd;margin-left:-1px;p
 }
 
 
+.flightlinebox{
+	margin-bottom:10px;
+	.no{width:20px;height:20px;background:@blue;color:#fff;.in();line-height:20px;text-align:center;border-radius:90px;}
+	.formline{
+		padding-left:60px;
+		i{width:50px;text-align:right;}
+	}
+}
+.passengersinfo{
+	.selectlist{
+		
+	}
+	.formline{
+		padding-left:80px;
+		i{width:70px;text-align:right;}
+	}
+	.selectlist{
+		left:80px;
+	}
+	input[type='text']{width:80px;
+		&.selectlist_width{
+		width:135px;
+	}
+	}
+	
+}
+
+.addflight{
+	border:1px dashed #eee;
+	color:@blue;padding:8px;margin-left:20px;
+	transition-duration:.5s;margin-bottom:20px;
+	&:hover{
+		border:1px dashed @blue;color:@blue;
+	}
+	
+}
 
 
 

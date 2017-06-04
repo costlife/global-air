@@ -16,6 +16,14 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: "[name].js"
     },
+    devServer: {
+        proxy: {
+          '/flight': {
+            target: 'http://192.168.4.79',
+            secure: false
+          }
+        }
+    },
     module: {
         rules: [{
             test: /\.(css|less)$/,

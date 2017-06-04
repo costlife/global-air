@@ -3,7 +3,7 @@ import moment from 'moment';
 import PriceTag from './PriceTag';
 import './index.less';
 
-class Dialog extends Component {
+class TicketCard extends Component {
 
     static propTypes = {
         adultCount: React.PropTypes.number,
@@ -218,4 +218,4 @@ class Dialog extends Component {
     }
 }
 
-export default Dialog;
+export default TicketCard;

@@ -27,7 +27,10 @@ class Home extends Component {
         }
     }
 
-    initBooking() {
+    initBooking(params) {
+        // $.post('/flight/query.in', params, (resp) => {
+        //     console.log(resp)
+        // });
         this.setState({
             showResult: true
         });
@@ -85,7 +88,7 @@ class Home extends Component {
             <div className="global-air">
                 <div style={{marginTop: '20px'}}>
                 </div>
-                <Search onSearch={()=>this.initBooking()}/>
+                <Search onSearch={this.initBooking.bind(this)}/>
                 {showResult &&
                     <div>
                         <TicketFilter

@@ -157,65 +157,108 @@
 					</div>
 				</div>
 				
-				<div><!--往返-->
+				<div><!--多程-->
 					<div class="searchForms">
-						<div class="formline">
-							<i>出发地</i><input type="text" class="loacal" placeholder="支持中文/拼音/英文/三字码" />
-							<div class="toggle">换</div>
+						<div class="flightlinebox">
+							<div class="no">1</div>
+							<div class="formline">
+								<i>出发地</i><input type="text" class="loacal" placeholder="支持中文/拼音/英文/三字码" />
+								
+							</div>
+							<div class="formline">
+								<i>到达地</i><input type="text" class="loacal" placeholder="支持中文/拼音/英文/三字码" />
+								<s class="ico-time"></s>
+							</div>
+												
+							<div class="formline">
+								<i>出发日期</i><input type="text" placeholder="选择返回日期" class="date"/>
+							</div>
 						</div>
-						<div class="formline">
-							<i>出发日期</i><input type="text" placeholder="选择出发日期" class="date"/>
+						
+						<div class="flightlinebox">
+							<div class="no">2</div>
+							<div class="formline">
+								<i>出发地</i><input type="text" class="loacal" placeholder="支持中文/拼音/英文/三字码" />
+								
+							</div>
+							<div class="formline">
+								<i>到达地</i><input type="text" class="loacal" placeholder="支持中文/拼音/英文/三字码" />
+								<s class="ico-time"></s>
+							</div>
+												
+							<div class="formline">
+								<i>出发日期</i><input type="text" placeholder="选择返回日期" class="date"/>
+							</div>
 						</div>
-						<div class="formline">
-							<i>到达地</i><input type="text" class="loacal" placeholder="支持中文/拼音/英文/三字码" />
-							<s class="ico-time"></s>
-						</div>
-						<div class="formline">
-							<i>返回日期</i><input type="text" placeholder="选择返回日期" class="date"/>
-						</div>
-		、				<div class="formline">
-							<i>成人</i><input type="text" class="selects" onclick="selects(this)" />
-							<dl class="selectlist">
-								 <dd data-value="0" class="select-option">无</dd>
-				                             <dd data-value="1" class="select-option">1</dd>
-				                             <dd data-value="2" class="select-option">2</dd>
-				                             <dd data-value="3" class="select-option">3</dd>
-				                             <dd data-value="4" class="select-option">4</dd>
-				                             <dd data-value="5" class="select-option">5</dd>
-				                             <dd data-value="6" class="select-option">6</dd>
-				                             <dd data-value="7" class="select-option">7</dd>
-				                             <dd data-value="8" class="select-option">8</dd>
-				                             <dd data-value="9" class="select-option">9</dd>
-							</dl>
-						</div>
-						<div class="formline">
-							<i>旅客身份</i><input type="text" value="普通" />
-							
-						</div>
-						<div class="formline">
-							<i>普通儿童</i><input type="text" class="selects" onclick="selects(this)" />
-							<dl class="selectlist">
-				                             <dd data-value="0" class="select-option">无</dd>
-				                             <dd data-value="1" class="select-option">1</dd>
-				                             <dd data-value="2" class="select-option">2</dd>
-				                             <dd data-value="3" class="select-option">3</dd>
-				                             <dd data-value="4" class="select-option">4</dd>
-				                             <dd data-value="5" class="select-option">5</dd>
-				                             <dd data-value="6" class="select-option">6</dd>
-				                             <dd data-value="7" class="select-option">7</dd>
-				                             <dd data-value="8" class="select-option">8</dd>
-				                             <dd data-value="9" class="select-option">9</dd>
-				                         </dl>
-						</div>
-						<div class="formline">
-							<i>舱位等级</i><input type="text" class="selects" onclick="selects(this)" />
-							<dl class="selectlist">
-				                             <dd data-value="ECONOMY" class="select-option">经济舱</dd>
-				                             <dd data-value="PREMIUM_ECONOMY" class="select-option">超级经济舱</dd>
-				                             <dd data-value="BUSINESS" class="select-option">公务舱</dd>
-				                             <dd data-value="FIRST" class="select-option">头等舱</dd>
-				                         </dl>
-						</div>
+						
+		、				
+						<div class="addflight">添加航程</div>
+		
+						<div class="flightlinebox passengersinfo">
+			
+									<div class="formline">
+										<i>旅客身份</i><input type="text" value="普通" />
+										
+									</div>
+									
+									
+									
+									<div class="formline">
+										<i>成人</i><input type="text" class="selects" onclick="selects(this)" />
+										<dl class="selectlist">
+											 <dd data-value="0" class="select-option">无</dd>
+							                             <dd data-value="1" class="select-option">1</dd>
+							                             <dd data-value="2" class="select-option">2</dd>
+							                             <dd data-value="3" class="select-option">3</dd>
+							                             <dd data-value="4" class="select-option">4</dd>
+							                             <dd data-value="5" class="select-option">5</dd>
+							                             <dd data-value="6" class="select-option">6</dd>
+							                             <dd data-value="7" class="select-option">7</dd>
+							                             <dd data-value="8" class="select-option">8</dd>
+							                             <dd data-value="9" class="select-option">9</dd>
+										</dl>
+									</div>
+									<div class="formline">
+										<i>普通儿童</i><input type="text" class="selects" onclick="selects(this)" />
+										<dl class="selectlist">
+							                             <dd data-value="0" class="select-option">无</dd>
+							                             <dd data-value="1" class="select-option">1</dd>
+							                             <dd data-value="2" class="select-option">2</dd>
+							                             <dd data-value="3" class="select-option">3</dd>
+							                             <dd data-value="4" class="select-option">4</dd>
+							                             <dd data-value="5" class="select-option">5</dd>
+							                             <dd data-value="6" class="select-option">6</dd>
+							                             <dd data-value="7" class="select-option">7</dd>
+							                             <dd data-value="8" class="select-option">8</dd>
+							                             <dd data-value="9" class="select-option">9</dd>
+							                         </dl>
+									</div>
+									
+									<div class="formline">
+										<i>婴儿</i><input type="text" class="selects" onclick="selects(this)" />
+										<dl class="selectlist">
+							                             <dd data-value="0" class="select-option">无</dd>
+							                             <dd data-value="1" class="select-option">1</dd>
+							                             <dd data-value="2" class="select-option">2</dd>
+							                             <dd data-value="3" class="select-option">3</dd>
+							                             <dd data-value="4" class="select-option">4</dd>
+							                             <dd data-value="5" class="select-option">5</dd>
+							                             <dd data-value="6" class="select-option">6</dd>
+							                             <dd data-value="7" class="select-option">7</dd>
+							                             <dd data-value="8" class="select-option">8</dd>
+							                             <dd data-value="9" class="select-option">9</dd>
+							                         </dl>
+									</div>
+									<div class="formline">
+										<i>舱位等级</i><input type="text" class="selects selectlist_width" onclick="selects(this)" />
+										<dl class="selectlist">
+							                             <dd data-value="ECONOMY" class="select-option">经济舱</dd>
+							                             <dd data-value="PREMIUM_ECONOMY" class="select-option">超级经济舱</dd>
+							                             <dd data-value="BUSINESS" class="select-option">公务舱</dd>
+							                             <dd data-value="FIRST" class="select-option">头等舱</dd>
+							                         </dl>
+									</div>
+		</div>
 						<div class="moreInfo" style="display:none;">
 							<div class="formline">
 								<i>中转</i><input type="text" class="loacal" placeholder="支持中文/拼音/英文/三字码" />
