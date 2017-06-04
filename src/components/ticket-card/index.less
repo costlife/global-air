@@ -1,3 +1,4 @@
+@import "../../static/css/mixin.less";
 .flightCard {
     border: 1px solid #ccc;
     padding: 20px;
@@ -63,3 +64,75 @@
     }
 
 }
+.personInfos{
+	&>div{
+		.in();
+	    width:120px;
+	}
+}
+.personLine {
+    margin: 0 0;
+    position: relative;
+    border-bottom: 1px dashed #ededed;
+    padding: 22px 0;
+    
+	&>div {
+	    display: inline-block;
+	    *display: inline;
+	    zoom: 1;
+	}
+	.price {
+	    color: #ff8520;width:auto;margin-left:30px;
+		.info{
+			color:#888;
+		}
+		p {
+		    color: #999;
+		    font-size: 12px;
+		    line-height: 20px;
+		}
+	}
+	.subBtn{
+		
+	}
+	.rightInfo{
+		position:absolute;right:10px;
+	}
+	.eback{
+		color:@blue;position:relative;
+	}
+	.tips{
+		position:absolute;left:0;top:100%+.1;background:#fff;width:400px;z-index:10;// padding:8px;border:1px solid #ddd;pa
+		padding:10px;
+		border:1px solid #ddd;
+		margin-left:-1px;
+		.table{
+			border:none;
+			td{border:1px solid #ddd;}
+		}
+		td{line-height:1.8;text-align:justify;color:#444;padding:10px;
+			}
+		.baggage{
+			h2{}
+		}
+	}
+}
+.tipsTab{
+	text-align:left;font-size:0;margin:-11px -10px 10px;border-bottom:1px solid #ddd;
+	&>div{
+		.in();padding:6px 20px;border:1px solid #ddd;font-size:14px;margin-left:-1px;margin-bottom:-1px;
+		color:#999;position:relative;cursor:pointer;
+		&:hover{
+			color:@blue;
+		}
+		&.active{
+			z-index:20;background:#fff;color:@blue;border-bottom-color:#fff;
+		}
+	}
+	
+	
+}
+
+
+
+
