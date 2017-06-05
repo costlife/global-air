@@ -3,6 +3,7 @@ import classNames from 'classnames';
 
 import $ from 'jquery';
 import DatePicker from 'react-datepicker';
+import Select from '../../components/select';
 import CitySuggest from '../../components/city-suggest';
 import MultiSearch from './MultiSearch';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -40,27 +41,27 @@ class FlightSearch extends Component {
         this.setState({journeyType: e.target.value});
     }
 
-    changeCabinClass(e) {
-        this.setState({cabinClass: e.target.value});
+    changeCabinClass(data) {
+        this.setState({cabinClass: data.value});
     }
 
-    changeAdtCount(e) {
-        this.setState({adtCount: e.target.value});
+    changeAdtCount(data) {
+        this.setState({adtCount: data.value});
     }
 
-    changeChdCount(e) {
-        this.setState({chdCount: e.target.value});
+    changeChdCount(data) {
+        this.setState({chdCount: data.value});
     }
 
-    changeInfCount(e) {
-        this.setState({infCount: e.target.value});
+    changeInfCount(data) {
+        this.setState({infCount: data.value});
     }
 
     changeStartDate(startDate) {
         this.setState({startDate})
 
     }
-    
+
     changeReturnDate(returnDate) {
         this.setState({returnDate})
     }
@@ -113,8 +114,13 @@ class FlightSearch extends Component {
                             多程
                         </label>
                     </div>
-                    {journeyType == 'MS' ? 
-                        <MultiSearch />
+                    {journeyType == 'MS' ?
+                        <MultiSearch
+                            changeCabinClass={this.changeCabinClass.bind(this)}
+                            changeAdtCount={this.changeAdtCount.bind(this)}
+                            changeChdCount={this.changeChdCount.bind(this)}
+                            changeInfCount={this.changeInfCount.bind(this)}
+                        />
                         :
                         <div className="searchForms">
                             <div className="formline search-city">
@@ -146,42 +152,23 @@ class FlightSearch extends Component {
                             </div>
                             <div className="formline select-user">
                                 <i>成人</i>
-                                <select className="selects" onChange={this.changeAdtCount.bind(this)}>
-                                    <option value="0">无</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                </select>
+                                <Select onChange={this.changeAdtCount.bind(this)}/>
                             </div>
                             <div className="formline select-user">
                                 <i>普通儿童</i>
-                                <select className="selects" onChange={this.changeChdCount.bind(this)}>
-                                    <option value="0">无</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                </select>
+                                <Select onChange={this.changeChdCount.bind(this)}/>
                             </div>
                             <div className="formline select-user">
                                 <i>舱位等级</i>
-                                <select className="selects" onChange={this.changeCabinClass.bind(this)}>
-                                    <option value="ECONOMY">经济舱</option>
-                                    <option value="PREMIUM_ECONOMY">超级经济舱</option>
-                                    <option value="BUSINESS">公务舱</option>
-                                    <option value="FIRST">头等舱</option>
-                                </select>
+                                <Select
+                                    options={[
+                                        {label: '经济舱', value: 'ECONOMY'},
+                                        {label: '超级经济舱', value: 'PREMIUM_ECONOMY'},
+                                        {label: '公务舱', value: 'BUSINESS'},
+                                        {label: '头等舱', value: 'FIRST'},
+                                    ]}
+                                    onChange={this.changeCabinClass.bind(this)}
+                                />
                             </div>
                             <div className="moreInfo" style={{display:'none'}}>
                                 <div className="formline">

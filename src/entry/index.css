@@ -1186,28 +1186,7 @@ a.Alink {
 .flyHead {
     margin-top: 20px
 }
-.selectlist {
-    position: absolute;
-    top: 100%;
-    left: 100px;
-    right: 0;
-    background: #fff;
-    border: 1px solid #2993d1;
-    z-index: 999;
-    margin-top: -1px;
-    display: none
-}
-.selectlist dd {
-    padding: 6px 10px;
-    cursor: pointer
-}
-.selectlist dd:hover {
-    background: #2993d1;
-    color: #fff
-}
-.selectlist.open {
-    display: block
-}
+
 .searchBar {
     padding: 10px;
     border: 1px solid #ddd;
