@@ -34,7 +34,9 @@ class FlightSearch extends Component {
             returnDate: '',
             segmentList: [],
             airline: '', /*航空公司，传航司二字码*/
-        }
+            departure: '',
+            destination: '',
+        };
     }
 
     changeJourneyType(e) {
@@ -59,11 +61,22 @@ class FlightSearch extends Component {
 
     changeStartDate(startDate) {
         this.setState({startDate})
-
     }
 
     changeReturnDate(returnDate) {
         this.setState({returnDate})
+    }
+
+    onChangeDeparture(departure) {
+        this.setState({departure});
+    }
+
+    onChangeDestination(destination) {
+        this.setState({destination});
+    }
+
+    onSegmentListChange(segmentList) {
+        this.setState({segmentList})
     }
 
     onSearchClick() {
@@ -71,11 +84,7 @@ class FlightSearch extends Component {
 
         this.props.onSearch({
             journeyType: journeyType,
-            segmentList: [{/*航程列表， 单程是一个，往返是两个，多程几程几个*/
-                oriCode: "BJS",
-                desCode: "NGO",
-                departureDate: 1495036800000
-            }],
+            segmentList: this.getSegmentList(),
             passengerType: [{
                 passgerType: "ADT",  /*成人人数*/
                 passgerNumber: adtCount
@@ -91,6 +100,35 @@ class FlightSearch extends Component {
             directFlightsOnly: false,  /*是否仅查直飞,默认是false*/
             debug: false,
         });
+    }
+
+    getSegmentList() {
+        const {journeyType, departure, destination, startDate, returnDate, segmentList} = this.state;
+        if (journeyType == 'OW') {
+            return [{/*航程列表， 单程是一个，往返是两个，多程几程几个*/
+                oriCode: departure,
+                desCode: destination,
+                departureDate: startDate.valueOf(),
+            }];
+        } else if (journeyType == 'RT') {
+            return [{
+                oriCode: departure,
+                desCode: destination,
+                departureDate: startDate.valueOf(),
+            }, {
+                oriCode: destination,
+                desCode: departure,
+                departureDate: returnDate.valueOf(),
+            }]
+        } else {
+            return segmentList.map(item => {
+                return {
+                    oriCode: item.oriCode,
+                    desCode: item.desCode,
+                    departureDate: item.departureDate.valueOf(),
+                }
+            });
+        }
     }
 
     render() {
@@ -120,12 +158,13 @@ class FlightSearch extends Component {
                             changeAdtCount={this.changeAdtCount.bind(this)}
                             changeChdCount={this.changeChdCount.bind(this)}
                             changeInfCount={this.changeInfCount.bind(this)}
+                            onSegmentListChange={this.onSegmentListChange.bind(this)}
                         />
                         :
                         <div className="searchForms">
                             <div className="formline search-city">
                                 <i>出发地</i>
-                                <CitySuggest />
+                                <CitySuggest onChangeCity={this.onChangeDeparture.bind(this)}/>
                                 <div className="toggle">换</div>
                             </div>
                             <div className="formline">
@@ -138,7 +177,7 @@ class FlightSearch extends Component {
                             </div>
                             <div className="formline search-city">
                                 <i>到达地</i>
-                                <CitySuggest />
+                                <CitySuggest onChangeCity={this.onChangeDestination.bind(this)}/>
                                 <s className="ico-time"></s>
                             </div>
                             <div className="formline">

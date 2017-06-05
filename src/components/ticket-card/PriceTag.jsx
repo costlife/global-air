@@ -10,18 +10,18 @@ class PriceTag extends Component {
         super(props);
         //this.state = this.props;
         this.state = {
-	        show: false
+            show: false
         }
         
     }
     
     showOptions() {
-	    this.setState({show: true});
-	}
-	
-	hideOptions() {
-	    this.setState({show: false});
-	}
+        this.setState({show: true});
+    }
+    
+    hideOptions() {
+        this.setState({show: false});
+    }
     render() {
         const {fare, type, count} = this.props;
         const {show} = this.state;
@@ -33,31 +33,30 @@ class PriceTag extends Component {
             personType = '儿童';
             price = fare.childPrice;
         }
-		
-        console.log(fare);
+        
         return (
             <div className="personLine">
                 <div className="personInfos">
-	                <div >{personType}/普通 x {count}</div>
-	                <div
-	                	className="eback"
-	                	onMouseEnter={this.showOptions.bind(this)}
-						onMouseLeave={this.hideOptions.bind(this)}>
-						退改签规定
-	                	{show &&
-							<Tips />
-						}
-					</div>
-	                <div>票面价：¥{price.settlementPrice * count}</div>
-	                <div>政策：5%,6%,8%</div>
-	                <div className="price">
-	                    <span>¥{price.settlementPriceWithTax * count}</span>
-	                    <span className="info">含税费¥{price.settlementPrice * count}</span>
-	                </div>
+                    <div >{personType}/普通 x {count}</div>
+                    <div
+                        className="eback"
+                        onMouseEnter={this.showOptions.bind(this)}
+                        onMouseLeave={this.hideOptions.bind(this)}>
+                        退改签规定
+                        {show &&
+                            <Tips />
+                        }
+                    </div>
+                    <div>票面价：¥{price.settlementPrice * count}</div>
+                    <div>政策：5%,6%,8%</div>
+                    <div className="price">
+                        <span>¥{price.settlementPriceWithTax * count}</span>
+                        <span className="info">含税费¥{price.settlementPrice * count}</span>
+                    </div>
                 </div>
                 <div className="rightInfo">
-                	<div>{price.physicalClassName}</div>
-	                <div className="subBtn"> <a className="btn selbtn btn-o">预定</a></div>
+                    <div>{price.physicalClassName}</div>
+                    <div className="subBtn"> <a className="btn selbtn btn-o">预定</a></div>
                 </div>
             </div>
         )

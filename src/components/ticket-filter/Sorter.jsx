@@ -66,7 +66,7 @@ class Dialog extends Component {
                         'fa': true,
                         'fa-angle-down': desc,
                         'fa-angle-up': !desc,
-                    })
+                    });
                     return <a key={i} onClick={this.onChangeSorter.bind(this, i, active)} className={className}>
                         {item.text}
                         {isCurrent && <i className={iconClass} aria-hidden="true"></i>}

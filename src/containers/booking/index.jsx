@@ -31,6 +31,7 @@ class Home extends Component {
         // $.post('/flight/query.in', params, (resp) => {
         //     console.log(resp)
         // });
+        console.log(params)
         this.setState({
             showResult: true
         });

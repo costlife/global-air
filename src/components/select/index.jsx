@@ -53,9 +53,15 @@ class SelectComponent extends Component {
         const {show, activeIndex} = this.state;
         const {options, onChange} = this.props;
         let current = options[activeIndex];
+        let iconClass = classNames({
+            'fa': true,
+            'fa-angle-down': !show,
+            'fa-angle-up': show,
+        })
         return (
             <div className="select">
                 <input type="text" className="selects" value={current.label} onClick={this.showList.bind(this)} readOnly/>
+                <i className={iconClass} aria-hidden="true"></i>
                 {show &&
                     <dl className="select-list">
                         {options.map((item, i) =>

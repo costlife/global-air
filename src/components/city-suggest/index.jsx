@@ -8,12 +8,10 @@ import './index.less';
 class CitySuggest extends Component {
 
     static propTypes = {
-        onChangeCategory: React.PropTypes.func,
         onChangeCity: React.PropTypes.func,
     };
 
     static defaultProps = {
-        onChangeCategory: () => {},
         onChangeCity: () => {},
     };
 
@@ -25,7 +23,10 @@ class CitySuggest extends Component {
         this.state = {
             showChoose: false,
             showSuggest: false,
-        }
+            inputText: '',
+            suggestData: [],
+            activeIndexSug: 0,
+        };
     }
 
     handleClickOutside = e => {
@@ -50,10 +51,19 @@ class CitySuggest extends Component {
         } else {
             this.showChoose();
         }
+        this.setState({
+            inputText: e.target.value
+        });
     }
 
     onChooseCity(e) {
         let city = e.target.getAttribute('data');
+        let citiCode = city.substring(city.indexOf('(') + 1, city.indexOf(')'));
+        this.props.onChangeCity(citiCode);
+        this.setState({
+            showChoose: false,
+            inputText: city.split('|')[1]
+        });
     }
 
     onHoverSug(index) {
@@ -90,8 +100,7 @@ class CitySuggest extends Component {
     }
 
     render() {
-        const { onChangeCategory, onChangeCity } = this.props;
-        const { showChoose, showSuggest, suggestData, activeIndexSug } = this.state;
+        const { showChoose, showSuggest, suggestData, activeIndexSug, inputText } = this.state;
         return (
             <div className="city-suggest">
                 <input 
@@ -100,6 +109,7 @@ class CitySuggest extends Component {
                     placeholder="支持中文/拼音/英文/三字码" 
                     onFocus={this.showChoose.bind(this)}
                     onChange={this.onChangeInput.bind(this)}
+                    value={inputText}
                 />
                 {showChoose && 
                     <CityChoose
