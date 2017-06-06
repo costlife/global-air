@@ -26,7 +26,7 @@ class FlightSearch extends Component {
         super(props);
         this.state = {
             journeyType: 'OW', // OW单程, RT往返, MS多程
-            cabinClass: "ECONOMY;PREMIUM_ECONOMY", /*舱位等级*/
+            cabinClass: "ECONOMY", /*舱位等级*/
             adtCount: 0,
             chdCount: 0,
             infCount: 0,

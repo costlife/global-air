@@ -12,13 +12,13 @@ class PriceTag extends Component {
         this.state = {
             show: false
         }
-        
+
     }
-    
+
     showOptions() {
         this.setState({show: true});
     }
-    
+
     hideOptions() {
         this.setState({show: false});
     }
@@ -26,14 +26,14 @@ class PriceTag extends Component {
         const {fare, type, count} = this.props;
         const {show} = this.state;
         let price, personType,tipType;
-        if (type === 1) {
+        //if (type === 1) {
             personType = '成人';
             price = fare.adultPrice;
-        } else if (type === 2) {
-            personType = '儿童';
-            price = fare.childPrice;
-        }
-        
+        // } else if (type === 2) {
+        //     personType = '儿童';
+        //     price = fare.childPrice;
+        // }
+
         return (
             <div className="personLine">
                 <div className="personInfos">

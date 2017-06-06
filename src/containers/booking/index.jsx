@@ -21,7 +21,6 @@ class Home extends Component {
         super(props);
         this.state = {
             current: 1,
-            size: 5,
         }
     }
 
@@ -30,20 +29,18 @@ class Home extends Component {
     }
 
     onPageChange(value) {
-        this.setState({
-            current: value,
-        });
+        this.props.actions.pageChange(value);
     }
 
-    getTicketList(ticketList, total, current, size) {
-        let start = (current - 1) * size;
-        let end = Math.min(current * size, total) - 1;
-        let list = [];
-        for (var i = start; i <= end; i++) {
-            list.push(<TicketCard key={i} detail={ticketList.avFlightList[i]}/>)
-        }
-        return list;
-    }
+    // getTicketList(ticketList, total, current, size) {
+    //     let start = (current - 1) * size;
+    //     let end = Math.min(current * size, total) - 1;
+    //     let list = [];
+    //     for (var i = start; i <= end; i++) {
+    //         list.push(<TicketCard key={i} detail={ticketList.avFlightList[i]}/>)
+    //     }
+    //     return list;
+    // }
 
     checkDirectOnly() {
         this.props.actions.checkDirectOnly();
@@ -70,13 +67,11 @@ class Home extends Component {
     }
 
 
-    renderResult(ticketList, isLoading, isInited) {
+    renderResult(ticketList, currentPage, total, isLoading, isInited) {
         if (isLoading) {
             return <div>loading</div>
         }
         if (isInited) {
-            const { current, size } = this.state;
-            const total = ticketList.avFlightList.length;
             return (
                 <div>
                     <TicketFilter
@@ -89,8 +84,10 @@ class Home extends Component {
                         checkDirectOnly={this.checkDirectOnly.bind(this)}
                         onSortChange={this.onSortChange.bind(this)}
                     />
-                    {this.getTicketList(ticketList, total, current, size)}
-                    <Pagination total={Math.ceil(total / size)} current={current} onPageChange={this.onPageChange.bind(this)}/>
+                    {ticketList.avFlightList.map((item, i) => {
+                        return <TicketCard key={i} detail={item}/>
+                    })}
+                    <Pagination total={Math.ceil(total / 20)} current={currentPage} onPageChange={this.onPageChange.bind(this)}/>
                 </div>
             )
         }
@@ -100,13 +97,13 @@ class Home extends Component {
      * @return {React.DOM}
      */
     render() {
-        const { ticketList, isLoading, isInited } = this.props.booking;
+        const { ticketList, paramsFilter, isLoading, isInited } = this.props.booking;
         return (
             <div className="global-air">
                 <div style={{marginTop: '20px'}}>
                 </div>
                 <Search onSearch={this.initBooking.bind(this)}/>
-                {this.renderResult(ticketList, isLoading, isInited)}
+                {this.renderResult(ticketList, paramsFilter.current, paramsFilter.total, isLoading, isInited)}
             </div>
         )
     }
