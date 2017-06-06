@@ -113,10 +113,9 @@ function rtDepartHourFilter(flightList, rtDepartHourRange) {
 
 function pageInfoFilter(flightList, current, total) {
     let size = 20;
-    let start = (current - 1) * size;
     let end = Math.min(current * size, total) - 1;
     let nextFlightList = [];
-    for (var i = start; i <= end; i++) {
+    for (var i = 0; i <= end; i++) {
         nextFlightList.push(flightList[i]);
     }
     return nextFlightList;
