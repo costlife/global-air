@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import actions from './actions';
 import './index.less';
-
+import $ from 'jquery';
 
 import Search from '../../partials/search';
 import TicketCard from '../../components/ticket-card';
@@ -22,6 +22,26 @@ class Home extends Component {
         this.state = {
             current: 1,
         }
+    }
+
+    componentDidMount() {
+        let didScroll;
+        $(window).on('scroll', () => {
+            didScroll = true;
+        });
+        this.intervalHandler = setInterval(() => {
+            const { paramsFilter } = this.props.booking;
+            let show = $(document).scrollTop() + $(window).height() > $(document).height() - 300;
+            if (didScroll && show ) {
+                didScroll = false;
+                this.props.actions.pageChange(paramsFilter.current + 1);
+            }
+        }, 250);
+    }
+
+    componentWillUnmount() {
+        $(window).off('scroll');
+        clearInterval(this.intervalHandler);
     }
 
     initBooking(params) {
@@ -87,7 +107,6 @@ class Home extends Component {
                     {ticketList.avFlightList.map((item, i) => {
                         return <TicketCard key={i} detail={item}/>
                     })}
-                    <Pagination total={Math.ceil(total / 20)} current={currentPage} onPageChange={this.onPageChange.bind(this)}/>
                 </div>
             )
         }
