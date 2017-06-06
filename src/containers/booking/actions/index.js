@@ -1,14 +1,20 @@
-
+import $ from 'jquery';
 import fakeData from '../../../mock/RT.json';
 
 const HomeActions = {
-    initBooking: (data) => (dispatch, getState) => {
+    initBooking: (params) => (dispatch, getState) => {
         dispatch({
-            type: 'BOOKING_INIT',
-            data: {
-                ticketList: fakeData
-            }
+            type: 'BOOKING_LOADING',
         });
+        $.post('/flight/query.in', params).done((resp) => {
+            dispatch({
+                type: 'BOOKING_INIT',
+                data: {
+                    ticketList: JSON.parse(resp)
+                }
+            });
+        });
+
     },
     checkDirectOnly: (data) => (dispatch, getState) => {
         dispatch({

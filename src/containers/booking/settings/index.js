@@ -9,5 +9,7 @@ export default {
             text: '起飞时间',
             value: 'departHour'
         }
-    }
+    },
+    isInited: false,
+    isLoading: false,
 }

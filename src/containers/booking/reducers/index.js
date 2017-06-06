@@ -4,12 +4,14 @@ let ticketListStorage = {};
 
 function newState(state, paramsFilter) {
     var ticketList = filterTickets(ticketListStorage, paramsFilter)
-    return Object.assign({}, state, {ticketList: ticketList});
+    return Object.assign({}, state, {ticketList: ticketList, isLoading: false, isInited: true});
 }
 
 export default function ( state = {}, { type, data } ) {
     var paramsFilter = state.paramsFilter;
     switch (type) {
+        case 'BOOKING_LOADING':
+            return Object.assign({}, state, {isLoading: true});
         case 'BOOKING_INIT':
             ticketListStorage = data.ticketList;
             return newState(state, paramsFilter);
