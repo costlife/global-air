@@ -3,8 +3,8 @@ import moment from 'moment';
 
 import Title from './Title.jsx';
 import Sorter from './Sorter.jsx';
+import PriceTable from './PriceTable.jsx';
 import FilterSelect from '../filter-select';
-
 import './index.less';
 
 class Dialog extends Component {
@@ -69,34 +69,12 @@ class Dialog extends Component {
         return Math.min.apply(this, arr);
     }
 
+
+    
     renderTable(priceTable) {
-        console.log(priceTable)
-        let head = [], body = [[], [], []];
-        priceTable.map(item => {
-            head.push(item.airlineName);
-            body[0].push(item.lp);
-            body[1].push(item.lpo);
-            body[2].push(item.lpt);
-        });
         return (
-            <div>
-                <table className="ticket-table">
-                    <thead>
-                        <tr>
-                            {head.map((item, i) => <th key={i}>{item}</th>)}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {body.map((item, i) =>
-                            <tr key={i}>
-                                {item.map((data, i) =>
-                                    <td key={i}>{data || '-'}</td>
-                                )}
-                            </tr>
-                        )}
-                    </tbody>
-                </table>
-            </div>
+            <PriceTable priceTable={priceTable}/>
+            
         )
     }
 

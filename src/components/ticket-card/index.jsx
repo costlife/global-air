@@ -49,12 +49,12 @@ class TicketCard extends Component {
         let startTime = firstOD.flightDetail[0].departureTime;
         let endTime = lastOD.flightDetail[lastOD.flightDetail.length - 1].arriveTime;
         let differDay = Math.floor((endTime - startTime) / 86400000);
+        console.log(detail)
         return (
             <div className="flightInfo">
                 <div className="flightsName">
                     <h1><i><img src="http://simg1.qunarzz.com/site/images/airlines/HU.gif" alt="" /></i>{detail.airlineSet.split(';')[0]}</h1>
-                    <p>PS288波音767(大)</p>
-                    <p>PS415波音737(中)</p>
+                    <p>{firstOD.flightNo}</p>
                 </div>
                 <div className="linebars">
                     <div className="time star">
@@ -68,9 +68,7 @@ class TicketCard extends Component {
                     </div>
                     <div className="line">
                         <div className="alltime">{detail.duration}</div>
-                        {detail.transferCitySet && 
-                            <div className="transfer">转 <b>{detail.transferCitySet}</b></div>
-                        }
+                        <div className="transfer"></div>
                     </div>
                     <div className="time end">
                         <div className="times">
@@ -85,6 +83,11 @@ class TicketCard extends Component {
                                 && <span>T{lastOD.flightDetail[lastOD.flightDetail.length - 1].arrTerm}</span>}
                         </b>
                     </div>
+                    <div>
+                        {detail.transferCitySet && 
+                            <div className="transfer">转 <b>{detail.transferCitySet}</b></div>
+                        }
+                    </div>
                 </div>
                 <div className="flightTool">
                     <a className="viewMore" onClick={this.showMoreInfoAction.bind(this)}>航班详情</a>
@@ -94,10 +97,12 @@ class TicketCard extends Component {
     }
 
     renderFlightMoreInfo(odlist) {
+        console.log(odlist)
         return odlist.map((oditem, index) => {
             let startTime = oditem.flightDetail[0].departureTime;
             let endTime = oditem.flightDetail[oditem.flightDetail.length - 1].arriveTime;
             let differDay = Math.floor((endTime - startTime) / 86400000);
+        
             return (
                 <div key={index} className="flightInfo">
                     <div className="flightsName">

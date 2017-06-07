@@ -1285,7 +1285,7 @@ a.Alink {
 .linebars .line .transfer:after {
     left: -34px;
     right: -34px;
-    top: 0;
+    top: 30px;
     height: 2px;
     border-top: 2px solid #ccc
 }
@@ -1293,7 +1293,7 @@ a.Alink {
     border: 6px solid transparent;
     border-left-color: #ccc;
     right: -46px;
-    top: -5px
+    top: 25px;
 }
 .linebars .line sup {
     color: #ff8520

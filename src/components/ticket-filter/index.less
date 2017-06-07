@@ -2,12 +2,48 @@
     .tax-filter {
         float: right;
     }
-
-    .ticket-table {
+    .ticket-table-container {
         width: 100%;
-        line-height: 40px;
-        text-align: center;
+        .carousel {
+            display: inline-block;
+            width: 980px;
+        }
+        .ticket-table {
+            float: left;
+            width: 860px;
+            height: 160px;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            tr {
+                border-bottom: 1px solid #ddd;
+            }
+            tbody tr:nth-child(2n) {
+                background-color: #fafafa;
+            }
+            td:not(:last-child) {
+                border-right: 1px solid #ddd;
+            }
+        }
+        .ticket-table-page {
+            float: left;
+            display: inline-block;
+            height: 160px;
+            text-align: center;
+            width: 60px;
+            border: 1px solid #CCCCCC;
+            vertical-align: top;
+            padding-top: 65px;
+            cursor: pointer;
+            &:hover {
+                background-color: #ededed;
+            }
+            i {
+                font-size: 25px;
+            }
+        }
     }
+    
+
     .bar {
         margin-left: 20px;
         display: inline-block;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 
-class Dialog extends Component {
+class TicketFilterTitle extends Component {
 
     static propTypes = {
         onOpen: React.PropTypes.func,
@@ -32,4 +32,4 @@ class Dialog extends Component {
     }
 }
 
-export default Dialog;
+export default TicketFilterTitle;
