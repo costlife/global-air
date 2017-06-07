@@ -9,6 +9,7 @@ function newState(state, paramsFilter) {
 
 export default function ( state = {}, { type, data } ) {
     var paramsFilter = state.paramsFilter;
+    console.log(type);
     switch (type) {
         case 'BOOKING_LOADING':
             return Object.assign({}, state, {isLoading: true});
@@ -16,6 +17,7 @@ export default function ( state = {}, { type, data } ) {
         case 'BOOKING_INIT':
             ticketListStorage = data.ticketList;
             paramsFilter.total = ticketListStorage.avFlightList.length;
+            paramsFilter.current = 1;
             return newState(state, paramsFilter);
 
         case 'BOOKING_PAGE_CHANGE':
