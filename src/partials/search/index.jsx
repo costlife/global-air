@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 
-import $ from 'jquery';
 import DatePicker from 'react-datepicker';
 import Select from '../../components/select';
 import CitySuggest from '../../components/city-suggest';
