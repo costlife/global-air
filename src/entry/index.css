@@ -1319,31 +1319,7 @@ a.Alink {
     margin-top: 20px
 }
 
-.personLine {
-    margin: 0 0;
-    position: relative;
-    border-bottom: 1px dashed #ededed;
-    padding: 22px 0
-}
-.personLine>div {
-    display: inline-block;
-    *display: inline;
-    zoom: 1;
-    width: 100px
-}
-.personLine .price {
-    color: #ff8520;
-    font-size: 14px;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    margin-top: -16px
-}
-.personLine .price p {
-    color: #999;
-    font-size: 12px;
-    line-height: 20px
-}
+
 
 .paged {
     text-align: center;

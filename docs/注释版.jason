@@ -41,7 +41,9 @@
                 {
                      /*舱位名称，如果各航班的舱位不同，是”多种舱位提醒“*/
                     "physicalClassName": "经济舱",
-                    /*行李额提醒*/
+                    /*行李额提醒*/,
+                    "title": '商务精选',//标识为图片
+                    "fareSource": '',
                     "baggagesRemark": [
                         {
                             "text": "第1段",
@@ -60,7 +62,7 @@
                             "content": "香港-北京：成人:2件,儿童:2件"
                         }
                     ],
-                    /*每个航班的具体舱位等级*/
+                    /*每个航班的具体舱位等级 tips for physicalClassName. sample: 北京-香港 经济舱(Q)*/
                     "classInfo": [
                         {
                             "depAirport": "PEK",
@@ -227,7 +229,7 @@
                         "passengerType": "CHD",
                         "passengerCount": 1,
                         "tktAirline": "CX",
-                        
+
                         "ticketRuleRQ": {
                             "journeyType": "RT",
                             "tktRules": [
@@ -251,7 +253,7 @@
                                 }
                             ]
                         },
-                       
+
                         "baggages": [
                             {
                                 "depAirport": "PEK",
@@ -291,7 +293,7 @@
                     },
                     /*婴儿价格信息，查询条件中婴儿>0时才会出现*/
                     "infPrice": null,
-                    
+
                     "sourcePolicyContent": "{\"ptcSpBreakdowns\":[{\"passengerType\":\"ADT\",\"spTotals\":[{\"basePrice\":3800,\"company\":\"在路上航空\",\"isDefaultFare\":true,\"poundage\":0,\"poundageUp\":0,\"proxyRate\":0.0,\"rebatePoint\":0,\"rebatePointUp\":0,\"resultFormulaId\":\"0\",\"settlementPrice\":3800,\"settlementPriceUp\":3800.00,\"spParts\":[],\"taxes\":1285,\"totalSettlementPrice\":5085,\"totalSettlementPriceUp\":5085.00}]},{\"passengerType\":\"CNN\",\"spTotals\":[{\"basePrice\":2850,\"company\":\"在路上航空\",\"isDefaultFare\":true,\"poundage\":0,\"poundageUp\":0,\"proxyRate\":0.0,\"rebatePoint\":0,\"rebatePointUp\":0,\"resultFormulaId\":\"0\",\"settlementPrice\":2850,\"settlementPriceUp\":2850.00,\"spParts\":[],\"taxes\":1195,\"totalSettlementPrice\":4045,\"totalSettlementPriceUp\":4045.00}]}]}"
                 }
             ],

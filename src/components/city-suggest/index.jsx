@@ -103,21 +103,21 @@ class CitySuggest extends Component {
         const { showChoose, showSuggest, suggestData, activeIndexSug, inputText } = this.state;
         return (
             <div className="city-suggest">
-                <input 
-                    type="text" 
-                    className="loacal" 
-                    placeholder="支持中文/拼音/英文/三字码" 
+                <input
+                    type="text"
+                    className="loacal"
+                    placeholder="支持中文/拼音/英文/三字码"
                     onFocus={this.showChoose.bind(this)}
                     onChange={this.onChangeInput.bind(this)}
                     value={inputText}
                 />
-                {showChoose && 
+                {showChoose &&
                     <CityChoose
                         onChooseCity={this.onChooseCity.bind(this)}
                         onCloseCityChoose={this.hideChoose.bind(this)}
                     />
                 }
-                {showSuggest && 
+                {showSuggest &&
                     <div className="poi_suggest">
                         <table cellSpacing="0" cellPadding="2"><tbody>
                             {suggestData.map((item, i) => this.renderSugItem(item, i, activeIndexSug))}

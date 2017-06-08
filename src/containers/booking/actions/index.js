@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import fakeData from '../../../mock/RT.json';
+import fakeData from '../../../mock/Test_search_MS.json';
 
 const HomeActions = {
     initBooking: (params) => (dispatch, getState) => {

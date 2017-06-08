@@ -25,38 +25,30 @@ class PriceTag extends Component {
     render() {
         const {fare, type, count} = this.props;
         const {show} = this.state;
-        let price, personType,tipType;
-        //if (type === 1) {
-            personType = '成人';
-            price = fare.adultPrice;
-        // } else if (type === 2) {
-        //     personType = '儿童';
-        //     price = fare.childPrice;
-        // }
-
         return (
             <div className="personLine">
                 <div className="personInfos">
-                    <div >{personType}/普通 x {count}</div>
+                    <div className="person-title">{fare.title}</div>
+                    <div className="person-class">{fare.physicalClassName}</div>
                     <div
                         className="eback"
                         onMouseEnter={this.showOptions.bind(this)}
                         onMouseLeave={this.hideOptions.bind(this)}>
-                        退改签规定
+                        退改/行李额及须知
                         {show &&
                             <Tips />
                         }
                     </div>
-                    <div>票面价：¥{price.settlementPrice * count}</div>
-                    <div>政策：5%,6%,8%</div>
+                    <div className="person-price">票面价：{fare.avgSettlementPrice}</div>
+                    <div className="person-back">返点：3.5%</div>
                     <div className="price">
-                        <span>¥{price.settlementPriceWithTax * count}</span>
-                        <span className="info">含税费¥{price.settlementPrice * count}</span>
+                        <span>¥{fare.avgSettlementPrice}</span>
+                        <span className="info">含税价</span>
                     </div>
-                </div>
-                <div className="rightInfo">
-                    <div>{price.physicalClassName}</div>
-                    <div className="subBtn"> <a className="btn selbtn btn-o">预定</a></div>
+                    <div>
+                        <a className="btn selbtn btn-o">预定</a>
+                        <span>仅剩{fare.totalPassengerCount}张</span>
+                    </div>
                 </div>
             </div>
         )

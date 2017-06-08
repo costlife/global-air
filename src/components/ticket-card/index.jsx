@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import PriceTag from './PriceTag';
+import FlightInfo from './FlightInfo';
 import './index.less';
 
 class TicketCard extends Component {
@@ -43,58 +44,6 @@ class TicketCard extends Component {
         this.setState({showMoreInfo: !this.state.showMoreInfo});
     }
 
-    renderFlightInfo(detail) {
-        let firstOD = detail.odlist[0];
-        let lastOD = detail.odlist[detail.odlist.length - 1];
-        let startTime = firstOD.flightDetail[0].departureTime;
-        let endTime = lastOD.flightDetail[lastOD.flightDetail.length - 1].arriveTime;
-        let differDay = Math.floor((endTime - startTime) / 86400000);
-        console.log(detail)
-        return (
-            <div className="flightInfo">
-                <div className="flightsName">
-                    <h1><i><img src="http://simg1.qunarzz.com/site/images/airlines/HU.gif" alt="" /></i>{detail.airlineSet.split(';')[0]}</h1>
-                    <p>{firstOD.flightNo}</p>
-                </div>
-                <div className="linebars">
-                    <div className="time star">
-                        <div className="times">{this.unixToTimeFormat(startTime)}</div>
-                        <b>
-                            {firstOD.dPortName}
-                            {firstOD.flightDetail[0].depTerm 
-                                && <span>T{firstOD.flightDetail[0].depTerm}</span>
-                            }
-                        </b>
-                    </div>
-                    <div className="line">
-                        <div className="alltime">{detail.duration}</div>
-                        <div className="transfer"></div>
-                    </div>
-                    <div className="time end">
-                        <div className="times">
-                            {this.unixToTimeFormat(endTime)}
-                            {this.isJumpDay(firstOD.flightDetail[0].departureTime, lastOD.flightDetail[lastOD.flightDetail.length - 1].arriveTime) 
-                                && <div className="dateAdd">+1</div>
-                            }
-                        </div>
-                        <b>
-                            {lastOD.aPortName}
-                            {lastOD.flightDetail[lastOD.flightDetail.length - 1].arrTerm 
-                                && <span>T{lastOD.flightDetail[lastOD.flightDetail.length - 1].arrTerm}</span>}
-                        </b>
-                    </div>
-                    <div>
-                        {detail.transferCitySet && 
-                            <div className="transfer">转 <b>{detail.transferCitySet}</b></div>
-                        }
-                    </div>
-                </div>
-                <div className="flightTool">
-                    <a className="viewMore" onClick={this.showMoreInfoAction.bind(this)}>航班详情</a>
-                </div>
-            </div>
-        )
-    }
 
     renderFlightMoreInfo(odlist) {
         console.log(odlist)
@@ -102,7 +51,7 @@ class TicketCard extends Component {
             let startTime = oditem.flightDetail[0].departureTime;
             let endTime = oditem.flightDetail[oditem.flightDetail.length - 1].arriveTime;
             let differDay = Math.floor((endTime - startTime) / 86400000);
-        
+
             return (
                 <div key={index} className="flightInfo">
                     <div className="flightsName">
@@ -119,7 +68,7 @@ class TicketCard extends Component {
                         </div>
                         <div className="line">
                             <div className="alltime">{this.durationFormat(oditem.duration)}</div>
-                            {oditem.transferCity && 
+                            {oditem.transferCity &&
                                 <div className="transfer">转 <b>{oditem.transferCity}</b></div>
                             }
                         </div>
@@ -144,10 +93,16 @@ class TicketCard extends Component {
     render() {
         const { detail } = this.props;
         const { showMoreInfo } = this.state;
-        
+
         return (
             <div className="flightCard">
-                {this.renderFlightInfo(detail)}
+                {detail.odlist.map((od, i) => {
+                    return <FlightInfo
+                        key={i}
+                        od={od}
+                        showMoreInfoAction={this.showMoreInfoAction}
+                    />
+                })}
                 {showMoreInfo && this.renderFlightMoreInfo(detail.odlist)}
                 <div className="flightDetails">
                     <div className="flights">
@@ -155,15 +110,15 @@ class TicketCard extends Component {
                         <div className="lineStep">第一段</div>
                             <div className="fname">
                                 <img src="http://simg1.qunarzz.com/site/images/airlines/HU.gif" alt="" /><h2>西班牙伊比利亚航空</h2>
-                                    
+
                                 <div>
                                     <span className="orange">BN4783</span>
                                     <span>大型机</span>
                                     <span>经济舱</span>
                                     <span>行李额：2件</span>
                                 </div>
-                            
-                                
+
+
                             </div>
                             <div className="timeline">
                                 <div className="star">
@@ -178,9 +133,9 @@ class TicketCard extends Component {
                                     <p className="time">2017-04-27 14:00</p>
                                 </div>
                             </div>
-                            
+
                         </div>
-                        
+
                         <div className="transferName">
                             <div className="time">
                                 中转 斯德哥尔摩
@@ -208,15 +163,15 @@ class TicketCard extends Component {
                                     <p>ARN 阿兰达机场</p>
                                     <p className="time">2017-04-27 14:00</p>
                                 </div>
-                            </div>  
-                        </div>  
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="personBar">
                     <PriceTag fare={detail.fareList[0]} type={1} count={2}/>
                     <PriceTag fare={detail.fareList[0]} type={2} count={3}/>
                 </div>
-            
+
             </div>
         );
     }
