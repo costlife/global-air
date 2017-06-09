@@ -45,7 +45,7 @@ class PriceTag extends Component {
                         <span>¥{fare.avgSettlementPrice}</span>
                         <span className="info">含税价</span>
                     </div>
-                    <div>
+                    <div className="person-order">
                         <a className="btn selbtn btn-o">预定</a>
                         <span>仅剩{fare.totalPassengerCount}张</span>
                     </div>

@@ -1,6 +1,7 @@
 {
   "name": "global-air",
   "version": "1.0.0",
+  "private": true,
   "description": "pgc_platform with react",
   "main": "index.js",
   "scripts": {
