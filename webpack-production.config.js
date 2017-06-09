@@ -6,6 +6,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var TransferWebpackPlugin = require('transfer-webpack-plugin');
 var autoprefixer = require('autoprefixer');
 
+const OUTPUT_PATH = "output/opt/intl/frontPage";
+const DOMAIN = '/opt/intl/frontPage/static';
 module.exports = {
     // 入口文件
     entry: {
@@ -15,9 +17,9 @@ module.exports = {
     },
    // 产出路径
     output: {
-        publicPath: '',
-        path: path.resolve(__dirname, 'output'),
-        filename: "resource/global-air/[name]_[hash].js"
+        publicPath: DOMAIN,
+        path: path.resolve(__dirname, `${OUTPUT_PATH}/static`),
+        filename: "[name]_[hash].js"
     },
     module: {
         rules: [{
@@ -74,11 +76,12 @@ module.exports = {
             }
         }),
         new HtmlWebpackPlugin({
-            template: 'src/templates/index.html'
+            template: 'src/templates/index.html',
+            filename: '../template/index.html',
         }),
         new TransferWebpackPlugin([{
             from: './',
-            to: 'resource/global-air/static'
+            to: 'static'
         }], path.resolve(__dirname, "src/static"))
     ]
 };
