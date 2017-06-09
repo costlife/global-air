@@ -15,7 +15,7 @@ class FlightDetail extends Component {
     }
 
     unixToDurationFormat(value) {
-        return moment(value).format('HH小时MM分钟');
+        return moment.duration(value).hours() + 'h' + moment.duration(value).minutes() + 'm';
     }
 
     renderFlightDetailItem(item, index, total) {
@@ -54,7 +54,7 @@ class FlightDetail extends Component {
                             <p className="time">{this.unixToTimeFormat(departureTime)}</p>
                             </div>
                             <div className="bar">
-                                <div className="flightTime">约{duration}</div>
+                                <div className="flightTime">{duration}</div>
                             </div>
                         <div className="end">
                             <p>{arriveAirport} {aPortName} T{arrTerm}</p>
@@ -67,7 +67,7 @@ class FlightDetail extends Component {
                         <div className="time">
                             中转 {aCityName}
                             <span className="orange">
-                                停留时长 {this.unixToDurationFormat(detail[index + 1].departureTime - detail[index].arriveTime)}
+                                停留时长 {this.unixToDurationFormat(detail[index + 1].departureTime - arriveTime)}
                             </span>
                         </div>
                     </div>

@@ -7,7 +7,7 @@ var TransferWebpackPlugin = require('transfer-webpack-plugin');
 var autoprefixer = require('autoprefixer');
 
 const OUTPUT_PATH = "output/opt/intl/frontPage";
-const DOMAIN = '/opt/intl/frontPage/static';
+const DOMAIN = '/frontPage/static';
 module.exports = {
     // 入口文件
     entry: {

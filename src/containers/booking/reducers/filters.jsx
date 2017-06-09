@@ -125,13 +125,13 @@ function sortFilter(flightList, sort) {
     flightList.sort((a, b) => {
         switch(sort.value) {
             case 'departHour':
-                return desc(sort.desc, a.departHour, b.departHour);
+                return desc(sort.desc, a.odlist[0].departureTime, b.odlist[0].departureTime);
             case 'rtDepartHour':
-                return desc(sort.desc, a.rtDepartHour, b.rtDepartHour);
+                return desc(sort.desc, a.odlist[0].arriveTime, b.odlist[0].arriveTime);
             case 'duration':
-                return desc(sort.desc, a.rtDepartHour - a.departHour, b.rtDepartHour - b.departHour);
+                return desc(sort.desc, a.totalDruation, b.totalDruation);
             case 'price':
-                return desc(sort.desc, a.avgSettlementPriceWithTax, b.avgSettlementPriceWithTax);
+                return desc(sort.desc, a.fareList[0].avgSettlementPriceWithTax, b.fareList[0].avgSettlementPriceWithTax);
             default:
                 return;
         }
