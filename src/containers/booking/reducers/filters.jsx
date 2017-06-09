@@ -1,7 +1,7 @@
 
 function filterTickets(ticketListStorage, paramsFilter) {
     let newTicketList = Object.assign({}, ticketListStorage);
-    let newAvFlightList = newTicketList.avFlightList;
+    let newAvFlightList = newTicketList.avFlightList || [];
 
     if (paramsFilter.isDirect) {
         newAvFlightList = directFilter(newAvFlightList);

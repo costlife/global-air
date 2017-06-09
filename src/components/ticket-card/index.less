@@ -2,7 +2,6 @@
 
 .flightCard {
     border: 1px solid #ccc;
-    padding: 20px 20px 0 20px;
     position: relative;
     margin-bottom: -1px;
     transition: .5s;
@@ -16,11 +15,11 @@
     .flight-info {
         position: relative;
         padding: 16px 15px;
-
+        border-bottom: 1px solid #eaeaea;
         .flight-name {
             display: inline-block;
             *display: inline;
-
+            width: 150px;
             img {
                 float: left;
                 width: 38px;
@@ -41,6 +40,21 @@
 
         }
 
+        .flight-time {
+            width: 150px;
+            line-height: 150%;
+            .times {
+                font-size: 20px;
+                color: #000000;
+            }
+            &.end {
+                text-align: left;
+            }
+            &.start {
+                text-align: right;
+            }
+        }
+
         .flight-line {
             display: inline-block;
             *display: inline;
@@ -51,11 +65,59 @@
 
         }
 
+        .flight-arrow {
+            vertical-align: top;
+            margin: 10px 13px;
+            &>div {
+                display: inline-block;
+                width: 104px;
+                height: 14px;
+                background-size: 100%;
+            }
+            .flight-arrow-transfer {
+                background-image: url(../../static/images/zflight@2x.png);
+            }
+            .flight-arrow-direct {
+                background-image: url(../../static/images/flights@2x.png);
+            }
+        }
+
+        .flight-duration {
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 14px;
+            width: 80px;
+            i {
+                margin-right: 5px;
+            }
+        }
+
+        .flight-transfer {
+            vertical-align: top;
+            .flight-transfer-item {
+                margin: 2px 0;
+                max-width: 140px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+
+                label {
+                    background: #F9F9F9;
+                    border: 1px solid #CCCCCC;
+                    border-radius: 2px;
+                    width: 31px;
+                    height: 18px;
+                    line-height: 18px;
+                    display: inline-block;
+                    text-align: center;
+                    margin-right: 10px;
+                    vertical-align: baseline;
+                }
+            }
+        }
+
         .flight-tool {
-            position: absolute;
-            right: 20px;
-            top: 0;
-            text-align: center;
+            float: right;
 
             a.btn {
                 padding: 10px 20px;
@@ -77,10 +139,13 @@
 }
 
 .personLine {
-    border-top: 1px solid #EAEAEA;
+    padding: 0 15px;
     height: 50px;
     line-height: 50px;
 
+    &:not(:last-child) {
+        border-bottom: 1px solid #EAEAEA;
+    }
     .personInfos {
         &>div {
             .in();

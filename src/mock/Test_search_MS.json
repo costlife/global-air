@@ -285,7 +285,7 @@
         }],
         "departHour": 10,
         "rtDepartHour": 0,
-        "transfer": 1,
+        "transfer": 0,
         "journeyType": "MS",
         "directFlightsOnly": "false",
         "odlist": [{
@@ -300,7 +300,7 @@
             "duration": "3:45",
             "transferTime": null,
             "transferCity": "",
-            "stopCity": "",
+            "stopCity": "中国，美国，澳大利亚",
             "airline": "日本航空",
             "flightNo": "JL860",
             "flightDetail": [{

@@ -1315,10 +1315,6 @@ a.Alink {
     border-bottom: 1px solid #eee;
     padding: 20px 0
 }
-.personBar {
-    margin-top: 20px
-}
-
 
 
 .paged {
@@ -1352,9 +1348,7 @@ a.Alink {
 .flightDetails {
     background: #f6f6f6;
     padding: 20px;
-    margin: 30px 0 10px;
     border: 1px solid #ededed;
-    display: none
 }
 .flines {
     position: relative;

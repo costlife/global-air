@@ -19,8 +19,12 @@ class FligthInfo extends Component {
         return new Date(endTime).getDate() - new Date(startTime).getDate() > 0;
     }
 
+    durationFormat(value) {
+        return value.replace(':', '小时') + '分';
+    }
+
     render() {
-        const {od, showMoreInfoAction} = this.props;
+        const {od, showMoreInfoAction, showMoreInfo} = this.props;
         const {
             startTime,
             endTime,
@@ -29,7 +33,9 @@ class FligthInfo extends Component {
             flightNo,
             dPortName,
             aPortName,
-            transferCity
+            transfer,
+            transferCity,
+            stopCity,
         } = od;
         let differDay = Math.floor((endTime - startTime) / 86400000);
         let depTerm = od.flightDetail[0].depTerm;
@@ -53,9 +59,11 @@ class FligthInfo extends Component {
                         </b>
                     </div>
                     <div className="flight-arrow">
-                        <div className="alltime">{duration}</div>
-                        <div className="transfer"></div>
-                        {/* <div className="direct"></div>*/}
+                        {transfer == 0 ?
+                            <div className="flight-arrow-direct"></div>
+                            :
+                            <div className="flight-arrow-transfer"></div>
+                        }
                     </div>
                     <div className="flight-time end">
                         <div className="times">
@@ -67,14 +75,34 @@ class FligthInfo extends Component {
                             {arrTerm && <span>T{arrTerm}</span>}
                         </b>
                     </div>
-                    <div>
+                    <div className="flight-duration">
+                        <i className="fa fa-clock-o" aria-hidden="true"></i>
+                        {duration}
+                    </div>
+                    <div className="flight-transfer">
                         {transferCity &&
-                            <div className="transfer">转 <b>{transferCity}</b></div>
+                            <div className="flight-transfer-item">
+                                <label>中转</label>
+                                <b>{transferCity}</b>
+                            </div>
+                        }
+                        {stopCity &&
+                            <div className="flight-transfer-item">
+                                <label>经停</label>
+                                <b>{stopCity}</b>
+                            </div>
                         }
                     </div>
                 </div>
                 <div className="flight-tool">
-                    <a className="viewMore" onClick={showMoreInfoAction.bind(this)}>航班详情</a>
+                    <a className="viewMore" onClick={showMoreInfoAction.bind(this)}>
+                        航班详情
+                        {showMoreInfo ?
+                            <i className="fa fa-angle-up" aria-hidden="true"></i>
+                            :
+                            <i className="fa fa-angle-down" aria-hidden="true"></i>
+                        }
+                    </a>
                 </div>
             </div>
         )
