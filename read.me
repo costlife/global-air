@@ -3,6 +3,9 @@ npm install && npm start
 使用react + redux 搭建的业务开发框架
 
 
-
-1. duration 需要后端把flightDetail里的加起来用以排序
-2. transferCity 和 stopCity在外层暴露
+#online
+1. sh build.sh
+2. 会在根目录下生成一个"时间戳_global_air_release.tar.bz2"的压缩包
+3. 这个包解压缩后会生成opt/intl/frontPage的目录，该目录下，static为静态资源，templates是模版
+4. 将该包进行发布解压缩上线
+5. 需要知道上线以后的domain，添加到webpack-production.config.js中，会自动在模版中引用静态资源的地方加上domain
