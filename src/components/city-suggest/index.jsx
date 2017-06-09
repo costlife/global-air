@@ -73,7 +73,7 @@ class CitySuggest extends Component {
             active: i == activeIndexSug
         });
         const {airportNameCn, airportCode, countryCodeCn, airportNamePy, cityNameCn, cityNameEn, cityCode } = item;
-        let city = airportNamePy + '|' + cityNameCn + '|(' + cityCode + ')';
+        let city = airportNamePy + '|' + cityNameCn + '(' + cityCode + ')';
         if (airportCode == cityCode) {
             return (
                 <tr key={i} className={cls}
@@ -88,6 +88,7 @@ class CitySuggest extends Component {
                 </tr>
             )
         } else {
+            console.log(city)
             return (
                 <tr key={i} className={cls}
                     onMouseEnter={this.onHoverSug.bind(this, i)}

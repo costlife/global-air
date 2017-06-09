@@ -70,7 +70,7 @@ class FligthInfo extends Component {
                     <div className="flight-time end">
                         <div className="times">
                             {this.unixToTimeFormat(endTime)}
-                            {isJumpDay && <div className="dateAdd">+1</div>}
+                            {isJumpDay && <span className="date-add">+1</span>}
                         </div>
                         <b>
                             {aPortName}
