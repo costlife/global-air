@@ -67,11 +67,29 @@ class FlightSearch extends Component {
     }
 
     onChangeDeparture(departure) {
-        this.setState({departure});
+        this.setState({
+            departure,
+            departureText: this.getName(departure)
+        });
+    }
+
+    onChangeDepartureText(text) {
+        this.setState({
+            departureText: text
+        });
     }
 
     onChangeDestination(destination) {
-        this.setState({destination});
+        this.setState({
+            destination,
+            destinationText: this.getName(destination)
+        });
+    }
+
+    onChangeDestinationText(text) {
+        this.setState({
+            destinationText: text
+        });
     }
 
     onSegmentListChange(segmentList) {
@@ -121,7 +139,6 @@ class FlightSearch extends Component {
         const {journeyType, departure, destination, startDate, returnDate, segmentList} = this.state;
         let departureCode = this.getCode(departure);
         let destinationCode = this.getCode(destination);
-        debugger;
         if (journeyType == 'OW') {
             return [{/*航程列表， 单程是一个，往返是两个，多程几程几个*/
                 oriCode: departureCode,
@@ -149,16 +166,9 @@ class FlightSearch extends Component {
         }
     }
 
-    onChangeValue(value) {
-        console.log(value)
-        this.setState({
-            departure: value
-        });
-    }
-
     render() {
         const { onSearch } = this.props;
-        const { journeyType, startDate, returnDate, departure, destination } = this.state;
+        const { journeyType, startDate, returnDate, departureText, destinationText } = this.state;
         return (
             <div className="typeCont">
                 <div className="searchForms">
@@ -190,9 +200,9 @@ class FlightSearch extends Component {
                             <div className="formline search-city">
                                 <i>出发地</i>
                                 <CitySuggest
-                                    value={this.getName(departure)}
+                                    value={departureText}
                                     onChangeCity={this.onChangeDeparture.bind(this)}
-                                    onChangeValue={this.onChangeValue.bind(this)}
+                                    onChangeText={this.onChangeDepartureText.bind(this)}
                                 />
                                 <div className="toggle" onClick={this.changeDestOrigin.bind(this)}>换</div>
                             </div>
@@ -207,9 +217,9 @@ class FlightSearch extends Component {
                             <div className="formline search-city">
                                 <i>到达地</i>
                                 <CitySuggest
-                                    value={this.getName(destination)}
+                                    value={destinationText}
                                     onChangeCity={this.onChangeDestination.bind(this)}
-                                    onChangeValue={this.onChangeValue.bind(this)}
+                                    onChangeText={this.onChangeDestinationText.bind(this)}
                                 />
                                 <s className="ico-time"></s>
                             </div>

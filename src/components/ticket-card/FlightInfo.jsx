@@ -29,6 +29,7 @@ class FligthInfo extends Component {
             startTime,
             endTime,
             airline,
+            airlineName,
             duration,
             flightNo,
             dPortName,
@@ -45,9 +46,9 @@ class FligthInfo extends Component {
         return (
             <div className="flight-info">
                 <div className="flight-name">
-                    <img src="http://simg1.qunarzz.com/site/images/airlines/HU.gif" alt="" />
+                    <img src={`http://simg1.qunarzz.com/site/images/airlines/${airline}.gif`} alt="" />
                     <div className="flight-name-info">
-                        <p>{airline}</p>
+                        <p>{airlineName}</p>
                         <p>{flightNo}</p>
                     </div>
                 </div>

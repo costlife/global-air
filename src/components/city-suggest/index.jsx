@@ -41,7 +41,7 @@ class CitySuggest extends Component {
     }
 
     onChangeInput(e) {
-        debugger;
+        console.log(e.target.value);
         if (e.target.value.length > 0) {
             $.getJSON('/flight/getAirPortCode.in', {
                 key: e.target.value
@@ -51,6 +51,7 @@ class CitySuggest extends Component {
         } else {
             this.showChoose();
         }
+        this.props.onChangeText();
     }
 
     onChooseCity(city) {
