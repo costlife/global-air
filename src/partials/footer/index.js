@@ -8,7 +8,7 @@ import './index.less';
 */
 class Footer extends Component {
     /*
-    @Des：构造函数 
+    @Des：构造函数
     */
     constructor(props) {
         super(props);
@@ -16,15 +16,11 @@ class Footer extends Component {
 
     /**
      * 渲染header 入口
-     * @return {React.DOM} 
+     * @return {React.DOM}
      */
     render() {
         return (
-            <div className="pgc-footer">
-                <div className="sfoot">
-                   footer
-                </div>
-            </div>
+            <div className="pgc-footer"></div>
         )
     }
 }

@@ -9,7 +9,7 @@ import './index.less';
 */
 class Header extends Component {
     /*
-    @Des：构造函数 
+    @Des：构造函数
     */
     constructor(props) {
         super(props);
@@ -21,9 +21,7 @@ class Header extends Component {
 
     render() {
         return (
-            <div className="pgc-header">
-                header
-            </div>
+            <div className="pgc-header"></div>
         )
     }
 }

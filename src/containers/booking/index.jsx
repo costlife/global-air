@@ -30,9 +30,9 @@ class Home extends Component {
             didScroll = true;
         });
         this.intervalHandler = setInterval(() => {
-            const { paramsFilter } = this.props.booking;
+            const { paramsFilter, isInited } = this.props.booking;
             let show = $(document).scrollTop() + $(window).height() > $(document).height() - 300;
-            if (didScroll && show ) {
+            if (didScroll && show && isInited) {
                 didScroll = false;
                 this.props.actions.pageChange(paramsFilter.current + 1);
             }
@@ -119,8 +119,6 @@ class Home extends Component {
         const { ticketList, paramsFilter, isLoading, isInited } = this.props.booking;
         return (
             <div className="global-air">
-                <div style={{marginTop: '20px'}}>
-                </div>
                 <Search onSearch={this.initBooking.bind(this)}/>
                 {this.renderResult(ticketList, paramsFilter.current, paramsFilter.total, isLoading, isInited)}
             </div>

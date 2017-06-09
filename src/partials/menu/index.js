@@ -13,15 +13,13 @@ class Menu extends Component {
     */
     constructor(props) {
         super(props);
-        
+
     }
 
     render() {
 
         return (
-            <div className="pgc-menu">
-                menu
-            </div>
+            <div className="pgc-menu"></div>
         )
     }
 }

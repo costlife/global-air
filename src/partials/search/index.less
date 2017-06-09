@@ -1,46 +1,47 @@
 @import "../../static/css/mixin.less";
 
-.selectlist {
-    &.active {
-        display: block;
+.searchForms {
+    .selectlist {
+        &.active {
+            display: block;
+        }
+
+    }
+    .index_label {
+        margin-right: 20px;
+    }
+    .selects {
+        border: 1px solid #ccc;
+        outline: none;
+        appearance: none;
+        -webkit-appearance: none;
+        padding: 6px 5px 7px;
+        width: 220px;
+        font-size: 13px;
+        color: #444;
+        background: #fff;
+        height: 30px;
     }
 
-}
+    .flight-minus {
+        font-size: 20px;
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 10px;
+        color: #ddd;
+    }
 
-.selects {
-    border: 1px solid #ccc;
-    outline: none;
-    appearance: none;
-    -webkit-appearance: none;
-    padding: 6px 5px 7px;
-    width: 220px;
-    font-size: 13px;
-    color: #444;
-    background: #fff;
-    height: 30px;
-}
+    input:disabled {
+        background-color: #eee;
+        opacity: 0.6;
+    }
 
-.flight-minus {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    background: #eee;
-    cursor: pointer;
-    display: inline-block;
-    border-radius: 50%;
-}
-
-input:disabled {
-    background-color: #eee;
-    opacity: 0.6;
-}
-
-.searchForms {
     .formline {
         padding-left: 100px;
         position: relative;
         margin-bottom: 15px;
+        line-height: 32px;
         .in();
 
         &>i {
@@ -149,7 +150,6 @@ input:disabled {
     .loacal {
         //background: #fff url(../imgs/ico/local.png) no-repeat right center;
         color: @blue;
-        font-weight: 700;
     }
 
     .moreBtn {

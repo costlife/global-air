@@ -89,7 +89,11 @@ class CityChoose extends Component {
                             placeholderText="请选择出发日期"
                             onChange={(date) => this.onChangeSegmentField(date, i, 'departureDate')} />
                     </div>
-                    {i > 1 ? <span className="flight-minus" onClick={this.deleteFlight.bind(this)}>-</span> : null}
+                    {i > 1 ?
+                        <span className="flight-minus" onClick={this.deleteFlight.bind(this)}>
+                            <i className="fa fa-minus-square" aria-hidden="true"></i>
+                        </span> : null
+                    }
                 </div>
             );
         }

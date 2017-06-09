@@ -135,7 +135,7 @@ class FlightSearch extends Component {
         const { journeyType, startDate, returnDate } = this.state;
         return (
             <div className="typeCont">
-                <div className="tpyeBox" id="typeBox">
+                <div className="searchForms">
                     <div className="formline">
                         <i>航程类型</i>
                         <label className="index_label">
@@ -160,7 +160,7 @@ class FlightSearch extends Component {
                             onSegmentListChange={this.onSegmentListChange.bind(this)}
                         />
                         :
-                        <div className="searchForms">
+                        <div>
                             <div className="formline search-city">
                                 <i>出发地</i>
                                 <CitySuggest onChangeCity={this.onChangeDeparture.bind(this)}/>

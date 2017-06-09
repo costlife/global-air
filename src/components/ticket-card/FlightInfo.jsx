@@ -33,14 +33,15 @@ class FligthInfo extends Component {
             flightNo,
             dPortName,
             aPortName,
-            transfer,
+            flightDetail,
             transferCity,
             stopCity,
         } = od;
+        console.log(flightDetail)
         let differDay = Math.floor((endTime - startTime) / 86400000);
-        let depTerm = od.flightDetail[0].depTerm;
-        let arrTerm = od.flightDetail[od.flightDetail.length - 1].arrTerm;
-        let isJumpDay = this.isJumpDay(od.flightDetail[0].departureTime, od.flightDetail[od.flightDetail.length - 1].arriveTime);
+        let depTerm = flightDetail[0].depTerm;
+        let arrTerm = flightDetail[flightDetail.length - 1].arrTerm;
+        let isJumpDay = this.isJumpDay(flightDetail[0].departureTime, flightDetail[flightDetail.length - 1].arriveTime);
         return (
             <div className="flight-info">
                 <div className="flight-name">
@@ -59,7 +60,7 @@ class FligthInfo extends Component {
                         </b>
                     </div>
                     <div className="flight-arrow">
-                        {transfer == 0 ?
+                        {flightDetail.length == 1 ?
                             <div className="flight-arrow-direct"></div>
                             :
                             <div className="flight-arrow-transfer"></div>

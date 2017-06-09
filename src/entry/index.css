@@ -1058,71 +1058,7 @@ a.Alink {
     width: 980px;
     margin: 0 auto
 }
-.searchForms .date, .searchForms .local, .searchForms .selects {
-    cursor: pointer
-}
-.searchForms .date {
-    // background: #fff url(../imgs/ico/date.png) no-repeat right center;
-    color: #2993d1
-}
-.searchForms .toggle {
-    width: 20px;
-    height: 20px;
-    border: none;
-    position: absolute;
-    right: -28px;
-    top: 30px;
-    background: #eee;
-    text-align: center;
-    border: 1px solid #ddd;
-    line-height: 20px;
-    cursor: pointer
-}
-.searchForms .toggle:hover {
-    border: 1px solid #2993d1;
-    color: #2993d1;
-    background: light(#2993d1, 34%)
-}
-.searchForms .toggle:hover:after, .searchForms .toggle:hover:before {
-    border-color: #2993d1
-}
-.searchForms .toggle:after, .searchForms .toggle:before {
-    content: '';
-    display: block;
-    border: 1px solid #ddd;
-    width: 33px;
-    height: 20px;
-    position: absolute;
-    border-left: none;
-    left: -24px;
-    z-index: -1
-}
-.searchForms .toggle:before {
-    bottom: -20px;
-    border-top: none
-}
-.searchForms .toggle:after {
-    top: -20px;
-    border-bottom: none
-}
-.searchForms .selects {
-    // background: #fff url(../imgs/ico/arr.png) no-repeat top right
-}
-.searchForms .focus {
-    background-position: bottom right
-}
-.searchForms .loacal {
-    // background: #fff url(../imgs/ico/local.png) no-repeat right center;
-    color: #2993d1;
-    font-weight: 700
-}
-.searchForms .moreBtn {
-    margin-left: 100px;
-    margin-bottom: 10px;
-    color: #2993d1;
-    cursor: pointer;
-    display: block
-}
+
 .footbar {
     clear: both;
     padding: 10px 0 0;
