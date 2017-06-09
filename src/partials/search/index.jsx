@@ -101,7 +101,12 @@ class FlightSearch extends Component {
         let temp = departure;
         let _departure = destination;
         let _destination = temp;
-        this.setState({departure: _departure, destination: _destination});
+        this.setState({
+            departure: _departure,
+            destination: _destination,
+            departureText: this.getName(_departure),
+            destinationText: this.getName(_destination),
+        });
     }
 
     onSearchClick() {

@@ -12,7 +12,7 @@ class FligthInfo extends Component {
     }
 
     unixToTimeFormat(value) {
-        return moment(value).format('HH:MM');
+        return moment(value).format('HH:mm');
     }
 
     isJumpDay(startTime, endTime) {
@@ -26,8 +26,8 @@ class FligthInfo extends Component {
     render() {
         const {od, showMoreInfoAction, showMoreInfo} = this.props;
         const {
-            startTime,
-            endTime,
+            departureTime,
+            arriveTime,
             airline,
             airlineName,
             duration,
@@ -38,8 +38,7 @@ class FligthInfo extends Component {
             transferCity,
             stopCity,
         } = od;
-        console.log(flightDetail)
-        let differDay = Math.floor((endTime - startTime) / 86400000);
+        console.log(departureTime);
         let depTerm = flightDetail[0].depTerm;
         let arrTerm = flightDetail[flightDetail.length - 1].arrTerm;
         let isJumpDay = this.isJumpDay(flightDetail[0].departureTime, flightDetail[flightDetail.length - 1].arriveTime);
@@ -54,7 +53,7 @@ class FligthInfo extends Component {
                 </div>
                 <div className="flight-line">
                     <div className="flight-time start">
-                        <div className="times">{this.unixToTimeFormat(startTime)}</div>
+                        <div className="times">{this.unixToTimeFormat(departureTime)}</div>
                         <b>
                             {dPortName}
                             {depTerm && <span>T{depTerm}</span>}
@@ -69,7 +68,7 @@ class FligthInfo extends Component {
                     </div>
                     <div className="flight-time end">
                         <div className="times">
-                            {this.unixToTimeFormat(endTime)}
+                            {this.unixToTimeFormat(arriveTime)}
                             {isJumpDay && <span className="date-add">+1</span>}
                         </div>
                         <b>
