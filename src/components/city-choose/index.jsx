@@ -31,7 +31,7 @@ class CityChoose extends Component {
 
     componentDidMount() {
         $('.c_address_box a').on('click', (e) => {
-            this.props.onChooseCity(e);
+            this.props.onChooseCity(e.target.getAttribute('data'));
         });
     }
 

@@ -5,6 +5,7 @@ import actions from './actions';
 import './index.less';
 import $ from 'jquery';
 
+import Loading from '../../components/loading';
 import Search from '../../partials/search';
 import TicketCard from '../../components/ticket-card';
 import Pagination from '../../components/pagination';
@@ -89,7 +90,7 @@ class Home extends Component {
 
     renderResult(ticketList, currentPage, total, isLoading, isInited) {
         if (isLoading) {
-            return <div>loading</div>
+            return <Loading/>
         }
         if (isInited) {
             return (

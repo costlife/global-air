@@ -23,7 +23,6 @@ class CitySuggest extends Component {
         this.state = {
             showChoose: false,
             showSuggest: false,
-            inputText: '',
             suggestData: [],
             activeIndexSug: 0,
         };
@@ -42,6 +41,7 @@ class CitySuggest extends Component {
     }
 
     onChangeInput(e) {
+        debugger;
         if (e.target.value.length > 0) {
             $.getJSON('/flight/getAirPortCode.in', {
                 key: e.target.value
@@ -51,18 +51,13 @@ class CitySuggest extends Component {
         } else {
             this.showChoose();
         }
-        this.setState({
-            inputText: e.target.value
-        });
     }
 
-    onChooseCity(e) {
-        let city = e.target.getAttribute('data');
-        let citiCode = city.substring(city.indexOf('(') + 1, city.indexOf(')'));
-        this.props.onChangeCity(citiCode);
+    onChooseCity(city) {
+        this.props.onChangeCity(city);
         this.setState({
             showChoose: false,
-            inputText: city.split('|')[1]
+            showSuggest: false,
         });
     }
 
@@ -76,23 +71,31 @@ class CitySuggest extends Component {
         let cls = classNames({
             active: i == activeIndexSug
         });
-        if (item.airportCode == item.cityCode) {
+        const {airportNameCn, airportCode, countryCodeCn, airportNamePy, cityNameCn, cityNameEn, cityCode } = item;
+        let city = airportNamePy + '|' + cityNameCn + '|(' + cityCode + ')';
+        if (airportCode == cityCode) {
             return (
-                <tr key={i} className={cls} onMouseEnter={this.onHoverSug.bind(this, i)}>
-                    <td className="icon_city " data="xi'an|西安(SIA)|10|SIA|480">
+                <tr key={i} className={cls}
+                    onMouseEnter={this.onHoverSug.bind(this, i)}
+                    onClick={() => this.onChooseCity(city)}
+                >
+                    <td className="icon_city">
                         <span>城市</span>
-                        {item.cityNameCn}({item.cityNameEn})
-                        <em>{item.countryCodeCn}</em>
+                        {cityNameCn}({cityNameEn})
+                        <em>{countryCodeCn}</em>
                     </td>
                 </tr>
             )
         } else {
             return (
-                <tr key={i} className={cls} onMouseEnter={this.onHoverSug.bind(this, i)}>
-                    <td className="icon_city " data="xi'an|西安(SIA)|10|SIA|480">
+                <tr key={i} className={cls}
+                    onMouseEnter={this.onHoverSug.bind(this, i)}
+                    onClick={() => this.onChooseCity(city)}
+                >
+                    <td className="icon_city">
                         <span>机场</span>
-                        {item.cityNameCn}({item.airportNameCn})
-                        <em>{item.countryCodeCn}</em>
+                        {cityNameCn}({airportNameCn})
+                        <em>{countryCodeCn}</em>
                     </td>
                 </tr>
             )
@@ -100,7 +103,8 @@ class CitySuggest extends Component {
     }
 
     render() {
-        const { showChoose, showSuggest, suggestData, activeIndexSug, inputText } = this.state;
+        const { showChoose, showSuggest, suggestData, activeIndexSug } = this.state;
+        const { value } = this.props;
         return (
             <div className="city-suggest">
                 <input
@@ -109,7 +113,7 @@ class CitySuggest extends Component {
                     placeholder="支持中文/拼音/英文/三字码"
                     onFocus={this.showChoose.bind(this)}
                     onChange={this.onChangeInput.bind(this)}
-                    value={inputText}
+                    value={value}
                 />
                 {showChoose &&
                     <CityChoose

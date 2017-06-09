@@ -78,6 +78,14 @@ class FlightSearch extends Component {
         this.setState({segmentList})
     }
 
+    changeDestOrigin() {
+        const { departure, destination } = this.state;
+        let temp = departure;
+        let _departure = destination;
+        let _destination = temp;
+        this.setState({departure: _departure, destination: _destination});
+    }
+
     onSearchClick() {
         const {journeyType, cabinClass, adtCount, chdCount, infCount, airline} = this.state;
 
@@ -101,22 +109,33 @@ class FlightSearch extends Component {
         });
     }
 
+    getCode(source) {
+        return source.substring(source.indexOf('(') + 1, source.indexOf(')'));
+    }
+
+    getName(source) {
+        return source.split('|')[1]
+    }
+
     getSegmentList() {
         const {journeyType, departure, destination, startDate, returnDate, segmentList} = this.state;
+        let departureCode = this.getCode(departure);
+        let destinationCode = this.getCode(destination);
+        debugger;
         if (journeyType == 'OW') {
             return [{/*航程列表， 单程是一个，往返是两个，多程几程几个*/
-                oriCode: departure,
-                desCode: destination,
+                oriCode: departureCode,
+                desCode: destinationCode,
                 departureDate: startDate.valueOf(),
             }];
         } else if (journeyType == 'RT') {
             return [{
-                oriCode: departure,
-                desCode: destination,
+                oriCode: departureCode,
+                desCode: destinationCode,
                 departureDate: startDate.valueOf(),
             }, {
-                oriCode: destination,
-                desCode: departure,
+                oriCode: destinationCode,
+                desCode: departureCode,
                 departureDate: returnDate.valueOf(),
             }]
         } else {
@@ -130,9 +149,16 @@ class FlightSearch extends Component {
         }
     }
 
+    onChangeValue(value) {
+        console.log(value)
+        this.setState({
+            departure: value
+        });
+    }
+
     render() {
         const { onSearch } = this.props;
-        const { journeyType, startDate, returnDate } = this.state;
+        const { journeyType, startDate, returnDate, departure, destination } = this.state;
         return (
             <div className="typeCont">
                 <div className="searchForms">
@@ -163,8 +189,12 @@ class FlightSearch extends Component {
                         <div>
                             <div className="formline search-city">
                                 <i>出发地</i>
-                                <CitySuggest onChangeCity={this.onChangeDeparture.bind(this)}/>
-                                <div className="toggle">换</div>
+                                <CitySuggest
+                                    value={this.getName(departure)}
+                                    onChangeCity={this.onChangeDeparture.bind(this)}
+                                    onChangeValue={this.onChangeValue.bind(this)}
+                                />
+                                <div className="toggle" onClick={this.changeDestOrigin.bind(this)}>换</div>
                             </div>
                             <div className="formline">
                                 <i>出发日期</i>
@@ -176,7 +206,11 @@ class FlightSearch extends Component {
                             </div>
                             <div className="formline search-city">
                                 <i>到达地</i>
-                                <CitySuggest onChangeCity={this.onChangeDestination.bind(this)}/>
+                                <CitySuggest
+                                    value={this.getName(destination)}
+                                    onChangeCity={this.onChangeDestination.bind(this)}
+                                    onChangeValue={this.onChangeValue.bind(this)}
+                                />
                                 <s className="ico-time"></s>
                             </div>
                             <div className="formline">
