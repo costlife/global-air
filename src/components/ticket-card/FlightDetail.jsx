@@ -37,7 +37,6 @@ class FlightDetail extends Component {
             arriveTime,
         } = item;
         let hasTransferTime = index < total - 1;
-        console.log(departureTime);
         return (
             <div key={index}>
                 <div className="flines">

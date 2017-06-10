@@ -46,22 +46,13 @@ class Home extends Component {
     }
 
     initBooking(params) {
+        this.setState({params});
         this.props.actions.initBooking(params);
     }
 
     onPageChange(value) {
         this.props.actions.pageChange(value);
     }
-
-    // getTicketList(ticketList, total, current, size) {
-    //     let start = (current - 1) * size;
-    //     let end = Math.min(current * size, total) - 1;
-    //     let list = [];
-    //     for (var i = start; i <= end; i++) {
-    //         list.push(<TicketCard key={i} detail={ticketList.avFlightList[i]}/>)
-    //     }
-    //     return list;
-    // }
 
     checkDirectOnly() {
         this.props.actions.checkDirectOnly();
@@ -87,8 +78,8 @@ class Home extends Component {
         this.props.actions.sortChange(value);
     }
 
-
     renderResult(ticketList, currentPage, total, isLoading, isInited) {
+        const {params} = this.state;
         if (isLoading) {
             return <Loading/>
         }
@@ -96,9 +87,9 @@ class Home extends Component {
             return (
                 <div>
                     <TicketFilter
-                        airline={ticketList.priceTable}
+                        params={params}
+                        ticketList={ticketList}
                         airlineChange={this.airlineChange.bind(this)}
-                        transferCity={ticketList.transferCity}
                         transferCityChange={this.transferCityChange.bind(this)}
                         departHourRange={this.departHourRange.bind(this)}
                         rtDepartHourRange={this.rtDepartHourRange.bind(this)}

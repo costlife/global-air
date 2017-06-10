@@ -68,7 +68,6 @@ class PriceTable extends Component {
 
     render() {
         const { priceTable } = this.props;
-        console.log(priceTable)
         let pageSize = 7;
         let swipeTable = [];
         let singleTable = [];

@@ -202,7 +202,7 @@ class FlightSearch extends Component {
                         />
                         :
                         <div>
-                            <div className="formline search-city">
+                            <div className="formline search-city start-city">
                                 <i>出发地</i>
                                 <CitySuggest
                                     value={departureText}
@@ -211,7 +211,7 @@ class FlightSearch extends Component {
                                 />
                                 <div className="toggle" onClick={this.changeDestOrigin.bind(this)}>换</div>
                             </div>
-                            <div className="formline">
+                            <div className="formline start-day">
                                 <i>出发日期</i>
                                 <DatePicker
                                     dateFormat="YYYY/MM/DD"
@@ -219,7 +219,7 @@ class FlightSearch extends Component {
                                     placeholderText="请选择出发日期"
                                     onChange={this.changeStartDate.bind(this)} />
                             </div>
-                            <div className="formline search-city">
+                            <div className="formline search-city end-city">
                                 <i>到达地</i>
                                 <CitySuggest
                                     value={destinationText}
@@ -228,7 +228,7 @@ class FlightSearch extends Component {
                                 />
                                 <s className="ico-time"></s>
                             </div>
-                            <div className="formline">
+                            <div className="formline end-day">
                                 <i>返回日期</i>
                                 <DatePicker
                                     dateFormat="YYYY/MM/DD"

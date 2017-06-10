@@ -10,8 +10,6 @@ import './index.less';
 class Dialog extends Component {
 
     static propTypes = {
-        airline: React.PropTypes.array,
-        transferCity: React.PropTypes.array,
         checkDirectOnly: React.PropTypes.func,
         transferCityChange: React.PropTypes.func,
         departHourRange: React.PropTypes.func,
@@ -19,8 +17,6 @@ class Dialog extends Component {
     };
 
     static defaultProps = {
-        airline: [],
-        transferCity: [],
         dateRangeData: [{
             text: '上午(6-12点)',
             value: '[6,12]',
@@ -80,24 +76,26 @@ class Dialog extends Component {
 
     render() {
         const {
-            airline,
+            params,
+            ticketList,
             airlineChange,
-            transferCity,
             transferCityChange,
             checkDirectOnly,
             departHourRange,
             rtDepartHourRange,
             dateRangeData,
         } = this.props;
+        console.log(params)
+        const { priceTable, transferCity } = ticketList;
         const { showTable } = this.state;
         return (
             <div className="flight-filter">
-                <Title onOpen={this.toggleTable.bind(this)}/>
-                {showTable && this.renderTable(airline)}
+                <Title params={params} ticketList={ticketList} onOpen={this.toggleTable.bind(this)}/>
+                {showTable && this.renderTable(priceTable)}
                 <div className="filter">
                     <FilterSelect
                         label="航空公司"
-                        data={airline.map(item => { return {
+                        data={priceTable.map(item => { return {
                             text: item.airlineName,
                             value: item.airlineName,
                             price: this.getMinPrice([item.lp, item.lpo, item.lpt])

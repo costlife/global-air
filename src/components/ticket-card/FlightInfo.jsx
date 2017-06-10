@@ -38,7 +38,6 @@ class FligthInfo extends Component {
             transferCity,
             stopCity,
         } = od;
-        console.log(departureTime);
         let depTerm = flightDetail[0].depTerm;
         let arrTerm = flightDetail[flightDetail.length - 1].arrTerm;
         let isJumpDay = this.isJumpDay(flightDetail[0].departureTime, flightDetail[flightDetail.length - 1].arriveTime);

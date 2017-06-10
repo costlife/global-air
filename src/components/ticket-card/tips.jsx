@@ -25,8 +25,9 @@ class Tips extends Component {
     }
     render() {
         const { show } = this.state;
+        const { className } = this.props;
         return (
-            <div onMouseLeave={this.hideOptions.bind(this)}>
+            <div className={className} onMouseLeave={this.hideOptions.bind(this)}>
                 {this.getTarget()}
                 {show &&
                     <div className="tips">
