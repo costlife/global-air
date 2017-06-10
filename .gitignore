@@ -6,3 +6,4 @@ output
 npm-debug.log
 *.orig
 .DS_Store
+package-lock.json
