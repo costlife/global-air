@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker';
 import CitySuggest from '../../components/city-suggest';
 import Select from '../../components/select';
 import classNames from 'classnames';
+import utils from '../../utils';
 
 class CityChoose extends Component {
 
@@ -63,24 +64,16 @@ class CityChoose extends Component {
     onChangeSegmentField(data, index, field) {
         let segmentList = this.state.segmentList;
         if (field == 'oriCode') {
-            segmentList[index].departureText = this.getName(data);
-            segmentList[index].oriCode = this.getCode(data);
+            segmentList[index].departureText = utils.getName(data);
+            segmentList[index].oriCode = utils.getCode(data);
         } else if (field == 'desCode') {
-            segmentList[index].destinationText = this.getName(data);
-            segmentList[index].desCode = this.getCode(data);
+            segmentList[index].destinationText = utils.getName(data);
+            segmentList[index].desCode = utils.getCode(data);
         } else {
             segmentList[index][field] = data;
         }
         this.props.onSegmentListChange(segmentList);
         this.setState({segmentList});
-    }
-
-    getName(source) {
-        return source.split('|')[1]
-    }
-
-    getCode(source) {
-        return source.substring(source.indexOf('(') + 1, source.indexOf(')'));
     }
 
     renderFlightLine(total) {

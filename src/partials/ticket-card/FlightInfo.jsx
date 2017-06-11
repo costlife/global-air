@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import classNames from 'classnames';
-
+import utils from '../../utils';
 class FligthInfo extends Component {
 
     /**
@@ -44,7 +44,7 @@ class FligthInfo extends Component {
         return (
             <div className="flight-info">
                 <div className="flight-name">
-                    <img src={`http://simg1.qunarzz.com/site/images/airlines/${airline}.gif`} alt="" />
+                    <img src={utils.getLogoByCode(airline)} alt="" />
                     <div className="flight-name-info">
                         <p>{airlineName}</p>
                         <p>{flightNo}</p>

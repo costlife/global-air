@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
-import Tips from './Tips';
+import Tips from '../../components/tips';
 
 class PriceTag extends Component {
 

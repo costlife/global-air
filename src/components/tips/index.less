@@ -1,0 +1,75 @@
+@import "../../static/css/mixin.less";
+.tips {
+    position: absolute;
+    left: 0;
+    top: 32px;
+    background: #fff;
+    z-index: 10;
+    border: 1px solid #ddd;
+    margin-left: -1px;
+
+    .eback-tips {
+        width: 400px;
+    }
+    .title-tips {
+        width: 267px;
+    }
+    .class-tips {
+        width: 170px;
+    }
+    .price-tips {
+        width: 300px;
+    }
+    .tipsTab {
+        text-align: left;
+        font-size: 0;
+        line-height: 20px;
+        cursor: pointer;
+        &>div {
+            .in();
+            padding: 6px 20px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            margin-left: -1px;
+            margin-bottom: -1px;
+            color: #999;
+            position: relative;
+            cursor: pointer;
+
+            &:hover {
+                color: @blue;
+            }
+
+            &.active {
+                z-index: 20;
+                background: #fff;
+                color: @blue;
+            }
+
+        }
+
+    }
+
+    .table {
+        border: none;
+
+        td {
+            border: 1px solid #ddd;
+        }
+
+    }
+
+    td {
+        line-height: 1.8;
+        text-align: justify;
+        color: #444;
+        padding: 10px;
+    }
+
+    .baggage {
+        h2 {
+        }
+
+    }
+
+}

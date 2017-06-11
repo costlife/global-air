@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
-
+import utils from '../../utils';
 import DatePicker from 'react-datepicker';
 import Select from '../../components/select';
 import CitySuggest from '../../components/city-suggest';
@@ -69,7 +69,7 @@ class FlightSearch extends Component {
     onChangeDeparture(departure) {
         this.setState({
             departure,
-            departureText: this.getName(departure)
+            departureText: utils.getName(departure)
         });
     }
 
@@ -82,7 +82,7 @@ class FlightSearch extends Component {
     onChangeDestination(destination) {
         this.setState({
             destination,
-            destinationText: this.getName(destination)
+            destinationText: utils.getName(destination)
         });
     }
 
@@ -104,8 +104,8 @@ class FlightSearch extends Component {
         this.setState({
             departure: _departure,
             destination: _destination,
-            departureText: this.getName(_departure),
-            destinationText: this.getName(_destination),
+            departureText: utils.getName(_departure),
+            destinationText: utils.getName(_destination),
         });
     }
 
@@ -132,18 +132,10 @@ class FlightSearch extends Component {
         });
     }
 
-    getCode(source) {
-        return source.substring(source.indexOf('(') + 1, source.indexOf(')'));
-    }
-
-    getName(source) {
-        return source.split('|')[1]
-    }
-
     getSegmentList() {
         const {journeyType, departure, destination, startDate, returnDate, segmentList} = this.state;
-        let departureCode = this.getCode(departure);
-        let destinationCode = this.getCode(destination);
+        let departureCode = utils.getCode(departure);
+        let destinationCode = utils.getCode(destination);
         if (journeyType == 'OW') {
             return [{/*航程列表， 单程是一个，往返是两个，多程几程几个*/
                 oriCode: departureCode,

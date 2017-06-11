@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
+import './index.less';
+
 class Tips extends Component {
 
     /**

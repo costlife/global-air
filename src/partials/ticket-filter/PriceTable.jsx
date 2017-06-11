@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactSwipe from 'react-swipe';
+import utils from '../../utils';
 
 class PriceTable extends Component {
 
@@ -45,12 +46,18 @@ class PriceTable extends Component {
                 <table key={index} className="ticket-table" width="1">
                     <tbody>
                         <tr>
-                            {head.map((item, i) => <td key={i}>{item}</td>)}
+                            {head.map((item, i) => {
+                                let code = utils.getCode(item);
+                                return <td key={i}>
+                                    {code && <img src={utils.getLogoByCode(code)} />}
+                                    {item}
+                                </td>
+                            })}
                         </tr>
                         {body.map((item, i) =>
                             <tr key={i}>
                                 {item.map((data, i) =>
-                                    <td key={i}>{data || '-'}</td>
+                                    <td key={i}>{data || ' /-'}</td>
                                 )}
                             </tr>
                         )}
