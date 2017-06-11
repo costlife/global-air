@@ -24,10 +24,9 @@ function filterTickets(ticketListStorage, paramsFilter) {
     if (paramsFilter.sort) {
         newAvFlightList = sortFilter(newAvFlightList, paramsFilter.sort);
     }
-    if (paramsFilter.current) {
-        newAvFlightList = pageInfoFilter(newAvFlightList, paramsFilter.current, paramsFilter.total);
-    }
-
+    // if (paramsFilter.current) {
+    //     newAvFlightList = pageInfoFilter(newAvFlightList, paramsFilter.current, paramsFilter.total);
+    // }
     newTicketList.avFlightList = newAvFlightList;
     return newTicketList;
 }
@@ -113,7 +112,7 @@ function rtDepartHourFilter(flightList, rtDepartHourRange) {
 
 function pageInfoFilter(flightList, current, total) {
     let size = 20;
-    let end = Math.min(current * size, total) - 1;
+    let end = Math.min(current * size, flightList.length) - 1;
     let nextFlightList = [];
     for (var i = 0; i <= end; i++) {
         nextFlightList.push(flightList[i]);

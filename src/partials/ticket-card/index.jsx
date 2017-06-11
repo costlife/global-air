@@ -16,15 +16,15 @@ class TicketCard extends Component {
 
     render() {
         const { detail, params, priceType } = this.props;
-
+        const { odlist, fareList } = detail;
         return (
             <div className="flightCard">
-                {detail.odlist.map((od, i) => {
+                {odlist.map((od, i) => {
                     return <Flight od={od} key={i}/>
                 })}
                 <div className="personBar">
-                    {detail.fareList.map((fare, i) => 
-                        <PriceTag key={i} fare={detail.fareList[0]} priceType={priceType} params={params}/>
+                    {fareList.map((fare, i) => 
+                        <PriceTag key={i} fare={fareList[0]} priceType={priceType} params={params}/>
                     )}
                 </div>
             </div>

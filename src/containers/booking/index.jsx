@@ -27,23 +27,23 @@ class Booking extends Component {
     }
 
     componentDidMount() {
-        let didScroll;
-        $(window).on('scroll', () => {
-            didScroll = true;
-        });
-        this.intervalHandler = setInterval(() => {
-            const { paramsFilter, isInited } = this.props.booking;
-            let show = $(document).scrollTop() + $(window).height() > $(document).height() - 300;
-            if (didScroll && show && isInited) {
-                didScroll = false;
-                this.props.actions.pageChange(paramsFilter.current + 1);
-            }
-        }, 250);
+        // let didScroll;
+        // $(window).on('scroll', () => {
+        //     didScroll = true;
+        // });
+        // this.intervalHandler = setInterval(() => {
+        //     const { paramsFilter, isInited } = this.props.booking;
+        //     let show = $(document).scrollTop() + $(window).height() > $(document).height() - 300;
+        //     if (didScroll && show && isInited) {
+        //         didScroll = false;
+        //         this.props.actions.pageChange(paramsFilter.current + 1);
+        //     }
+        // }, 250);
     }
 
     componentWillUnmount() {
-        $(window).off('scroll');
-        clearInterval(this.intervalHandler);
+        // $(window).off('scroll');
+        // clearInterval(this.intervalHandler);
     }
 
     initBooking(params) {
