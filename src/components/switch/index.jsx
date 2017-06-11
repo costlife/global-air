@@ -40,6 +40,7 @@ class Switch extends Component {
                             active: activeIndex == i
                         });
                         return <a 
+                            key={i}
                             className={itemCls}
                             href="javascript:void(0);"  
                             onClick={() => onChangeIndex(item.value)}

@@ -37,7 +37,7 @@ class PriceTable extends Component {
             body[2].push(item.lpt);
         });
         return (
-            <div>
+            <div key={index}>
                 <div className="ticket-table-page" onClick={this.prev.bind(this)}>
                     <i className="fa fa-angle-left" aria-hidden="true"></i>
                     <br/>

@@ -24,7 +24,7 @@ class TicketCard extends Component {
                 })}
                 <div className="personBar">
                     {detail.fareList.map((fare, i) => 
-                        <PriceTag fare={detail.fareList[0]} priceType={priceType} params={params}/>
+                        <PriceTag key={i} fare={detail.fareList[0]} priceType={priceType} params={params}/>
                     )}
                 </div>
             </div>

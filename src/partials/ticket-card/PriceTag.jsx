@@ -29,7 +29,7 @@ class PriceTag extends Component {
             <span>{fare.physicalClassName}</span>
             <div className="class-tips">
                 {fare.classInfo.map((info, i) => {
-                    return <div>
+                    return <div key={i}>
                         <span>{info.cityName}</span>
                         <span>{info.physicalClassName}({info.cabin})</span>
                     </div>
@@ -70,7 +70,6 @@ class PriceTag extends Component {
     }
 
     renderPrice(fare, priceType, params) {
-        console.log(fare)
         let adtCount = params.passengerType[0].passgerNumber;
         let chdCount = params.passengerType[1].passgerNumber;
         let infCount = params.passengerType[2].passgerNumber;
