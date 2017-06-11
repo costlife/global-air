@@ -1,8 +1,9 @@
 import $ from 'jquery';
 import fakeData from '../../../mock/Test_search_MS.json';
 
-const HomeActions = {
+const BookingActions = {
     initBooking: (params) => (dispatch, getState) => {
+        console.log('查询条件', params)
         dispatch({
             type: 'BOOKING_INIT',
             data: {
@@ -89,4 +90,4 @@ const HomeActions = {
 
 };
 
-export default HomeActions;
+export default BookingActions;

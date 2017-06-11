@@ -14,7 +14,6 @@ import Header from '../partials/header';
 import Footer from '../partials/footer';
 /* router */
 
-import Home from '../containers/home';
 import Booking from '../containers/booking';
 
 /* router end */

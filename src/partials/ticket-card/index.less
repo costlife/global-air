@@ -174,7 +174,8 @@
         &>div {
             .in();
             //width: 120px;
-            margin-right: 58px;
+            margin-right: 53px;
+            position: relative;
         }
 
     }
@@ -203,11 +204,14 @@
     .eback {
         margin-right: 128px;
         color: @blue;
-        position: relative;
     }
 
     .person-order {
         margin-right: 0 !important;
+        span {
+            color: #b00;
+            margin-left: 3px;
+        }
     }
 
     .selbtn {
@@ -226,11 +230,22 @@
     left: 0;
     top: 32px;
     background: #fff;
-    width: 400px;
     z-index: 10;
     border: 1px solid #ddd;
     margin-left: -1px;
 
+    .eback-tips {
+        width: 400px;
+    }
+    .title-tips {
+        width: 267px;
+    }
+    .class-tips {
+        width: 170px;
+    }
+    .price-tips {
+        width: 300px;
+    }
     .tipsTab {
         text-align: left;
         font-size: 0;

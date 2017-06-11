@@ -6,15 +6,15 @@ import './index.less';
 import $ from 'jquery';
 
 import Loading from '../../components/loading';
-import Search from '../../partials/search';
-import TicketCard from '../../components/ticket-card';
 import Pagination from '../../components/pagination';
-import TicketFilter from '../../components/ticket-filter';
+import Search from '../../partials/search';
+import TicketCard from '../../partials/ticket-card';
+import TicketFilter from '../../partials/ticket-filter';
 /*
 @Des:组件容器
 */
 
-class Home extends Component {
+class Booking extends Component {
     /*
     @Des：构造函数
     */
@@ -22,6 +22,7 @@ class Home extends Component {
         super(props);
         this.state = {
             current: 1,
+            priceType: 1,
         }
     }
 
@@ -78,8 +79,12 @@ class Home extends Component {
         this.props.actions.sortChange(value);
     }
 
+    priceTypeChange(priceType) {
+        this.setState({priceType});
+    }
+
     renderResult(ticketList, currentPage, total, isLoading, isInited) {
-        const {params} = this.state;
+        const {params, priceType} = this.state;
         if (isLoading) {
             return <Loading/>
         }
@@ -95,9 +100,16 @@ class Home extends Component {
                         rtDepartHourRange={this.rtDepartHourRange.bind(this)}
                         checkDirectOnly={this.checkDirectOnly.bind(this)}
                         onSortChange={this.onSortChange.bind(this)}
+                        priceType={priceType}
+                        priceTypeChange={this.priceTypeChange.bind(this)}
                     />
                     {ticketList.avFlightList.map((item, i) => {
-                        return <TicketCard key={i} detail={item}/>
+                        return <TicketCard 
+                            key={i} 
+                            detail={item} 
+                            params={params}
+                            priceType={priceType}
+                        />
                     })}
                 </div>
             )
@@ -121,4 +133,4 @@ class Home extends Component {
 export default connect(
     (state) => state,
     (dispatch) => {return { actions: bindActionCreators(actions, dispatch) }}
-)(Home);
+)(Booking);

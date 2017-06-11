@@ -4,7 +4,8 @@ import moment from 'moment';
 import Title from './Title.jsx';
 import Sorter from './Sorter.jsx';
 import PriceTable from './PriceTable.jsx';
-import FilterSelect from '../filter-select';
+import FilterSelect from '../../components/filter-select';
+import Switch from '../../components/switch';
 import './index.less';
 
 class Dialog extends Component {
@@ -84,8 +85,9 @@ class Dialog extends Component {
             departHourRange,
             rtDepartHourRange,
             dateRangeData,
+            priceType,
+            priceTypeChange,
         } = this.props;
-        console.log(params)
         const { priceTable, transferCity } = ticketList;
         const { showTable } = this.state;
         return (
@@ -106,10 +108,7 @@ class Dialog extends Component {
                     <FilterSelect label="中转城市" data={transferCity.map(item => { return { text: item, value: item, price: null }})} onChange={transferCityChange}/>
                     <input type="checkbox" onClick={checkDirectOnly}/>仅看直飞
                     <Sorter onChange={this.onChangeSorter.bind(this)}/>
-                    <span className="bar tax-filter">
-                        <a className="active">不含税价</a>
-                        <a>含税价</a>
-                    </span>
+                    <Switch className="tax-filter" activeIndex={priceType} onChangeIndex={priceTypeChange}/>
                 </div>
             </div>
         );

@@ -15,7 +15,7 @@ class TicketCard extends Component {
     }
 
     render() {
-        const { detail } = this.props;
+        const { detail, params, priceType } = this.props;
 
         return (
             <div className="flightCard">
@@ -24,7 +24,7 @@ class TicketCard extends Component {
                 })}
                 <div className="personBar">
                     {detail.fareList.map((fare, i) => 
-                        <PriceTag fare={detail.fareList[0]} type={1}/>
+                        <PriceTag fare={detail.fareList[0]} priceType={priceType} params={params}/>
                     )}
                 </div>
             </div>

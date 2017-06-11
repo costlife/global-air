@@ -40,6 +40,8 @@ class CityChoose extends Component {
             segmentList.push({
                 oriCode: '',
                 desCode: '',
+                departureText: '',
+                destinationText: '',
                 departureDate: '',
             })
         }
@@ -60,9 +62,25 @@ class CityChoose extends Component {
 
     onChangeSegmentField(data, index, field) {
         let segmentList = this.state.segmentList;
-        segmentList[index][field] = data;
+        if (field == 'oriCode') {
+            segmentList[index].departureText = this.getName(data);
+            segmentList[index].oriCode = this.getCode(data);
+        } else if (field == 'desCode') {
+            segmentList[index].destinationText = this.getName(data);
+            segmentList[index].desCode = this.getCode(data);
+        } else {
+            segmentList[index][field] = data;
+        }
         this.props.onSegmentListChange(segmentList);
         this.setState({segmentList});
+    }
+
+    getName(source) {
+        return source.split('|')[1]
+    }
+
+    getCode(source) {
+        return source.substring(source.indexOf('(') + 1, source.indexOf(')'));
     }
 
     renderFlightLine(total) {
@@ -74,11 +92,19 @@ class CityChoose extends Component {
                     <div className="no">{i + 1}</div>
                     <div className="formline">
                         <i>出发地</i>
-                        <CitySuggest onChangeCity={(departure) => this.onChangeSegmentField(departure, i, 'oriCode')}/>
+                        <CitySuggest 
+                            value={segmentList[i].departureText}
+                            onChangeCity={(departure) => this.onChangeSegmentField(departure, i, 'oriCode')}
+                            onChangeText={(text) => this.onChangeSegmentField(text, i, 'departureText')}
+                        />
                     </div>
                     <div className="formline">
                         <i>到达地</i>
-                        <CitySuggest onChangeCity={(destination) => this.onChangeSegmentField(destination, i, 'desCode')}/>
+                        <CitySuggest 
+                            value={segmentList[i].destinationText}
+                            onChangeCity={(destination) => this.onChangeSegmentField(destination, i, 'desCode')}
+                            onChangeText={(text) => this.onChangeSegmentField(text, i, 'destinationText')}
+                        />
                         <s className="ico-time"></s>
                     </div>
                     <div className="formline">

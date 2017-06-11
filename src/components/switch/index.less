@@ -1,0 +1,33 @@
+.switch {
+    display: inline-block;
+    .bar {
+        margin-left: 20px;
+        display: inline-block;
+        font-size: 0
+    }
+
+    .bar a {
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        border: 1px solid #ccc;
+        margin-left: -1px;
+        padding: 5px 15px;
+        font-size: 12px;
+        position: relative
+    }
+
+    .bar a:hover {
+        border: 1px solid #2993d1;
+        color: #2993d1;
+        cursor: pointer;
+        z-index: 10
+    }
+
+    .bar a.active {
+        background: #2993d1;
+        border: 1px solid #2993d1;
+        z-index: 10;
+        color: #fff
+    }
+}
