@@ -14,7 +14,6 @@ class Dialog extends Component {
                 text: '起飞时间',
                 value: 'departHour'
             },
-
             {
                 text: '抵达时间',
                 value: 'rtDepartHour'
@@ -53,8 +52,10 @@ class Dialog extends Component {
     }
 
     render() {
-        const { sorter, active, onChange, desc } = this.state;
-
+        let { sorter, active, onChange, desc, journeyType } = this.state;
+        if (journeyType != 'OW') {
+            sorter = sorter.filter((item) => item.value != 'rtDepartHour');
+        }
         return (
             <div className="bar">
                 {sorter.map((item, i) => {

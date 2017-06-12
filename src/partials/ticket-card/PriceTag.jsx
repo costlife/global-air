@@ -73,9 +73,9 @@ class PriceTag extends Component {
         let adtCount = params.passengerType[0].passgerNumber;
         let chdCount = params.passengerType[1].passgerNumber;
         let infCount = params.passengerType[2].passgerNumber;
-        const { 
-            avgSettlementPriceWithTax, 
-            avgSettlementPrice, 
+        const {
+            avgSettlementPriceWithTax,
+            avgSettlementPrice,
             avgTax,
             adultPrice,
             childPrice,
@@ -83,21 +83,21 @@ class PriceTag extends Component {
         } = fare;
         let priceList = [{
             label: '成人',
-            priceWithTax:  adultPrice.settlementPriceWithTax,
-            price: adultPrice.settlementPrice,
-            tax: adultPrice.tax,
+            priceWithTax:  adultPrice && adultPrice.settlementPriceWithTax,
+            price: adultPrice && adultPrice.settlementPrice,
+            tax: adultPrice && adultPrice.tax,
             count: adtCount
         }, {
             label: '儿童',
-            priceWithTax:  childPrice.settlementPriceWithTax,
-            price: childPrice.settlementPrice,
-            tax: childPrice.tax,
+            priceWithTax:  childPrice && childPrice.settlementPriceWithTax,
+            price: childPrice && childPrice.settlementPrice,
+            tax: childPrice && childPrice.tax,
             count: chdCount
         }, {
             label: '婴儿',
-            priceWithTax:  infPrice.settlementPriceWithTax,
-            price: infPrice.settlementPrice,
-            tax: infPrice.tax,
+            priceWithTax:  infPrice && infPrice.settlementPriceWithTax,
+            price: infPrice && infPrice.settlementPrice,
+            tax: infPrice && infPrice.tax,
             count: infCount
         }, {
             label: '往返人均含税价',
@@ -119,7 +119,7 @@ class PriceTag extends Component {
                     if (item.count > 0 || item.count == -1) {
                         return <div key={i}>
                             <label>{item.label}</label>
-                            {priceType == 0 ? 
+                            {priceType == 0 ?
                                 <span>
                                     <span>¥{item.price}</span>
                                     <span>+¥{item.tax}税费</span>
@@ -150,7 +150,7 @@ class PriceTag extends Component {
                     {this.renderPrice(fare, priceType, params)}
                     <div className="person-order">
                         <a className="btn selbtn btn-o">预定</a>
-                        <span>仅剩{fare.totalPassengerCount}张</span>
+                        {fare.seats < 9 && <span>仅剩{fare.seats}张</span>}
                     </div>
                 </div>
             </div>

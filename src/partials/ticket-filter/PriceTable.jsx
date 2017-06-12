@@ -12,7 +12,7 @@ class PriceTable extends Component {
         priceTable: [],
     };
 
-    
+
     /**
      * @description 构造函数
      */
@@ -32,9 +32,9 @@ class PriceTable extends Component {
         let head = ['所有航司'], body = [['第一次转机'], ['第二次转机'], ['直飞']];
         singleTable.map(item => {
             head.push(item.airlineName);
-            body[0].push(item.lp);
-            body[1].push(item.lpo);
-            body[2].push(item.lpt);
+            body[0].push(item.lpo);
+            body[1].push(item.lpt);
+            body[2].push(item.lp);
         });
         return (
             <div key={index}>
@@ -57,7 +57,7 @@ class PriceTable extends Component {
                         {body.map((item, i) =>
                             <tr key={i}>
                                 {item.map((data, i) =>
-                                    <td key={i}>{data || ' /-'}</td>
+                                    <td key={i}>{data || ' -'}</td>
                                 )}
                             </tr>
                         )}
@@ -69,7 +69,7 @@ class PriceTable extends Component {
                     <span>{index} / {total}</span>
                 </div>
             </div>
-            
+
         )
     }
 

@@ -67,11 +67,11 @@ class Dialog extends Component {
     }
 
 
-    
+
     renderTable(priceTable) {
         return (
             <PriceTable priceTable={priceTable}/>
-            
+
         )
     }
 
@@ -89,6 +89,7 @@ class Dialog extends Component {
             priceTypeChange,
         } = this.props;
         const { priceTable, transferCity } = ticketList;
+        const { journeyType } = params;
         const { showTable } = this.state;
         return (
             <div className="flight-filter">
@@ -104,10 +105,16 @@ class Dialog extends Component {
                         }})}
                         onChange={airlineChange}/>
                     <FilterSelect label="起飞时间" data={dateRangeData} onChange={departHourRange}/>
-                    <FilterSelect label="返程时间" data={dateRangeData} onChange={rtDepartHourRange}/>
-                    <FilterSelect label="中转城市" data={transferCity.map(item => { return { text: item, value: item, price: null }})} onChange={transferCityChange}/>
+                    {journeyType == 'RT' &&
+                        <FilterSelect label="返程时间" data={dateRangeData} onChange={rtDepartHourRange}/>
+                    }
+                    <FilterSelect
+                        label="中转城市"
+                        data={transferCity.map(item => { return { text: item, value: item, price: null }})}
+                        onChange={transferCityChange}
+                    />
                     <input type="checkbox" onClick={checkDirectOnly}/>仅看直飞
-                    <Sorter onChange={this.onChangeSorter.bind(this)}/>
+                    <Sorter journeyType={journeyType} onChange={this.onChangeSorter.bind(this)}/>
                     <Switch className="tax-filter" activeIndex={priceType} onChangeIndex={priceTypeChange}/>
                 </div>
             </div>

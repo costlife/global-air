@@ -126,7 +126,7 @@ function sortFilter(flightList, sort) {
             case 'departHour':
                 return desc(sort.desc, a.odlist[0].departureTime, b.odlist[0].departureTime);
             case 'rtDepartHour':
-                return desc(sort.desc, a.odlist[0].arriveTime, b.odlist[0].arriveTime);
+                return desc(sort.desc, a.odlist[1].departureTime, b.odlist[1].departureTime);
             case 'duration':
                 return desc(sort.desc, a.totalDruation, b.totalDruation);
             case 'price':
