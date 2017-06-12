@@ -23,8 +23,8 @@ class TicketCard extends Component {
                     return <Flight od={od} key={i}/>
                 })}
                 <div className="personBar">
-                    {fareList.map((fare, i) => 
-                        <PriceTag key={i} fare={fareList[0]} priceType={priceType} params={params}/>
+                    {fareList.map((fare, i) =>
+                        <PriceTag key={i} odlist={odlist} fare={fareList[0]} priceType={priceType} params={params}/>
                     )}
                 </div>
             </div>

@@ -243,8 +243,10 @@ class FlightSearch extends Component {
                                     options={[
                                         {label: '经济舱', value: 'ECONOMY'},
                                         {label: '超级经济舱', value: 'PREMIUM_ECONOMY'},
+                                        {label: '经济舱/超级经济舱', value: 'ECONOMY;PREMIUM_ECONOMY'},
                                         {label: '公务舱', value: 'BUSINESS'},
                                         {label: '头等舱', value: 'FIRST'},
+                                        {label: '公务舱/头等舱', value: 'BUSINESS;FIRST'},
                                     ]}
                                     onChange={this.changeCabinClass.bind(this)}
                                 />

@@ -85,7 +85,7 @@ class CityChoose extends Component {
                     <div className="no">{i + 1}</div>
                     <div className="formline">
                         <i>出发地</i>
-                        <CitySuggest 
+                        <CitySuggest
                             value={segmentList[i].departureText}
                             onChangeCity={(departure) => this.onChangeSegmentField(departure, i, 'oriCode')}
                             onChangeText={(text) => this.onChangeSegmentField(text, i, 'departureText')}
@@ -93,7 +93,7 @@ class CityChoose extends Component {
                     </div>
                     <div className="formline">
                         <i>到达地</i>
-                        <CitySuggest 
+                        <CitySuggest
                             value={segmentList[i].destinationText}
                             onChangeCity={(destination) => this.onChangeSegmentField(destination, i, 'desCode')}
                             onChangeText={(text) => this.onChangeSegmentField(text, i, 'destinationText')}
@@ -141,8 +141,10 @@ class CityChoose extends Component {
                             options={[
                                 {label: '经济舱', value: 'ECONOMY'},
                                 {label: '超级经济舱', value: 'PREMIUM_ECONOMY'},
+                                {label: '经济舱/超级经济舱', value: 'ECONOMY;PREMIUM_ECONOMY'},
                                 {label: '公务舱', value: 'BUSINESS'},
                                 {label: '头等舱', value: 'FIRST'},
+                                {label: '公务舱/头等舱', value: 'BUSINESS;FIRST'},
                             ]}
                             onChange={changeCabinClass.bind(this)}
                         />

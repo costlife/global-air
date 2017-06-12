@@ -138,7 +138,35 @@ class PriceTag extends Component {
     }
 
     render() {
-        const {fare, priceType, count, params} = this.props;
+        const {odlist, fare, priceType, count, params} = this.props;
+        const {adultPrice, childPrice, infPrice, baggagesRemark} = fare;
+        let airPolicy = [], tktRulesMap = {}, adtNum, chdNum, infNum;
+        if (adultPrice) {
+            airPolicy.push(adultPrice.policyInfo);
+            tktRulesMap[adultPrice.passengerType] = adultPrice.tktRules;
+            adtNum = adultPrice.passengerCount;
+        }
+        if (childPrice) {
+            airPolicy.push(childPrice.policyInfo);
+            tktRulesMap[childPrice.passengerType] = childPrice.tktRules;
+            chdNum = childPrice.passengerCount;
+        }
+        if (infPrice) {
+            airPolicy.push(infPrice.policyInfo);
+            tktRulesMap[infPrice.passengerType] = infPrice.tktRules;
+            infNum = infPrice.passengerCount;
+        }
+        let formValue = {
+            journeyType: params.journeyType,
+            airPolicy: airPolicy,
+            odList: odlist,
+            baggagesRemarks: baggagesRemark,
+            tktRulesMap: tktRulesMap,
+            adtNum: adtNum,
+            chdNum: chdNum,
+            infNum: infNum,
+        };
+        console.log(formValue);
         return (
             <div className="price-tag">
                 <div className="personInfos">
@@ -149,7 +177,10 @@ class PriceTag extends Component {
                     <div className="person-back">返点：<em>3.5%</em></div>
                     {this.renderPrice(fare, priceType, params)}
                     <div className="person-order">
-                        <a className="btn selbtn btn-o">预定</a>
+                        <form method="POST" action="http://192.168.4.79/airIntlFlightBook/showAirIntlFlightBookInfo.in">
+                            <input className="none" name="bookInfoVO" value={JSON.stringify(formValue)} />
+                            <input type="submit" className="btn selbtn btn-o" value="预定"/>
+                        </form>
                         {fare.seats < 9 && <span>仅剩{fare.seats}张</span>}
                     </div>
                 </div>
