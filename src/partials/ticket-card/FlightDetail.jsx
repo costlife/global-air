@@ -77,11 +77,12 @@ class FlightDetail extends Component {
     }
 
     render() {
-        const { detail } = this.props;
+        const { detail, index } = this.props;
         let total = detail.length;
         return (
             <div className="flightDetails">
                 <div className="flights">
+                    <div className="lineStep">第{index + 1}段</div>
                     {detail.map((item, i) => {
                         return this.renderFlightDetailItem(item, i, total);
                     })}

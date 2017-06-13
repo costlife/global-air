@@ -104,9 +104,9 @@ class Booking extends Component {
                         priceTypeChange={this.priceTypeChange.bind(this)}
                     />
                     {ticketList.avFlightList.map((item, i) => {
-                        return <TicketCard 
-                            key={i} 
-                            detail={item} 
+                        return <TicketCard
+                            key={i}
+                            detail={item}
                             params={params}
                             priceType={priceType}
                         />

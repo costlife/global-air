@@ -1281,24 +1281,7 @@ a.Alink {
     z-index: 9;
     border: 1px solid #2993d1
 }
-.flightDetails {
-    background: #f6f6f6;
-    padding: 20px;
-    border: 1px solid #ededed;
-}
-.flines {
-    position: relative;
-    padding-left: 80px
-}
-.lineStep {
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 14px;
-    padding: 6px;
-    background: #2993d1;
-    color: #fff
-}
+
 .timeline {
     position: relative;
     margin-top: 14px;

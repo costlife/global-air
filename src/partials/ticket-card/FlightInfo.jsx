@@ -24,7 +24,7 @@ class FligthInfo extends Component {
     }
 
     render() {
-        const {od, showMoreInfoAction, showMoreInfo} = this.props;
+        const {od, showMoreInfoAction, showMoreInfo, enableShowMoreInfo} = this.props;
         const {
             departureTime,
             arriveTime,
@@ -94,16 +94,18 @@ class FligthInfo extends Component {
                         }
                     </div>
                 </div>
-                <div className="flight-tool">
-                    <a className="viewMore" onClick={showMoreInfoAction.bind(this)}>
-                        航班详情
-                        {showMoreInfo ?
-                            <i className="fa fa-angle-up" aria-hidden="true"></i>
-                            :
-                            <i className="fa fa-angle-down" aria-hidden="true"></i>
-                        }
-                    </a>
-                </div>
+                {enableShowMoreInfo &&
+                    <div className="flight-tool">
+                        <a className="viewMore" onClick={showMoreInfoAction.bind(this)}>
+                            航班详情
+                            {showMoreInfo ?
+                                <i className="fa fa-angle-up" aria-hidden="true"></i>
+                                :
+                                <i className="fa fa-angle-down" aria-hidden="true"></i>
+                            }
+                        </a>
+                    </div>
+                }
             </div>
         )
     }

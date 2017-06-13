@@ -3,21 +3,19 @@ import filterTickets from './filters';
 let ticketListStorage = {};
 
 function newState(state, paramsFilter) {
-    var ticketList = filterTickets(ticketListStorage, paramsFilter)
+    let ticketList = filterTickets(ticketListStorage, paramsFilter)
     return Object.assign({}, state, {ticketList: ticketList, isLoading: false, isInited: true, paramsFilter});
 }
 
 export default function ( state = {}, { type, data } ) {
-    var paramsFilter = state.paramsFilter;
-    console.log(type);
+    let paramsFilter = state.paramsFilter;
     switch (type) {
         case 'BOOKING_LOADING':
             return Object.assign({}, state, {isLoading: true});
 
         case 'BOOKING_INIT':
             ticketListStorage = data.ticketList;
-            paramsFilter.total = ticketListStorage.avFlightList.length;
-            paramsFilter.current = 1;
+            paramsFilter = {};
             return newState(state, paramsFilter);
 
         case 'BOOKING_PAGE_CHANGE':

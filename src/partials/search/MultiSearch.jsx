@@ -83,7 +83,7 @@ class CityChoose extends Component {
             flight.push(
                 <div key={i} className="flightlinebox">
                     <div className="no">{i + 1}</div>
-                    <div className="formline">
+                    <div className="formline start-city">
                         <i>出发地</i>
                         <CitySuggest
                             value={segmentList[i].departureText}

@@ -4,30 +4,30 @@ import fakeData from '../../../mock/Test_search_MS.json';
 const BookingActions = {
     initBooking: (params) => (dispatch, getState) => {
         console.log('查询条件', params)
-        // dispatch({
-        //     type: 'BOOKING_INIT',
-        //     data: {
-        //         ticketList: fakeData
-        //     }
-        // })
         dispatch({
-            type: 'BOOKING_LOADING',
-        });
-        $.ajax({
-            url: '/flight/query.in',
-            type: 'POST',
-            contentType: 'application/json; charset=utf-8', // 很重要
-            traditional: true,
-            data: JSON.stringify(params), // {"name":"zhangsan", "age": 28}
-            success: function(res, status, xhr) {
-                dispatch({
-                    type: 'BOOKING_INIT',
-                    data: {
-                        ticketList: JSON.parse(res)
-                    }
-                });
+            type: 'BOOKING_INIT',
+            data: {
+                ticketList: fakeData
             }
-        });
+        })
+        // dispatch({
+        //     type: 'BOOKING_LOADING',
+        // });
+        // $.ajax({
+        //     url: '/flight/query.in',
+        //     type: 'POST',
+        //     contentType: 'application/json; charset=utf-8', // 很重要
+        //     traditional: true,
+        //     data: JSON.stringify(params), // {"name":"zhangsan", "age": 28}
+        //     success: function(res, status, xhr) {
+        //         dispatch({
+        //             type: 'BOOKING_INIT',
+        //             data: {
+        //                 ticketList: JSON.parse(res)
+        //             }
+        //         });
+        //     }
+        // });
     },
 
     pageChange: (value) => (dispatch, getState) => {

@@ -32,11 +32,11 @@ class TicketFilterTitle extends Component {
         let startDay = $('.start-day input').val();
         let endDay = $('.end-day input').val();
         if (journeyType == 'OW') {
-            return '【' + journey[journeyType] + '】 ' + startCity + ' - ' + endCity + ' ' + startDay;
+            return `【${journey[journeyType]}】${startCity} - ${endCity}  ${startDay}`;
         } else if (journeyType == 'RT') {
-            return '【' + journey[journeyType] + '】 ' + startCity + ' - ' + endCity + ' 去：' + startDay + '返' + endDay;
+            return `【${journey[journeyType]}】${startCity} - ${endCity} 去：${startDay} 返: ${endDay}`;
         } else {
-            return startCity + ' - ' + endCity + '多程查询'
+            return `${startCity}始发的多程查询`;
         }
 
     }
