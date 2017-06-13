@@ -52,7 +52,7 @@ class Pagination extends Component {
                 <a key={i} className={index === current ? 'active' : ''} onClick={this.changePage.bind(this, index)}>{index}</a>
             );
             if (!index) {
-                item = <a key={'separater' + i} className="separater">...</a>
+                item = <a key={`separater${i}`} className="separater">...</a>
             }
             numbers.push(item);
         }
