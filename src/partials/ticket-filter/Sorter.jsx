@@ -46,7 +46,7 @@ class Dialog extends Component {
             active: index,
             desc: desc
         });
-        let sort = this.state.sorter[index];
+        let sort = this._sorter[index];
         sort.desc = desc;
         this.props.onChange(sort);
     }
@@ -54,11 +54,13 @@ class Dialog extends Component {
     render() {
         let { sorter, active, onChange, desc, journeyType } = this.state;
         if (journeyType != 'OW') {
-            sorter = sorter.filter((item) => item.value != 'rtDepartHour');
+            this._sorter = sorter.filter((item) => item.value != 'rtDepartHour');
+        } else {
+            this._sorter = sorter;
         }
         return (
             <div className="bar">
-                {sorter.map((item, i) => {
+                {this._sorter.map((item, i) => {
                     let isCurrent = i == active;
                     let className = classNames({
                         active: isCurrent

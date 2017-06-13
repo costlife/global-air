@@ -6,6 +6,7 @@ import './index.less';
 import $ from 'jquery';
 
 import Loading from '../../components/loading';
+import NoData from '../../components/no-data';
 import Pagination from '../../components/pagination';
 import Search from '../../partials/search';
 import TicketCard from '../../partials/ticket-card';
@@ -103,14 +104,21 @@ class Booking extends Component {
                         priceType={priceType}
                         priceTypeChange={this.priceTypeChange.bind(this)}
                     />
-                    {ticketList.avFlightList.map((item, i) => {
-                        return <TicketCard
-                            key={i}
-                            detail={item}
-                            params={params}
-                            priceType={priceType}
-                        />
-                    })}
+                    {ticketList.avFlightList.length > 0 ?
+                        <div>
+                            {ticketList.avFlightList.map((item, i) => {
+                                return <TicketCard
+                                    key={i}
+                                    detail={item}
+                                    params={params}
+                                    priceType={priceType}
+                                />
+                            })}
+                        </div>
+                        :
+                        <NoData />
+                    }
+
                 </div>
             )
         }

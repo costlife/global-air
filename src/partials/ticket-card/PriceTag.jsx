@@ -166,7 +166,6 @@ class PriceTag extends Component {
             chdNum: chdNum,
             infNum: infNum,
         };
-        console.log(formValue);
         return (
             <div className="price-tag">
                 <div className="personInfos">
