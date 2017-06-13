@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import onClickOutside from 'react-onclickoutside';
 import classNames from 'classnames';
 import './index.less';
@@ -6,8 +7,8 @@ import './index.less';
 class SelectComponent extends Component {
 
     static propTypes = {
-        onChange: React.PropTypes.func,
-        options: React.PropTypes.array,
+        onChange: PropTypes.func,
+        options: PropTypes.array,
     };
 
     static defaultProps = {

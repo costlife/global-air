@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import $ from 'jquery';
 import './index.less';
@@ -6,7 +7,7 @@ import './index.less';
 class CityChoose extends Component {
 
     static propTypes = {
-        onChooseCity: React.PropTypes.func,
+        onChooseCity: PropTypes.func,
     };
 
     static defaultProps = {

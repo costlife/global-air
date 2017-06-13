@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './index.less';
 
 class Switch extends Component {
 
     static propTypes = {
-        data: React.PropTypes.array,
-        activeIndex: React.PropTypes.number,
-        onChangeIndex: React.PropTypes.func,
+        data: PropTypes.array,
+        activeIndex: PropTypes.number,
+        onChangeIndex: PropTypes.func,
     };
 
     static defaultProps = {
@@ -39,10 +40,10 @@ class Switch extends Component {
                         let itemCls = classNames({
                             active: activeIndex == i
                         });
-                        return <a 
+                        return <a
                             key={i}
                             className={itemCls}
-                            href="javascript:void(0);"  
+                            href="javascript:void(0);"
                             onClick={() => onChangeIndex(item.value)}
                         >{item.label}</a>
                     })}

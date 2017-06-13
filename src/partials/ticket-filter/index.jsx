@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 
 import Title from './Title.jsx';
@@ -11,10 +12,10 @@ import './index.less';
 class Dialog extends Component {
 
     static propTypes = {
-        checkDirectOnly: React.PropTypes.func,
-        transferCityChange: React.PropTypes.func,
-        departHourRange: React.PropTypes.func,
-        onSortChange: React.PropTypes.func,
+        checkDirectOnly: PropTypes.func,
+        transferCityChange: PropTypes.func,
+        departHourRange: PropTypes.func,
+        onSortChange: PropTypes.func,
     };
 
     static defaultProps = {

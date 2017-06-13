@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './index.less';
 
 class FilterSelect extends Component {
 
     static propTypes = {
-        data: React.PropTypes.array,
-        label: React.PropTypes.string,
-        onChange: React.PropTypes.func,
+        data: PropTypes.array,
+        label: PropTypes.string,
+        onChange: PropTypes.func,
     };
 
     static defaultProps = {

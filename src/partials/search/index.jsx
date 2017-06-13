@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import utils from '../../utils';
 import DatePicker from 'react-datepicker';
@@ -11,7 +12,7 @@ import './index.less';
 class FlightSearch extends Component {
 
     static propTypes = {
-        onSearch: React.PropTypes.func,
+        onSearch: PropTypes.func,
     };
 
     static defaultProps = {
@@ -34,7 +35,9 @@ class FlightSearch extends Component {
             segmentList: [],
             airline: '', /*航空公司，传航司二字码*/
             departure: '',
+            departureText: '',
             destination: '',
+            destinationText: '',
         };
     }
 

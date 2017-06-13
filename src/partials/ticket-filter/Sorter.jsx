@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 class Dialog extends Component {
 
     static propTypes = {
-        sorter: React.PropTypes.array,
-        active: React.PropTypes.number,
-        onChange: React.PropTypes.func,
+        sorter: PropTypes.array,
+        active: PropTypes.number,
+        onChange: PropTypes.func,
     };
 
     static defaultProps = {
@@ -29,7 +30,7 @@ class Dialog extends Component {
         ],
         active: 0,
         desc: true,
-        onChange: React.PropTypes.func,
+        onChange: PropTypes.func,
     };
 
     /**

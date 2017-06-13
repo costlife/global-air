@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import onClickOutside from 'react-onclickoutside';
 import classNames from 'classnames';
 import CityChoose from '../city-choose';
@@ -8,7 +9,7 @@ import './index.less';
 class CitySuggest extends Component {
 
     static propTypes = {
-        onChangeCity: React.PropTypes.func,
+        onChangeCity: PropTypes.func,
     };
 
     static defaultProps = {

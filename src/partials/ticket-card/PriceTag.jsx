@@ -177,7 +177,7 @@ class PriceTag extends Component {
                     {this.renderPrice(fare, priceType, params)}
                     <div className="person-order">
                         <form method="POST" action="http://192.168.4.79/airIntlFlightBook/showAirIntlFlightBookInfo.in">
-                            <input className="none" name="bookInfoVO" value={JSON.stringify(formValue)} />
+                            <input className="none" name="bookInfoVO" value={JSON.stringify(formValue)} readOnly/>
                             <input type="submit" className="btn selbtn btn-o" value="预定"/>
                         </form>
                         {fare.seats < 9 && <span>仅剩{fare.seats}张</span>}

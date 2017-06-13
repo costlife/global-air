@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
 import CitySuggest from '../../components/city-suggest';
 import Select from '../../components/select';
@@ -8,11 +9,11 @@ import utils from '../../utils';
 class CityChoose extends Component {
 
     static propTypes = {
-        changeCabinClass: React.PropTypes.func,
-        changeAdtCount: React.PropTypes.func,
-        changeChdCount: React.PropTypes.func,
-        changeInfCount: React.PropTypes.func,
-        onSegmentListChange:  React.PropTypes.func,
+        changeCabinClass: PropTypes.func,
+        changeAdtCount: PropTypes.func,
+        changeChdCount: PropTypes.func,
+        changeInfCount: PropTypes.func,
+        onSegmentListChange:  PropTypes.func,
     };
 
     static defaultProps = {

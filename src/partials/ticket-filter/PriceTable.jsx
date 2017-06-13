@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ReactSwipe from 'react-swipe';
 import utils from '../../utils';
 
 class PriceTable extends Component {
 
     static propTypes = {
-        priceTable: React.PropTypes.array,
+        priceTable: PropTypes.array,
     };
 
     static defaultProps = {

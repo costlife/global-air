@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import $ from 'jquery';
 
@@ -10,7 +11,7 @@ const journey = {
 class TicketFilterTitle extends Component {
 
     static propTypes = {
-        onOpen: React.PropTypes.func,
+        onOpen: PropTypes.func,
     };
 
     static defaultProps = {

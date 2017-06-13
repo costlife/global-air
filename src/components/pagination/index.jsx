@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 class Pagination extends Component {
 
@@ -7,11 +8,11 @@ class Pagination extends Component {
      * @type {Object}
      */
     static propTypes = {
-        prefixCls: React.PropTypes.string,
-        current: React.PropTypes.number,
-        total: React.PropTypes.number,
-        direction: React.PropTypes.string,
-        onPageChange: React.PropTypes.func
+        prefixCls: PropTypes.string,
+        current: PropTypes.number,
+        total: PropTypes.number,
+        direction: PropTypes.string,
+        onPageChange: PropTypes.func
     };
 
     static defaultProps = {
@@ -79,7 +80,7 @@ class Pagination extends Component {
             for (let i = total - 5; i <= total; i++) {
                 array.push(i);
             }
-        }   
+        }
         return array;
     }
 
@@ -92,7 +93,7 @@ class Pagination extends Component {
         return <div className="paged">
           <div className={`${prefixCls}-numbers`}>{this.renderNumbers(total, current)}</div>
         </div>
-        
+
     }
 }
 export default Pagination;
