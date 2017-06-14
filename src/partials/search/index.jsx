@@ -6,6 +6,7 @@ import DatePicker from 'react-datepicker';
 import Select from '../../components/select';
 import CitySuggest from '../../components/city-suggest';
 import MultiSearch from './MultiSearch';
+import InfoAlert from '../../components/info-alert';
 import 'react-datepicker/dist/react-datepicker.css';
 import './index.less';
 
