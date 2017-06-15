@@ -9,11 +9,12 @@ class InfoAlert extends Component {
 
 
     render() {
+        const {text, left, top} = this.props;
         return (
             <div className="info">
                 <div className="info-alert">
                     <b className="tri_l"></b>
-                    <div className="info-content">请选择酒店所在城市</div>
+                    <div className="info-content">{text}</div>
                 </div>
             </div>
         )

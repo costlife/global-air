@@ -1,9 +1,9 @@
 const utils = {
-	getLogoByCode(code) {
-		return `http://simg1.qunarzz.com/site/images/airlines/${code}.gif`;
-	},
+    getLogoByCode(code) {
+        return `http://simg1.qunarzz.com/site/images/airlines/${code}.gif`;
+    },
 
-	getCode(source) {
+    getCode(source) {
         return source.substring(source.indexOf('(') + 1, source.indexOf(')'));
     },
 

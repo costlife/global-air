@@ -1,0 +1,72 @@
+// let searchParams = {
+//     journeyType: journeyType,
+//     segmentList: [{
+//         departureDate: 1498406400000,
+//         desCode : "BOS",
+//         oriCode : "IZM"
+//     }, {
+//         departureDate: 1498406400000,
+//         desCode : "BOS",
+//         oriCode : "IZM"
+//     }],
+//     passengerType: [{
+//         passgerType: "ADT",  /*成人人数*/
+//         passgerNumber: adtCount
+//     }, {
+//         passgerType: "CHD",/*儿童人数*/
+//         passgerNumber: chdCount
+//     }, {
+//         passgerType: "INF",/*婴儿人数*/
+//         passgerNumber: infCount
+//     }],
+//     cabinClass: cabinClass,
+//     airline: airline,
+//     directFlightsOnly: false,  /*是否仅查直飞,默认是false*/
+//     debug: false,
+// };
+
+const paramsCheck = {
+    OW(segmentList) {
+        let seg = segmentList[0];
+        if (seg.oriCode == '') {
+            return '请选择出发城市';
+        } else if (seg.desCode == '') {
+            return '请选择到达城市';
+        } else if (seg.departureDate == '') {
+            return '请选择出发时间';
+        } else {
+            return true;
+        }
+    },
+    RT(segmentList) {
+
+    },
+    MS(segmentList) {
+
+    }
+}
+
+function checkPassenger(passengerType) {
+    let adt = parseInt(passengerType[0].passgerNumber, 10);
+    let chd = parseInt(passengerType[1].passgerNumber, 10);
+    let inf = parseInt(passengerType[2].passgerNumber, 10);
+    if (adt + chd + inf === 0) {
+        return '请选择实际出行人数。';
+    }
+    if (adt === 0) {
+        if (chd > 0 && inf === 0) {
+            return '请确认儿童有同舱等的成人陪伴乘机，儿童单独乘机需直接向航空公司购票';
+        } else if (chd > 0 && inf > 0) {
+            return '儿童婴儿须有成人陪伴乘机。';
+        } else {
+            return '如需单独预订婴儿票，请致电51book';
+        }
+    }
+    return true;
+}
+
+export default (params) => {
+    console.log(params)
+    const {segmentList, passengerType, journeyType} = params;
+    return paramsCheck[journeyType](segmentList) //&& checkPassenger(passengerType);
+};

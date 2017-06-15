@@ -42,7 +42,6 @@ class CitySuggest extends Component {
     }
 
     onChangeInput(e) {
-        console.log(e.target.value);
         if (e.target.value.length > 0) {
             $.getJSON('/flight/getAirPortCode.in', {
                 key: e.target.value
@@ -53,6 +52,11 @@ class CitySuggest extends Component {
             this.showChoose();
         }
         this.props.onChangeText();
+    }
+
+    onBlurInput(e) {
+        let city = this.getCityByOrigin(this.state.suggestData[0]);
+        city && this.onChooseCity(city);
     }
 
     onChooseCity(city) {
@@ -69,12 +73,20 @@ class CitySuggest extends Component {
         });
     }
 
+    getCityByOrigin(item) {
+        if (item) {
+            const {airportNamePy, cityNameCn, cityCode} = item;
+            return `${airportNamePy}|${cityNameCn}(${cityCode})`;
+        }
+    }
+
     renderSugItem(item, i, activeIndexSug) {
         let cls = classNames({
             active: i == activeIndexSug
         });
-        const {airportNameCn, airportCode, countryCodeCn, airportNamePy, cityNameCn, cityNameEn, cityCode } = item;
-        let city = `${airportNamePy}|${cityNameCn}(${cityCode})`;
+        const {airportCode, countryCodeCn, cityNameCn, cityNameEn, airportNameCn, cityCode } = item;
+        let city = this.getCityByOrigin(item);
+
         if (airportCode == cityCode) {
             return (
                 <tr key={i} className={cls}
@@ -116,6 +128,7 @@ class CitySuggest extends Component {
                     placeholder="支持中文/拼音/英文/三字码"
                     onFocus={this.showChoose.bind(this)}
                     onChange={this.onChangeInput.bind(this)}
+                    onBlur={this.onBlurInput.bind(this)}
                     value={value}
                 />
                 {showChoose &&

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import utils from '../../utils';
+import paramsCheck from './paramsCheck';
 import DatePicker from 'react-datepicker';
 import Select from '../../components/select';
 import CitySuggest from '../../components/city-suggest';
@@ -39,6 +40,9 @@ class FlightSearch extends Component {
             departureText: '',
             destination: '',
             destinationText: '',
+            infoAlertText: '',
+            infoAlertLeft: 0,
+            infoAlertTop: 0,
         };
     }
 
@@ -115,8 +119,7 @@ class FlightSearch extends Component {
 
     onSearchClick() {
         const {journeyType, cabinClass, adtCount, chdCount, infCount, airline} = this.state;
-
-        this.props.onSearch({
+        let searchParams = {
             journeyType: journeyType,
             segmentList: this.getSegmentList(),
             passengerType: [{
@@ -133,7 +136,17 @@ class FlightSearch extends Component {
             airline: airline,
             directFlightsOnly: false,  /*是否仅查直飞,默认是false*/
             debug: false,
-        });
+        };
+        let checkResult = paramsCheck(searchParams);
+        if (typeof checkResult == 'boolean' && checkResult) {
+            this.props.onSearch(searchParams);
+        } else {
+            this.setState({
+                infoAlertText: checkResult
+            });
+            console.log(checkResult);
+            console.log('查询参数错误');
+        }
     }
 
     getSegmentList() {
@@ -169,7 +182,16 @@ class FlightSearch extends Component {
 
     render() {
         const { onSearch } = this.props;
-        const { journeyType, startDate, returnDate, departureText, destinationText } = this.state;
+        const {
+            journeyType,
+            startDate,
+            returnDate,
+            departureText,
+            destinationText,
+            infoAlertText,
+            infoAlertLeft,
+            infoAlertTop
+        } = this.state;
         return (
             <div className="typeCont">
                 <div className="searchForms">
@@ -188,6 +210,7 @@ class FlightSearch extends Component {
                             多程
                         </label>
                     </div>
+                    <InfoAlert text={infoAlertText} left={infoAlertLeft} top={infoAlertTop}/>
                     {journeyType == 'MS' ?
                         <MultiSearch
                             changeCabinClass={this.changeCabinClass.bind(this)}
