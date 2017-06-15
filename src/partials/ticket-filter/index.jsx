@@ -75,7 +75,10 @@ class Dialog extends Component {
                     <span className="filter-spliter"></span>
                     <FilterSelect label="起飞时间" data={dateRangeData} onChange={departHourRange}/>
                     {journeyType == 'RT' &&
-                        <FilterSelect label="返程时间" data={dateRangeData} onChange={rtDepartHourRange}/>
+                        <div>
+                            <span className="filter-spliter"></span>
+                            <FilterSelect label="返程时间" data={dateRangeData} onChange={rtDepartHourRange}/>
+                        </div>
                     }
                     <span className="filter-spliter"></span>
                     <FilterSelect
