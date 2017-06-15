@@ -68,5 +68,6 @@ function checkPassenger(passengerType) {
 export default (params) => {
     console.log(params)
     const {segmentList, passengerType, journeyType} = params;
+    return true;
     return paramsCheck[journeyType](segmentList) //&& checkPassenger(passengerType);
 };

@@ -1059,33 +1059,6 @@ a.Alink {
     margin: 0 auto
 }
 
-.footbar {
-    clear: both;
-    padding: 10px 0 0;
-    padding-left: 100px
-}
-.footbar .searchBtn {
-    display: inline-block;
-    *display: inline;
-    zoom: 1;
-    padding: 6px 20px;
-    background: #eee;
-    border: 1px solid #ddd;
-    cursor: pointer;
-    background: #00adee;
-    border-color: #0097cf;
-    color: #fff;
-    padding: 10px 32px;
-    font-size: 16px
-}
-.footbar .searchBtn:hover {
-    background: #f2f2f2;
-    border: 1px solid #ccc
-}
-.footbar .searchBtn:hover {
-    background: #31a1e1;
-    border: 1px solid #2a89c0
-}
 .flyType {
     font-size: 12px;
     position: relative;
@@ -1110,12 +1083,7 @@ a.Alink {
     border: 1px solid #2993d1;
     z-index: 10
 }
-.typeCont {
-    border: 1px solid #2993d1;
-    padding: 20px;
-    padding-top: 30px;
-    width: 980px;
-}
+
 // .tpyeBox>div {
 //     display: none
 // }

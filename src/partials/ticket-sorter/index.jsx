@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-class Dialog extends Component {
+import Switch from '../../components/switch';
+import './index.less';
+class TicketSorter extends Component {
 
     static propTypes = {
         sorter: PropTypes.array,
@@ -53,14 +55,18 @@ class Dialog extends Component {
     }
 
     render() {
-        let { sorter, active, onChange, desc, journeyType } = this.state;
+        let { sorter, active,
+            checkDirectOnly, onChange, desc, journeyType } = this.state;
+        const {
+            priceType,
+            priceTypeChange,} = this.props;
         if (journeyType != 'OW') {
             this._sorter = sorter.filter((item) => item.value != 'rtDepartHour');
         } else {
             this._sorter = sorter;
         }
         return (
-            <div className="bar">
+            <div className="ticket-sorter">
                 {this._sorter.map((item, i) => {
                     let isCurrent = i == active;
                     let className = classNames({
@@ -76,9 +82,12 @@ class Dialog extends Component {
                         {isCurrent && <i className={iconClass} aria-hidden="true"></i>}
                     </a>
                 })}
+                <label className="check-only"><input type="checkbox" onClick={checkDirectOnly}/>仅看直飞</label>
+                <Switch className="tax-filter" activeIndex={priceType} onChangeIndex={priceTypeChange}/>
             </div>
+
         );
     }
 }
 
-export default Dialog;
+export default TicketSorter;

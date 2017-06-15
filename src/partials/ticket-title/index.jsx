@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
+import PriceTable from './PriceTable.jsx';
 import $ from 'jquery';
+
+import './index.less';
 
 const journey = {
     OW: '单程',
@@ -23,6 +26,15 @@ class TicketFilterTitle extends Component {
      */
     constructor(props) {
         super(props);
+        this.state = {
+            showTable: false,
+        };
+    }
+
+    toggleTable() {
+        this.setState({
+            showTable: !this.state.showTable
+        });
     }
 
     getAirline() {
@@ -51,13 +63,22 @@ class TicketFilterTitle extends Component {
     }
 
     render() {
-        const { onOpen } = this.props;
+        const {showTable} = this.state;
+        const {
+            params,
+            ticketList,
+        } = this.props;
+        const { priceTable, transferCity } = ticketList;
+        const { journeyType } = params;
         return (
-            <div className="filter-title">
-                {this.getAirline()} {this.getListInfo()}
-                <div style={{float:'right'}}>
-                    <a href="javascript:void(0)" onClick={onOpen}>展开航司矩阵表</a>
+            <div className="ticket-title">
+                <div className="filter-title">
+                    {this.getAirline()} {this.getListInfo()}
+                    <div className="ticket-title-table-btn" onClick={this.toggleTable.bind(this)}>
+                        展开航司矩阵表
+                    </div>
                 </div>
+                {showTable && <PriceTable priceTable={priceTable}/>}
             </div>
         );
     }

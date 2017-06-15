@@ -124,7 +124,7 @@ class CityChoose extends Component {
         const {changeCabinClass, changeAdtCount, changeChdCount, changeInfCount, onSegmentListChange} = this.props;
         const {total} = this.state;
         return (
-            <div className="searchForms">
+            <div className="multi-search">
                 {this.renderFlightLine(total)}
                 <div className="addflight" onClick={this.addNewFlight.bind(this)}>添加航程</div>
                 <div className="flightlinebox passengersinfo">

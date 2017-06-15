@@ -1,0 +1,40 @@
+.ticket-sorter {
+    font-size: 0;
+    margin-bottom: 10px;
+    .tax-filter {
+        float: right;
+    }
+
+    a {
+        display: inline-block;
+        zoom: 1;
+        border: 1px solid #ccc;
+        margin-left: -1px;
+        padding: 5px 15px;
+        font-size: 12px;
+        position: relative;
+
+        &:hover {
+            border: 1px solid #2993d1;
+            color: #2993d1;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        &.active {
+            background: #2993d1;
+            border: 1px solid #2993d1;
+            z-index: 10;
+            color: #fff;
+        }
+
+    }
+
+    .check-only {
+        font-size: 12px;
+        margin-left: 10px;
+        vertical-align: baseline;
+        display: inline-block;
+    }
+
+}

@@ -31,17 +31,8 @@ class FilterSelect extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            show: false,
             activeArr: []
         };
-    }
-
-    showOptions() {
-        this.setState({show: true});
-    }
-
-    hideOptions() {
-        this.setState({show: false});
     }
 
     onSelectData(value, e) {
@@ -60,34 +51,27 @@ class FilterSelect extends Component {
 
     render() {
         const { data, label, onChange } = this.props;
-        const { show, activeArr } = this.state;
+        const { activeArr } = this.state;
         return (
-            <div
-                className="filter-select"
-                onMouseEnter={this.showOptions.bind(this)}
-                onMouseLeave={this.hideOptions.bind(this)}>
-                <div className="filter-label">
-                    {label}<i className="fa fa-angle-down" aria-hidden="true"></i>
-                </div>
-                {show &&
-                    <ul className="bar-filter-select" >
-                        {data.map((item, i) =>
-                            <li key={i} className="bar-filter-option">
-                                <label>
-                                    <input
-                                        onChange={this.onSelectData.bind(this, item.value)}
-                                        className="J_filter_option"
-                                        type="checkbox"
-                                        value={item.value}
-                                        checked={activeArr.indexOf(item.value) >= 0}
-                                    />
-                                    {item.text}
-                                    {item.price && <span className="base_price02"><dfn>¥</dfn>{item.price}</span>}
-                                </label>
-                            </li>
-                        )}
-                    </ul>
-                }
+            <div className="filter-select">
+                <div className="filter-label">{label}</div>
+                <ul className="bar-filter-select" >
+                    {data.map((item, i) =>
+                        <li key={i} className="bar-filter-option">
+                            <label>
+                                <input
+                                    onChange={this.onSelectData.bind(this, item.value)}
+                                    className="J_filter_option"
+                                    type="checkbox"
+                                    value={item.value}
+                                    checked={activeArr.indexOf(item.value) >= 0}
+                                />
+                                {item.text}
+                                {item.price && <span className="base_price02"><dfn>¥</dfn>{item.price}</span>}
+                            </label>
+                        </li>
+                    )}
+                </ul>
             </div>
         );
     }

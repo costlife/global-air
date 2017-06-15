@@ -10,7 +10,9 @@ import NoData from '../../components/no-data';
 import Pagination from '../../components/pagination';
 import Search from '../../partials/search';
 import TicketCard from '../../partials/ticket-card';
+import TicketTitle from '../../partials/ticket-title';
 import TicketFilter from '../../partials/ticket-filter';
+import TicketSorter from '../../partials/ticket-sorter';
 /*
 @Des:组件容器
 */
@@ -92,33 +94,46 @@ class Booking extends Component {
         if (isInited) {
             return (
                 <div>
-                    <TicketFilter
-                        params={params}
-                        ticketList={ticketList}
-                        airlineChange={this.airlineChange.bind(this)}
-                        transferCityChange={this.transferCityChange.bind(this)}
-                        departHourRange={this.departHourRange.bind(this)}
-                        rtDepartHourRange={this.rtDepartHourRange.bind(this)}
-                        checkDirectOnly={this.checkDirectOnly.bind(this)}
-                        onSortChange={this.onSortChange.bind(this)}
-                        priceType={priceType}
-                        priceTypeChange={this.priceTypeChange.bind(this)}
-                    />
-                    {ticketList.avFlightList.length > 0 ?
-                        <div>
-                            {ticketList.avFlightList.map((item, i) => {
-                                return <TicketCard
-                                    key={i}
-                                    detail={item}
-                                    params={params}
-                                    priceType={priceType}
-                                />
-                            })}
-                        </div>
-                        :
-                        <NoData />
-                    }
+                    <div className="ticket-top">
+                        <TicketTitle
+                            params={params}
+                            ticketList={ticketList}
+                        />
+                    </div>
+                    <div className="ticket-left">
+                        <TicketFilter
+                            params={params}
+                            ticketList={ticketList}
+                            airlineChange={this.airlineChange.bind(this)}
+                            transferCityChange={this.transferCityChange.bind(this)}
+                            departHourRange={this.departHourRange.bind(this)}
+                            rtDepartHourRange={this.rtDepartHourRange.bind(this)}
+                        />
+                    </div>
 
+                    <div className="ticket-main">
+                        <TicketSorter
+                            journeyType={params.journeyType}
+                            checkDirectOnly={this.checkDirectOnly.bind(this)}
+                            onChange={this.onSortChange.bind(this)}
+                            priceType={priceType}
+                            priceTypeChange={this.priceTypeChange.bind(this)}
+                        />
+                        {ticketList.avFlightList.length > 0 ?
+                            <div>
+                                {ticketList.avFlightList.map((item, i) => {
+                                    return <TicketCard
+                                        key={i}
+                                        detail={item}
+                                        params={params}
+                                        priceType={priceType}
+                                    />
+                                })}
+                            </div>
+                            :
+                            <NoData />
+                        }
+                    </div>
                 </div>
             )
         }

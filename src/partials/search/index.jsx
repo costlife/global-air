@@ -193,106 +193,96 @@ class FlightSearch extends Component {
             infoAlertTop
         } = this.state;
         return (
-            <div className="typeCont">
-                <div className="searchForms">
-                    <div className="formline">
-                        <i>航程类型</i>
-                        <label className="index_label">
-                            <input name="FlightWay" type="radio" value="OW" checked={journeyType == 'OW'} onChange={this.changeJourneyType.bind(this)}/>
-                            单程
-                        </label>
-                        <label className="index_label">
-                            <input name="FlightWay" type="radio" value="RT" checked={journeyType == 'RT'} onChange={this.changeJourneyType.bind(this)}/>
-                            往返
-                        </label>
-                        <label className="index_label">
-                            <input name="FlightWay" type="radio" value="MS" checked={journeyType == 'MS'} onChange={this.changeJourneyType.bind(this)}/>
-                            多程
-                        </label>
-                    </div>
-                    <InfoAlert text={infoAlertText} left={infoAlertLeft} top={infoAlertTop}/>
-                    {journeyType == 'MS' ?
-                        <MultiSearch
-                            changeCabinClass={this.changeCabinClass.bind(this)}
-                            changeAdtCount={this.changeAdtCount.bind(this)}
-                            changeChdCount={this.changeChdCount.bind(this)}
-                            changeInfCount={this.changeInfCount.bind(this)}
-                            onSegmentListChange={this.onSegmentListChange.bind(this)}
-                        />
-                        :
-                        <div>
-                            <div className="formline search-city start-city">
-                                <i>出发地</i>
-                                <CitySuggest
-                                    value={departureText}
-                                    onChangeCity={this.onChangeDeparture.bind(this)}
-                                    onChangeText={this.onChangeDepartureText.bind(this)}
-                                />
-                                <div className="toggle" onClick={this.changeDestOrigin.bind(this)}>换</div>
-                            </div>
-                            <div className="formline start-day">
-                                <i>出发日期</i>
-                                <DatePicker
-                                    dateFormat="YYYY/MM/DD"
-                                    selected={startDate}
-                                    placeholderText="请选择出发日期"
-                                    onChange={this.changeStartDate.bind(this)} />
-                            </div>
-                            <div className="formline search-city end-city">
-                                <i>到达地</i>
-                                <CitySuggest
-                                    value={destinationText}
-                                    onChangeCity={this.onChangeDestination.bind(this)}
-                                    onChangeText={this.onChangeDestinationText.bind(this)}
-                                />
-                                <s className="ico-time"></s>
-                            </div>
-                            <div className="formline end-day">
-                                <i>返回日期</i>
-                                <DatePicker
-                                    dateFormat="YYYY/MM/DD"
-                                    selected={returnDate}
-                                    disabled={journeyType == 'OW'}
-                                    placeholderText="请选择返回日期"
-                                    onChange={this.changeReturnDate.bind(this)} />
-                            </div>
-                            <div className="formline select-user">
-                                <i>成人</i>
-                                <Select onChange={this.changeAdtCount.bind(this)}/>
-                            </div>
-                            <div className="formline select-user">
-                                <i>普通儿童</i>
-                                <Select onChange={this.changeChdCount.bind(this)}/>
-                            </div>
-                            <div className="formline select-user">
-                                <i>舱位等级</i>
-                                <Select
-                                    options={[
-                                        {label: '经济舱', value: 'ECONOMY'},
-                                        {label: '超级经济舱', value: 'PREMIUM_ECONOMY'},
-                                        {label: '经济舱/超级经济舱', value: 'ECONOMY;PREMIUM_ECONOMY'},
-                                        {label: '公务舱', value: 'BUSINESS'},
-                                        {label: '头等舱', value: 'FIRST'},
-                                        {label: '公务舱/头等舱', value: 'BUSINESS;FIRST'},
-                                    ]}
-                                    onChange={this.changeCabinClass.bind(this)}
-                                />
-                            </div>
-                            <div className="moreInfo" style={{display:'none'}}>
-                                <div className="formline">
-                                    <i>中转</i><input type="text" className="loacal" placeholder="支持中文/拼音/英文/三字码"/>
-                                </div>
-                                <div className="formline">
-                                    <i>航空公司</i><input type="text"/>
-                                </div>
-                            </div>
+            <div className="search-forms">
+                <div className="formline">
+                    <i>航程类型</i>
+                    <label className="index_label">
+                        <input name="FlightWay" type="radio" value="OW" checked={journeyType == 'OW'} onChange={this.changeJourneyType.bind(this)}/>
+                        单程
+                    </label>
+                    <label className="index_label">
+                        <input name="FlightWay" type="radio" value="RT" checked={journeyType == 'RT'} onChange={this.changeJourneyType.bind(this)}/>
+                        往返
+                    </label>
+                    <label className="index_label">
+                        <input name="FlightWay" type="radio" value="MS" checked={journeyType == 'MS'} onChange={this.changeJourneyType.bind(this)}/>
+                        多程
+                    </label>
+                </div>
+                <InfoAlert text={infoAlertText} left={infoAlertLeft} top={infoAlertTop}/>
+                {journeyType == 'MS' ?
+                    <MultiSearch
+                        changeCabinClass={this.changeCabinClass.bind(this)}
+                        changeAdtCount={this.changeAdtCount.bind(this)}
+                        changeChdCount={this.changeChdCount.bind(this)}
+                        changeInfCount={this.changeInfCount.bind(this)}
+                        onSegmentListChange={this.onSegmentListChange.bind(this)}
+                    />
+                    :
+                    <div>
+                        <div className="formline search-city start-city">
+                            <i>出发地</i>
+                            <CitySuggest
+                                value={departureText}
+                                onChangeCity={this.onChangeDeparture.bind(this)}
+                                onChangeText={this.onChangeDepartureText.bind(this)}
+                            />
+                            <div className="toggle" onClick={this.changeDestOrigin.bind(this)}>换</div>
                         </div>
-                    }
-                </div>
-
-                <div className="footbar">
-                    <a className="searchBtn" onClick={this.onSearchClick.bind(this)}>搜索</a>
-                </div>
+                        <div className="formline start-day">
+                            <i>出发日期</i>
+                            <DatePicker
+                                dateFormat="YYYY/MM/DD"
+                                selected={startDate}
+                                placeholderText="请选择出发日期"
+                                onChange={this.changeStartDate.bind(this)} />
+                        </div>
+                        <div className="formline search-city end-city">
+                            <i>到达地</i>
+                            <CitySuggest
+                                value={destinationText}
+                                onChangeCity={this.onChangeDestination.bind(this)}
+                                onChangeText={this.onChangeDestinationText.bind(this)}
+                            />
+                            <s className="ico-time"></s>
+                        </div>
+                        <div className="formline end-day">
+                            <i>返回日期</i>
+                            <DatePicker
+                                dateFormat="YYYY/MM/DD"
+                                selected={returnDate}
+                                disabled={journeyType == 'OW'}
+                                placeholderText="请选择返回日期"
+                                onChange={this.changeReturnDate.bind(this)} />
+                        </div>
+                        <div className="formline select-user">
+                            <i>成人</i>
+                            <Select onChange={this.changeAdtCount.bind(this)}/>
+                        </div>
+                        <div className="formline select-user">
+                            <i>普通儿童</i>
+                            <Select onChange={this.changeChdCount.bind(this)}/>
+                        </div>
+                        <div className="formline select-user">
+                            <i>舱位等级</i>
+                            <Select
+                                options={[
+                                    {label: '经济舱', value: 'ECONOMY'},
+                                    {label: '超级经济舱', value: 'PREMIUM_ECONOMY'},
+                                    {label: '经济舱/超级经济舱', value: 'ECONOMY;PREMIUM_ECONOMY'},
+                                    {label: '公务舱', value: 'BUSINESS'},
+                                    {label: '头等舱', value: 'FIRST'},
+                                    {label: '公务舱/头等舱', value: 'BUSINESS;FIRST'},
+                                ]}
+                                onChange={this.changeCabinClass.bind(this)}
+                            />
+                        </div>
+                        <div className="formline">
+                            <i>航空公司</i><input type="text"/>
+                        </div>
+                    </div>
+                }
+                <a className="search-btn" onClick={this.onSearchClick.bind(this)}>搜索</a>
             </div>
         );
     }

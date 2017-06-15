@@ -1,40 +1,13 @@
 @import "../../static/css/mixin.less";
 
-.searchForms {
-    .selectlist {
-        &.active {
-            display: block;
-        }
+.search-forms {
+    border: 1px solid #ddd;
+    padding: 20px;
+    padding-top: 30px;
+    position: relative;
 
-    }
     .index_label {
         margin-right: 20px;
-    }
-    .selects {
-        border: 1px solid #ccc;
-        outline: none;
-        appearance: none;
-        -webkit-appearance: none;
-        padding: 6px 5px 7px;
-        width: 220px;
-        font-size: 13px;
-        color: #444;
-        background: #fff;
-        height: 30px;
-    }
-
-    .flight-minus {
-        font-size: 20px;
-        cursor: pointer;
-        display: inline-block;
-        vertical-align: middle;
-        margin-left: 10px;
-        color: #ddd;
-    }
-
-    input:disabled {
-        background-color: #eee;
-        opacity: 0.6;
     }
 
     .formline {
@@ -64,7 +37,7 @@
         appearance: none;
         -webkit-appearance: none;
         padding: 6px 5px 7px;
-        width: 220px;
+        width: 140px;
         font-size: 13px;
         color: #444;
 
@@ -72,21 +45,11 @@
             border: 1px solid @blue;
         }
 
-        .focus {
-            border: 1px solid @blue;
+        &:disabled {
+            background-color: #eee;
+            opacity: 0.6;
         }
 
-    }
-
-    .date,
-    .local,
-    .selects {
-        cursor: pointer;
-    }
-
-    .date {
-        //background: #fff url(../imgs/ico/date.png) no-repeat right center;
-        color: @blue;
     }
 
     .toggle {
@@ -139,84 +102,96 @@
 
     }
 
-    .selects {
-        //background: #fff url(../imgs/ico/arr.png) no-repeat top right;
-    }
-
-    .focus {
-        background-position: bottom right;
-    }
-
-    .loacal {
-        //background: #fff url(../imgs/ico/local.png) no-repeat right center;
-        color: @blue;
-    }
-
-    .moreBtn {
-        margin-left: 100px;
-        margin-bottom: 10px;
-        color: @blue;
+    .search-btn {
+        position: absolute;
+        right: 100px;
+        top: 80px;
+        display: inline-block;
+        zoom: 1;
+        padding: 6px 20px;
+        border: 1px solid #0097cf;
         cursor: pointer;
-        display: block;
-    }
+        background: #00adee;
+        color: #fff;
+        font-size: 16px;
 
-}
-
-.passengersinfo {
-    .selectlist {
-    }
-
-    .selectlist {
-        left: 80px;
-    }
-    .select {
-        margin-right: 20px;
-    }
-    input[type='text'] {
-        width: 120px;
-
-        &.selectlist_width {
-            width: 135px;
+        &:hover {
+            background: #31a1e1;
+            border: 1px solid #2a89c0;
         }
 
     }
 
-}
+    .multi-search {
+        .passengersinfo {
+            .selectlist {
+                left: 80px;
+            }
 
-.addflight {
-    border: 1px dashed #eee;
-    color: @blue;
-    padding: 8px;
-    margin-left: 20px;
-    transition-duration: .5s;
-    margin-bottom: 20px;
+            .select {
+                margin-right: 20px;
+            }
 
-    &:hover {
-        border: 1px dashed @blue;
-        color: @blue;
-    }
+            input[type='text'] {
+                width: 120px;
 
-}
+                &.selectlist_width {
+                    width: 135px;
+                }
 
-.flightlinebox {
-    margin-bottom: 10px;
-    margin-left: 20px;
-    .no {
-        width: 20px;
-        height: 20px;
-        background: @blue;
-        color: #fff;
-        .in();
-        line-height: 20px;
-        text-align: center;
-        border-radius: 90px;
-    }
+            }
 
-    .formline {
-        padding-left: 60px;
-        &>i {
-            width: 50px !important;
-            text-align: right;
+        }
+
+        .addflight {
+            border: 1px dashed #eee;
+            color: @blue;
+            padding: 8px;
+            margin-left: 20px;
+            transition-duration: .5s;
+            margin-bottom: 20px;
+
+            &:hover {
+                border: 1px dashed @blue;
+                color: @blue;
+            }
+
+        }
+
+        .flight-minus {
+            font-size: 20px;
+            cursor: pointer;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px;
+            color: #ddd;
+        }
+
+        .flightlinebox {
+            margin-bottom: 10px;
+            margin-left: 20px;
+
+            .no {
+                width: 20px;
+                height: 20px;
+                background: @blue;
+                color: #fff;
+                .in();
+                line-height: 20px;
+                text-align: center;
+                border-radius: 90px;
+            }
+
+            .formline {
+                padding-left: 60px;
+
+                &>i {
+                    width: 50px !important;
+                    text-align: right;
+                }
+
+            }
+
         }
 
     }

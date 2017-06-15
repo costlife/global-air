@@ -2,17 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 
-import Title from './Title.jsx';
-import Sorter from './Sorter.jsx';
-import PriceTable from './PriceTable.jsx';
 import FilterSelect from '../../components/filter-select';
-import Switch from '../../components/switch';
 import './index.less';
 
 class Dialog extends Component {
 
     static propTypes = {
-        checkDirectOnly: PropTypes.func,
         transferCityChange: PropTypes.func,
         departHourRange: PropTypes.func,
         onSortChange: PropTypes.func,
@@ -36,7 +31,6 @@ class Dialog extends Component {
             value: '[0,6]',
             price: null,
         }],
-        checkDirectOnly: () => {},
         transferCityChange: () => {},
         departHourRange: () => {},
         onSortChange: () => {},
@@ -47,33 +41,11 @@ class Dialog extends Component {
      */
     constructor(props) {
         super(props);
-        this.state = {
-            showTable: false
-        }
-    }
-
-    toggleTable() {
-        this.setState({
-            showTable: !this.state.showTable
-        });
-    }
-
-    onChangeSorter(value) {
-        this.props.onSortChange(value);
     }
 
     getMinPrice(arr) {
         arr = arr.filter(item => item != null);
         return Math.min.apply(this, arr);
-    }
-
-
-
-    renderTable(priceTable) {
-        return (
-            <PriceTable priceTable={priceTable}/>
-
-        )
     }
 
     render() {
@@ -82,20 +54,14 @@ class Dialog extends Component {
             ticketList,
             airlineChange,
             transferCityChange,
-            checkDirectOnly,
             departHourRange,
             rtDepartHourRange,
             dateRangeData,
-            priceType,
-            priceTypeChange,
         } = this.props;
         const { priceTable, transferCity } = ticketList;
         const { journeyType } = params;
-        const { showTable } = this.state;
         return (
             <div className="flight-filter">
-                <Title params={params} ticketList={ticketList} onOpen={this.toggleTable.bind(this)}/>
-                {showTable && this.renderTable(priceTable)}
                 <div className="filter">
                     <FilterSelect
                         label="航空公司"
@@ -104,19 +70,19 @@ class Dialog extends Component {
                             value: item.airlineName,
                             price: this.getMinPrice([item.lp, item.lpo, item.lpt])
                         }})}
-                        onChange={airlineChange}/>
+                        onChange={airlineChange}
+                    />
+                    <span className="filter-spliter"></span>
                     <FilterSelect label="起飞时间" data={dateRangeData} onChange={departHourRange}/>
                     {journeyType == 'RT' &&
                         <FilterSelect label="返程时间" data={dateRangeData} onChange={rtDepartHourRange}/>
                     }
+                    <span className="filter-spliter"></span>
                     <FilterSelect
                         label="中转城市"
                         data={transferCity.map(item => { return { text: item, value: item, price: null }})}
                         onChange={transferCityChange}
                     />
-                    <input type="checkbox" onClick={checkDirectOnly}/>仅看直飞
-                    <Sorter journeyType={journeyType} onChange={this.onChangeSorter.bind(this)}/>
-                    <Switch className="tax-filter" activeIndex={priceType} onChangeIndex={priceTypeChange}/>
                 </div>
             </div>
         );

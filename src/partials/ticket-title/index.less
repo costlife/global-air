@@ -1,0 +1,67 @@
+.ticket-title {
+    .filter-title {
+        height: 44px;
+        line-height: 44px;
+        font-size: 14px;
+    }
+
+    .ticket-table-container {
+        width: 100%;
+
+        .carousel {
+            display: inline-block;
+            width: 1200px;
+        }
+
+        .ticket-table {
+            float: left;
+            width: 1080px;
+            height: 160px;
+            text-align: center;
+            border-top: 1px solid #ddd;
+
+            tr {
+                border-bottom: 1px solid #ddd;
+            }
+
+            tbody tr:nth-child(2n) {
+                background-color: #fafafa;
+            }
+
+            td:not(:last-child) {
+                border-right: 1px solid #ddd;
+            }
+
+        }
+
+        .ticket-table-page {
+            float: left;
+            display: inline-block;
+            height: 160px;
+            text-align: center;
+            width: 60px;
+            border: 1px solid #CCCCCC;
+            vertical-align: top;
+            padding-top: 65px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #ededed;
+            }
+
+            i {
+                font-size: 25px;
+            }
+
+        }
+
+    }
+
+    .ticket-title-table-btn {
+        float: right;
+        font-size: 12px;
+        color: #2993D1;
+        cursor: pointer;
+    }
+
+}
