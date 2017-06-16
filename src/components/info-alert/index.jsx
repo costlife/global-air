@@ -20,8 +20,8 @@ class InfoAlert extends Component {
         const { top = 0, left = 0 } = $target.offset() || {};
         const width = $target.width() || 0;
         const height = $target.height() || 0;
-        let destLeft = left + width;
-        let destTop = top + height / 2;
+        let destLeft = left + width + 100;
+        let destTop = top + height / 2 - 5;
         return { destLeft, destTop };
     }
 

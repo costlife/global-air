@@ -26,8 +26,9 @@
 // };
 
 const paramsCheck = {
-    OW(segmentList) {
+    OW(segmentList, RTType) {
         let seg = segmentList[0];
+        let dest = segmentList[1];
         if (seg.oriCode == '') {
             return {
                 code: 1,
@@ -43,6 +44,11 @@ const paramsCheck = {
                 code: 3,
                 text: '请选择出发时间'
             };
+        } else if (RTType && dest.departureDate == '') {
+            return {
+                code: 4,
+                text: '请选择返程时间'
+            };
         } else {
             return {
                 code: 0
@@ -50,7 +56,7 @@ const paramsCheck = {
         }
     },
     RT(segmentList) {
-
+        return paramsCheck.OW(segmentList, true);
     },
     MS(segmentList) {
 
