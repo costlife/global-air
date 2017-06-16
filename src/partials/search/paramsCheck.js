@@ -29,13 +29,24 @@ const paramsCheck = {
     OW(segmentList) {
         let seg = segmentList[0];
         if (seg.oriCode == '') {
-            return '请选择出发城市';
+            return {
+                code: 1,
+                text: '请选择出发城市'
+            };
         } else if (seg.desCode == '') {
-            return '请选择到达城市';
+            return {
+                code: 2,
+                text: '请选择到达城市'
+            };
         } else if (seg.departureDate == '') {
-            return '请选择出发时间';
+            return {
+                code: 3,
+                text: '请选择出发时间'
+            };
         } else {
-            return true;
+            return {
+                code: 0
+            };
         }
     },
     RT(segmentList) {
@@ -51,15 +62,27 @@ function checkPassenger(passengerType) {
     let chd = parseInt(passengerType[1].passgerNumber, 10);
     let inf = parseInt(passengerType[2].passgerNumber, 10);
     if (adt + chd + inf === 0) {
-        return '请选择实际出行人数。';
+        return {
+            code: 9,
+            text: '请选择实际出行人数。'
+        };
     }
     if (adt === 0) {
         if (chd > 0 && inf === 0) {
-            return '请确认儿童有同舱等的成人陪伴乘机，儿童单独乘机需直接向航空公司购票';
+            return {
+                code: 9,
+                text: '请确认儿童有同舱等的成人陪伴乘机，儿童单独乘机需直接向航空公司购票'
+            };
         } else if (chd > 0 && inf > 0) {
-            return '儿童婴儿须有成人陪伴乘机。';
+            return {
+                code: 9,
+                text: '儿童婴儿须有成人陪伴乘机。'
+            };
         } else {
-            return '如需单独预订婴儿票，请致电51book';
+            return {
+                code: 9,
+                text: '如需单独预订婴儿票，请致电51book'
+            };
         }
     }
     return true;
@@ -68,6 +91,12 @@ function checkPassenger(passengerType) {
 export default (params) => {
     console.log(params)
     const {segmentList, passengerType, journeyType} = params;
-    return true;
-    return paramsCheck[journeyType](segmentList) //&& checkPassenger(passengerType);
+    let journeyCheck = paramsCheck[journeyType](segmentList);
+    let passengerCheck = checkPassenger(passengerType);
+    if (journeyCheck.code !== 0) {
+        return journeyCheck;
+    }
+    if (passengerCheck.code !== 0) {
+        return passengerCheck;
+    }
 };

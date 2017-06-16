@@ -40,43 +40,64 @@ class FlightSearch extends Component {
             departureText: '',
             destination: '',
             destinationText: '',
-            infoAlertText: '',
-            infoAlertLeft: 0,
-            infoAlertTop: 0,
+            infoAlertResult: '',
+            infoAlertTarget: null,
         };
     }
 
     changeJourneyType(e) {
-        this.setState({journeyType: e.target.value});
+        this.setState({
+            infoAlertResult: null,
+            journeyType: e.target.value
+        });
     }
 
     changeCabinClass(data) {
-        this.setState({cabinClass: data.value});
+        this.setState({
+            infoAlertResult: null,
+            cabinClass: data.value
+        });
     }
 
     changeAdtCount(data) {
-        this.setState({adtCount: data.value});
+        this.setState({
+            infoAlertResult: null,
+            adtCount: data.value
+        });
     }
 
     changeChdCount(data) {
-        this.setState({chdCount: data.value});
+        this.setState({
+            infoAlertResult: null,
+            chdCount: data.value
+        });
     }
 
     changeInfCount(data) {
-        this.setState({infCount: data.value});
+        this.setState({
+            infoAlertResult: null,
+            infCount: data.value
+        });
     }
 
     changeStartDate(startDate) {
-        this.setState({startDate})
+        this.setState({
+            infoAlertResult: null,
+            startDate
+        });
     }
 
     changeReturnDate(returnDate) {
-        this.setState({returnDate})
+        this.setState({
+            infoAlertResult: null,
+            returnDate
+        });
     }
 
     onChangeDeparture(departure) {
         this.setState({
             departure,
+            infoAlertResult: null,
             departureText: utils.getName(departure)
         });
     }
@@ -89,6 +110,7 @@ class FlightSearch extends Component {
 
     onChangeDestination(destination) {
         this.setState({
+            infoAlertResult: null,
             destination,
             destinationText: utils.getName(destination)
         });
@@ -96,12 +118,16 @@ class FlightSearch extends Component {
 
     onChangeDestinationText(text) {
         this.setState({
+            infoAlertResult: null,
             destinationText: text
         });
     }
 
     onSegmentListChange(segmentList) {
-        this.setState({segmentList})
+        this.setState({
+            infoAlertResult: null,
+            segmentList
+        })
     }
 
     changeDestOrigin() {
@@ -112,6 +138,7 @@ class FlightSearch extends Component {
         this.setState({
             departure: _departure,
             destination: _destination,
+            infoAlertResult: null,
             departureText: utils.getName(_departure),
             destinationText: utils.getName(_destination),
         });
@@ -142,7 +169,7 @@ class FlightSearch extends Component {
             this.props.onSearch(searchParams);
         } else {
             this.setState({
-                infoAlertText: checkResult
+                infoAlertResult: checkResult
             });
             console.log(checkResult);
             console.log('查询参数错误');
@@ -188,9 +215,8 @@ class FlightSearch extends Component {
             returnDate,
             departureText,
             destinationText,
-            infoAlertText,
-            infoAlertLeft,
-            infoAlertTop
+            infoAlertResult,
+            infoAlertTarget
         } = this.state;
         return (
             <div className="search-forms">
@@ -209,7 +235,7 @@ class FlightSearch extends Component {
                         多程
                     </label>
                 </div>
-                <InfoAlert text={infoAlertText} left={infoAlertLeft} top={infoAlertTop}/>
+                <InfoAlert result={infoAlertResult}/>
                 {journeyType == 'MS' ?
                     <MultiSearch
                         changeCabinClass={this.changeCabinClass.bind(this)}
@@ -223,6 +249,7 @@ class FlightSearch extends Component {
                         <div className="formline search-city start-city">
                             <i>出发地</i>
                             <CitySuggest
+                                ref="departureSelect"
                                 value={departureText}
                                 onChangeCity={this.onChangeDeparture.bind(this)}
                                 onChangeText={this.onChangeDepartureText.bind(this)}
@@ -283,6 +310,7 @@ class FlightSearch extends Component {
                     </div>
                 }
                 <a className="search-btn" onClick={this.onSearchClick.bind(this)}>搜索</a>
+                <span className="passenger-alert"></span>
             </div>
         );
     }
